@@ -134,18 +134,20 @@ const Resume = () => {
            <div className={a.ContentLayout}>
                <div className={a.RightSide}>
                    <div className={a.WrapperInfo}>
-                       <div className={a.IntroCard}>
-                           <p className={a.IntroTitle}>Привет!</p>
-                           <div className={a.IntroBlock}>
-                               <p className={a.IntroText}>
-                                   Я Саша, Product Designer с 5-летним опытом. Работал в B2C, B2B, B2E проектах: от
-                                   стартапов до крупных компаний. За все время работы помог компаниям скорить TTM, повышал конверсию, поднимал вовлеченность, снижал нагрузку на сотрудников и поддержку, спроектировал дизайн для 3 MVPшек с нуля.
-                               </p>
+                       <div className={a.WrapperHeader}>
+                           <div className={a.IntroCard}>
+                               <p className={a.IntroTitle}>Привет!</p>
+                               <div className={a.IntroBlock}>
+                                   <p className={a.IntroText}>
+                                       Я Саша, Product Designer с 5-летним опытом. Работал в B2C, B2B, B2E проектах: от
+                                       стартапов до крупных компаний. За все время работы помог компаниям скорить TTM, повышал конверсию, поднимал вовлеченность, снижал нагрузку на сотрудников и поддержку, спроектировал дизайн для 3 MVPшек с нуля.
+                                   </p>
+                               </div>
                            </div>
+                           <Suspense fallback={<LoadingComponent>Загрузка профиля...</LoadingComponent>}>
+                               <WorkExp/>
+                           </Suspense>
                        </div>
-                       <Suspense fallback={<LoadingComponent>Загрузка профиля...</LoadingComponent>}>
-                           <WorkExp/>
-                       </Suspense>
 
                        {/*Cases - ленивая загрузка для улучшения производительности */}
                        <Suspense fallback={<LoadingComponent>Загрузка кейса...</LoadingComponent>}>

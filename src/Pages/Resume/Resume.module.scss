@@ -55,6 +55,11 @@
   height: fit-content;
 }
 
+.WrapperHeader {
+  display: flex;
+  flex-flow: column;
+  gap: var(--spacing-m);
+}
 
 .Profile {
   border: 1px solid var(--border-default);
