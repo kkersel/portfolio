@@ -1,5 +1,4 @@
 .ResumePage {
-  background-color: var(--bg-default);
   min-height: 100vh;
   display: flex;
   align-items: stretch;
@@ -9,28 +8,24 @@
   margin: 0 auto;
 
   .ThameButton {
-    z-index: 999;
-    position: fixed;
-    top: var(--spacing-m);
-    left: var(--spacing-l);
-    height: 56px;
-    width: 56px;
+    height: 44px;
+    width: 44px;
     border-radius: 12px;
-    background-color: var(--nav-button-bg);
     outline: none;
     border: none;
     color: var(--nav-text-color);
-    cursor: pointer;
+    background: transparent;
+    transition: 0.5s;
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
-        border: 2px solid var(--accent-default);
+        transition: 0.5s;
+        border: 1px solid var(--accent-default);
         color: var(--accent-default);
       }
     }
   }
 }
-
 
 .ContentLayout {
   display: grid;

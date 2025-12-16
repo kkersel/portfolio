@@ -17,11 +17,14 @@ $bk-phone: 611px 0px;
   span {
     word-wrap: break-word;
     width: 100%;
-    font-size: 32px;
+    //font-size: 32px;
   }
 
   @include breakpoint($bk-phone) {
     padding: 24px;
+    span {
+      font-size: 32px;
+    }
     gap: 40px;
   }
 
