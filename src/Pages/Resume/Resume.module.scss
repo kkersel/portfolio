@@ -1,0 +1,438 @@
+.ResumePage {
+  background-color: var(--bg-default);
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1104px;
+  margin: 0 auto;
+
+  .ThameButton {
+    z-index: 999;
+    position: fixed;
+    top: var(--spacing-m);
+    left: var(--spacing-l);
+    height: 56px;
+    width: 56px;
+    border-radius: 12px;
+    background-color: var(--nav-button-bg);
+    outline: none;
+    border: none;
+    color: var(--nav-text-color);
+    cursor: pointer;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        border: 2px solid var(--accent-default);
+        color: var(--accent-default);
+      }
+    }
+  }
+}
+
+
+.ContentLayout {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--spacing-l);
+  max-width: 1104px;
+  margin: 0 auto;
+  padding: var(--spacing-xl) 0 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.LeftSide {
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+  align-items: stretch;
+  position: sticky;
+  top: 20px;
+  width: 100%;
+  height: fit-content;
+}
+
+
+.Profile {
+  border: 1px solid var(--border-default);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+  align-items: center;
+  padding: var(--spacing-l);
+  border-radius: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.Avatar {
+  border-radius: 200px;
+  width: 96px;
+  height: 96px;
+  position: relative;
+
+  img {
+    position: absolute;
+    inset: 0;
+    max-width: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    border-radius: 200px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.AvatarImage {
+  position: absolute;
+  inset: 0;
+  max-width: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  border-radius: 200px;
+  width: 100%;
+  height: 100%;
+}
+
+.ProfileInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.ProfileName {
+  font-family: 'Manrope', sans-serif;
+  font-weight: var(--font-weight-semibold);
+  line-height: 26px;
+  font-size: var(--font-size-l);
+  color: var(--fg-default);
+  white-space: pre;
+  margin: 0;
+}
+
+.ProfileDescription {
+  font-family: 'Manrope', sans-serif;
+  font-weight: var(--font-weight-medium);
+  line-height: var(--font-line-height-normal);
+  font-size: var(--font-size-s);
+  color: var(--fg-soft);
+  width: 100%;
+  margin: 0;
+}
+
+.ProfileButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+  width: 100%;
+}
+
+.ProfileButton {
+  background-color: var(--btn-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 12px;
+  width: 100%;
+  height: 64px;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    background-color: var(--btn-bg-hover);
+  }
+}
+
+.GradientButton {
+  background: linear-gradient(45deg, #8A2BE2, #6A5ACD, #4B0082, #1E90FF, #00BFFF);
+  background-size: 400% 400%;
+  animation: gradientShift 6s ease-in-out infinite;
+  color: white;
+  border-radius: 16px;
+
+  &:hover {
+    background: linear-gradient(45deg, #8A2BE2, #6A5ACD, #4B0082, #1E90FF, #00BFFF);
+    background-size: 400% 400%;
+    animation: gradientShift 6s ease-in-out infinite;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.ButtonText {
+  font-family: 'Manrope', sans-serif;
+  font-weight: var(--font-weight-regular);
+  line-height: 20px;
+  font-size: var(--font-size-s);
+  color: var(--fg-default);
+  white-space: pre;
+  margin: 0;
+}
+
+.RightSide {
+  grid-column: span 8;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: stretch;
+  width: 100%;
+  //overflow-y: auto;
+
+  /* Стили скроллбара */
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--bg-muted);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--accent-muted);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-default);
+  }
+}
+
+
+.WrapperInfo {
+  display: flex;
+  flex-flow: column;
+  gap: 80px;
+}
+
+.IntroCard {
+  background-color: var(--bg-surface1);
+  border: 1px solid var(--border-accent);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  padding: var(--spacing-m) var(--spacing-l);
+  border-radius: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.IntroTitle {
+  font-family: 'Manrope', sans-serif;
+  font-weight: var(--font-weight-semibold);
+  line-height: 26px;
+  font-size: var(--font-size-l);
+  color: var(--fg-default);
+  white-space: pre;
+  margin: 0;
+}
+
+.IntroBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+  align-items: flex-start;
+  width: 100%;
+}
+
+.IntroText {
+  font-family: 'Manrope', sans-serif;
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-line-height-normal);
+  font-size: var(--font-size-m);
+  color: var(--fg-default);
+  width: 100%;
+}
+
+.ExperienceCard {
+  background-color: var(--bg-surface1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-l);
+  align-items: stretch;
+  padding: var(--spacing-m) var(--spacing-l);
+  border-radius: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ExperienceHeader {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.CompanyLogo {
+  border-radius: 8px;
+  width: 51px;
+  height: 51px;
+  position: relative; /* Необходим для правильного позиционирования изображения внутри */
+
+  img {
+    position: absolute;
+    inset: 0;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.CompanyInfo {
+  flex: 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: center;
+  line-height: normal;
+}
+
+.CompanyName {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-m);
+  color: var(--fg-default);
+  width: min-content;
+}
+
+.JobInfo {
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-s);
+  color: var(--fg-soft);
+  white-space: pre;
+  margin: 0;
+}
+
+.ExperienceBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+  align-items: flex-start;
+  width: 100%;
+}
+
+.Badge {
+  background-color: var(--accent-soft);
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border-radius: 9px;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+
+.BadgeText {
+  font-weight: var(--font-weight-medium);
+  line-height: normal;
+  font-size: var(--font-size-xxs);
+  color: var(--fg-default);
+  white-space: pre;
+}
+
+.ExperienceText {
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-line-height-loose);
+  font-size: var(--font-size-s);
+  color: var(--fg-default);
+  width: 100%;
+  margin: 0;
+}
+
+.BoldText {
+  font-weight: var(--font-weight-bold);
+}
+
+// Адаптивные стили для разных размеров экрана
+@media (max-width: 1024px) {
+  .ContentLayout {
+    grid-template-columns: 1fr;
+    padding: var(--spacing-m) var(--spacing-s) 0;
+  }
+
+  .LeftSide {
+    grid-column: auto;
+    order: -1; /* Помещаем LeftSide в начало при адаптиве */
+    position: static; /* Убираем фиксированное позиционирование */
+    background-color: var(--bg-default);
+    padding: var(--spacing-s);
+    max-width: 1104px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .RightSide {
+    grid-column: auto;
+    margin-top: 0; /* Убираем отступ сверху */
+  }
+}
+
+@media (max-width: 768px) {
+  .ExperienceHeader {
+    flex-direction: column;
+    gap: var(--spacing-s);
+  }
+
+  .CompanyLogo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ProfileButtons {
+    gap: var(--spacing-s);
+  }
+
+  .ProfileButton {
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ContentLayout {
+    gap: var(--spacing-m);
+    padding: 120px var(--spacing-xs) 0; /* Увеличиваем верхний отступ, чтобы учесть фиксированный LeftSide */
+  }
+
+  .Profile, .IntroCard, .ExperienceCard {
+    padding: var(--spacing-m);
+  }
+
+  .ProfileName {
+    font-size: var(--font-size-m);
+  }
+
+  .IntroTitle {
+    font-size: var(--font-size-m);
+  }
+
+  .CompanyName {
+    font-size: var(--font-size-s);
+  }
+
+  .JobInfo {
+    font-size: var(--font-size-xs);
+  }
+}

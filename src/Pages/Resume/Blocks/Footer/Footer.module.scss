@@ -1,0 +1,119 @@
+@import "../../../../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+
+$bk-desktop: 1920px 1440px;
+$bk-table-landscape: 1440px 811px;
+$bk-table: 811px 611px;
+$bk-phone: 611px 0px;
+
+.Wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+}
+
+.WrapperCoin {
+  display: flex;
+  justify-content: space-between;
+  transition: ease-in-out 0.4s;
+  text-decoration: none;
+
+  &:hover {
+    .Title {
+      color: #AA7A2E;
+      transition: ease-in-out 0.4s;
+    }
+  }
+
+  &.gradientAnimation {
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background-size: 400% 400%;
+    animation: gradientShift 3s ease infinite;
+    border-radius: 16px;
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @include breakpoint($bk-phone) {
+    display: flex;
+    flex-flow: column;
+    gap: 32px;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.FooterWrapper {
+  width: 100%;
+  padding: 40px 40px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-flow: column;
+  gap: 24px;
+  border-radius: 16px;
+  color: var(--text-color);
+  font-family: Manrope, sans-serif;
+  border: 2px solid #9c8bd9;
+  @include breakpoint($bk-phone) {
+    padding: 24px 24px 24px 24px;
+    margin: 0 24px 40px 24px;
+  }
+
+  .Title {
+    margin-left: -0.55%;
+    font-size: 100px;
+    color: #8673c9;
+    padding: 10px 0 10px 0;
+    @include breakpoint($bk-phone) {
+      font-size: 32px;
+    }
+  }
+
+  .Info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    color: var(--text-color);
+
+    @include breakpoint($bk-phone) {
+      flex-flow: column;
+      font-size: 10px;
+    }
+  }
+
+  .links {
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoint($bk-phone) {
+      flex-flow: column;
+    }
+
+    a {
+      width: 100%;
+      padding: 12px 24px 12px 24px;
+      text-align: center;
+      color: #080808;
+      font-size: 18px;
+      transition: 0.5s;
+      border-radius: 18px;
+
+      @include breakpoint($bk-phone) {
+        border-left: 5px solid black;
+        text-align: left;
+      }
+    }
+  }
+}

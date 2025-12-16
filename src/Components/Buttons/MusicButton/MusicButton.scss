@@ -1,0 +1,155 @@
+@import "~breakpoint-sass";
+$bk-desktop: 1920px 1440px;
+$bk-table-landscape: 1440px 811px;
+$bk-table: 811px 611px;
+$bk-phone: 611px 0px;
+
+.WrapperMusic {
+  display: flex;
+  width: auto;
+  justify-content: end;
+  gap: 12px;
+
+  @include breakpoint($bk-phone) {
+    display: none;
+  }
+}
+
+.WrapperButtonNextPrevious {
+  min-width: 100px;
+  width: auto;
+  gap: 8px;
+  display: flex;
+
+  button {
+    width: 100px;
+    height: 100%;
+    border-radius: 12px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 0.4s;
+
+    outline: none;
+    border: none;
+    background-color: var(--bg-surface1);
+    box-shadow: 0 4px 12px rgba(70, 63, 192, 0.06);
+
+    &:hover {
+      background-color: var(--bg-surface3);
+      transition: 0.4s;
+    }
+    @include breakpoint($bk-phone) {
+      width: 50%;
+    }
+  }
+}
+
+.WrapperForMusicButton {
+  width: auto;
+  height: auto;
+  gap: 12px;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-surface1);
+  box-shadow: 0 4px 12px rgba(70, 63, 192, 0.06);
+  border-radius: 12px;
+  padding: 12px;
+  }
+
+.ButtonMusic {
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: 0.4s;
+
+  outline: none;
+  border: none;
+  background-color: var(--accent-default);
+  background-size: cover;
+  background-image: url("/../public/play.png");
+}
+
+.Pause {
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+
+  z-index: 2;
+  opacity: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: 0.4s;
+
+  outline: none;
+  border: none;
+  background-color: var(--accent-default);
+  background-image: url("/../public/pause.png");
+  background-size: cover;
+}
+.ButtonMusic:hover {
+  width: 32px;
+  height: 32px;
+  transition: 0.4s;
+  background-color: var(--accent-hover);
+  opacity: 100%;
+  background-image: url("/../public/play.png");
+  @include breakpoint($bk-phone) {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.Pause:hover {
+  width: 32px;
+  height: 32px;
+  transition: 0.4s;
+  background-color: var(--accent-default);
+
+  opacity: 100%;
+  background-image: url("/../public/pause.png");
+  @include breakpoint($bk-phone) {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.HorizontalSlider {
+  /* Styles for the horizontal slider */
+  width: 150px; /* Set the width of the slider */
+  height: 8px; /* Set the height of the slider */
+  appearance: none; /* Remove default styling */
+  background-color: #ccc; /* Slider track color */
+  border-radius: 4px; /* Rounded corners */
+  outline: none; /* Remove outline on focus */
+  /* Custom track color when slider is filled */
+  &::-webkit-slider-runnable-track {
+    background-color: var(--bg-container);
+    border-radius: 12px; /* Rounded corners */
+  }
+  /* Custom thumb (handle) style */
+  &::-webkit-slider-thumb {
+    appearance: none; /* Remove default styling */
+    width: 20px; /* Thumb width */
+    height: 20px; /* Thumb height */
+    background-color: #828AF0; /* Thumb color */
+    border-radius: 50%; /* Rounded shape for the thumb */
+    transition: 0.4s;
+
+    &:hover {
+      background-color: var(--accent-default);
+      transition: 0.4s;
+    }
+  }
+}
+

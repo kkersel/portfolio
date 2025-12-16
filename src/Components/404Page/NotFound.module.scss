@@ -1,0 +1,64 @@
+@import "../../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+$bk-desktop: 1920px 1440px;
+$bk-table-landscape: 1440px 811px;
+$bk-table: 811px 611px;
+$bk-phone: 611px 0px;
+
+.Wrapper {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 100vh;
+  width: auto;
+  background: #080808;
+
+  @include breakpoint($bk-phone) {
+    padding: 24px;
+  }
+}
+
+.Title {
+  font-size: 250px;
+  text-align: center;
+  color: #C3CCE9;
+  @include breakpoint($bk-phone) {
+    font-size: 200px;
+  }
+}
+.Subtitle {
+  text-align: center;
+  text-decoration: none;
+  color: #C3CCE9;
+  @include breakpoint($bk-phone) {
+  }
+}
+
+.ButtonToMain {
+  height: 48px;
+  width: 600px;
+  margin-top: 40px;
+  border-radius: 40px;
+  border: 1px solid #C3CCE9;
+  font-size: 18px;
+  color: #C3CCE9;
+  background-color: #080808;
+  transition: 0.4s;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include breakpoint($bk-phone) {
+    width: auto;
+  }
+}
+.ButtonToMain:hover {
+  background-color: #171717;
+  transition: 0.4s;
+}
+
+.Link {
+  text-decoration: none;
+}

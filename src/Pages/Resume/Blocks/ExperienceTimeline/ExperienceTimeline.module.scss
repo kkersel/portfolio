@@ -1,0 +1,42 @@
+.ExperienceTimeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.TimelineItem {
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ExperienceBlocks {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ExperienceBlock {
+  margin-bottom: 0;
+}
+
+.Badge {
+  margin-bottom: 4px;
+}
+
+.ExperienceText {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-color);
+
+  .BoldText {
+    font-weight: bold;
+    margin: 0 4px;
+  }
+}

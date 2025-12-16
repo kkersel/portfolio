@@ -1,0 +1,155 @@
+@import "../../../../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+$bk-desktop: 1920px 1440px;
+$bk-table-landscape: 1440px 811px;
+$bk-table: 811px 611px;
+$bk-phone: 611px 0px;
+
+.viRoot {
+  width: 100%;
+  padding: var(--spacing-l) var(--spacing-l);
+  background: var(--card-bg);
+  border-radius: var(--border-s);
+  background-color: var(--bg-surface1);
+
+  @include breakpoint($bk-phone) {
+    padding: 24px;
+  }
+}
+
+.viTitleWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: var(--spacing-s);
+
+  .viTitle {
+    font-size: var(--font-size-xl);
+    font-weight: 900;
+    color: var(--text-color);
+  }
+
+  .viSubtitle {
+    color: var(--text-3);
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-medium);
+  }
+}
+
+.viItem {
+  background: var(--card-bg);
+  border: 1px solid var(--border-default);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  transition: all 0.2s ease;
+}
+
+.viQuestion {
+  font-weight: 600;
+  line-height: 1.4;
+  font-size: 18px;
+}
+
+.viAnswer {
+  //width: 70%;
+  margin-top: 10px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  @include breakpoint($bk-phone) {
+    width: 100%;
+  }
+}
+
+.viAnswerRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  width: fit-content;
+  border-radius: 12px 12px 0 12px;
+  font-size: var(--font-size-s);
+
+  p {
+    max-width: 700px;
+    word-wrap: break-word;
+  }
+}
+
+.viAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.viFeedbackBlock {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.viBtnHelpful,
+.viBtnCringe {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 8px 16px;
+  border-radius: 99px;
+  border: 1px solid var(--border-color);
+  background-color: var(--btn-bg);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+
+  p {
+    font-size: var(--font-size-l);
+  }
+}
+
+.viBtnHelpful:hover {
+  background-color: var(--btn-bg-hover);
+  border-color: var(--btn-accent);
+}
+
+.viBtnCringe:hover {
+  background-color: var(--btn-red);
+  border-color: #f43f5e;
+}
+
+.activeHelpful {
+  background-color: var(--btn-bg-hover);
+  border-color: var(--btn-accent);
+  color: var(--btn-accent);
+  transform: scale(0.98);
+}
+
+.activeCringe {
+  background-color: var(--btn-red);
+  border-color: #f43f5e;
+  color: #be123c;
+  transform: scale(0.98);
+}
+
+.skeleton {
+  display: inline-block;
+  width: 24px;
+  height: 18px;
+  background: linear-gradient(90deg, #eee 25%, #f5f5f5 50%, #eee 75%);
+  background-size: 200% 100%;
+  border-radius: 4px;
+  animation: loading 1.2s infinite;
+}
+
+@keyframes loading {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}

@@ -1,0 +1,37 @@
+@import "~breakpoint-sass";
+$bk-desktop: 1920px 1440px;
+$bk-table-landscape: 1440px 811px;
+$bk-table: 811px 611px;
+$bk-phone: 611px 0px;
+
+.serv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  height: auto;
+  width: 100%;
+  font-size: 24px;
+  padding: 8px;
+
+  .pin {
+    border-radius: 18px;
+    background-color: var(--bg-surface1);
+    color: var(--fg-on-container);
+    height: 35px;
+    width: auto;
+    font-size: 20px;
+    padding: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.Cursor {
+  @include breakpoint($bk-phone)  {
+    display: none;
+  }
+}

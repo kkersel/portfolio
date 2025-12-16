@@ -1,0 +1,41 @@
+@import "~breakpoint-sass";
+
+$bk-desktop: 1920px 1440px;
+$bk-table-landscape: 1440px 811px;
+$bk-table: 811px 611px;
+$bk-phone: 611px 0px;
+
+.WrapperTitle {
+  width: 100%;
+  user-select: text;
+  -webkit-user-select: text;
+ -moz-user-select: text;
+  word-wrap: break-word;
+  display: flex;
+  gap: 12px;
+
+  @include breakpoint($bk-phone) {
+    flex-flow: column;
+  }
+}
+
+.image {
+  height: 55px;
+  width: 55px;
+  object-fit: cover;
+
+  @include breakpoint($bk-phone) {
+    height: 44px;
+    width: 44px;
+  }
+}
+
+h2, p {
+  margin-bottom: 0;
+}
+
+.description {
+  font-size: var(--font-size-m);
+  color: var(--fg-soft);
+  font-weight: 500;
+}

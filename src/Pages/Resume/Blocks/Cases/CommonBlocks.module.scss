@@ -1,0 +1,235 @@
+// Общие стили для блоков проектов
+
+.Wrapper {
+  display: flex;
+  flex-flow: column;
+  gap: var(--spacing-s);
+}
+
+.BlockContainer {
+  background-color: var(--bg-surface1);
+  padding: var(--spacing-l) var(--spacing-l);
+  border-radius: 16px;
+  width: 100%;
+  gap: var(--spacing-s);
+  display: flex;
+  flex-flow: column;
+}
+
+.BlockTitle {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-m);
+  color: var(--fg-default);
+  line-height: var(--font-line-height-tight);
+}
+
+.BlockDescription {
+  font-family: 'Manrope', sans-serif;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-s);
+  color: var(--fg-soft);
+  line-height: var(--font-line-height-normal);
+  min-width: 100%;
+}
+
+.BlockText {
+  font-family: 'Manrope', sans-serif;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-s);
+  color: var(--fg-soft);
+  line-height: var(--font-line-height-normal);
+  min-width: 100%;
+}
+
+.Paragraph {
+  margin: 0;
+  line-height: var(--font-line-height-normal);
+}
+
+.ResultBlock {
+  @extend .BlockContainer;
+  background-color: var(--bg-container);
+}
+
+.VideoBlock {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--bg-surface2);
+  //position: relative;
+}
+
+.VideoPlayer, .VideoElement {
+  //width: 100%;
+  //height: auto;
+  //display: block;
+  //object-fit: contain;
+}
+
+.VideoElementTennis {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  max-height: 700px;
+}
+
+
+.VideoContainer {
+  width: 100%;
+}
+
+.VideoElement {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-width: 100%;
+  display: block;
+}
+
+.GalleryBlock {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--bg-surface2);
+  position: relative;
+}
+
+.GalleryContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-l);
+  box-sizing: border-box;
+  height: 750px;
+}
+
+.ScreenshotContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.ScreenshotContainer.next {
+  animation: slideNext 0.3s ease forwards;
+}
+
+.ScreenshotContainer.prev {
+  animation: slidePrev 0.3s ease forwards;
+}
+
+@keyframes slideNext {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slidePrev {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.ScreenshotImage {
+  max-width: 100%;
+  max-height: 700px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.NavButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--bg-surface2);
+  border: 1px solid var(--border-default);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+
+  svg {
+    width: 8px;
+    height: 15px;
+
+    path {
+      stroke: var(--fg-default);
+    }
+  }
+
+  &:hover {
+    background: var(--bg-container);
+    border-color: var(--border-accent);
+  }
+
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.PrevButton {
+  left: 20px;
+}
+
+.NextButton {
+  right: 20px;
+}
+
+.Indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.Indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--bg-muted);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &.ActiveIndicator {
+    background-color: var(--accent-default);
+  }
+}
+
+.AppStoresBlock {
+  width: 100%;
+  border-radius: 16px;
+  background-color: var(--bg-surface2);
+  box-sizing: border-box;
+  padding: var(--spacing-l) var(--spacing-l);
+}
+
+.ButtonsContainer {
+  display: flex;
+  gap: var(--spacing-s);
+  width: 100%;
+}

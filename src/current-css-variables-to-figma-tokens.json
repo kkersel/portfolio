@@ -1,0 +1,327 @@
+{
+  "mode": {
+    "fg": {
+      "primary": {
+        "$value": {
+          "light": "#111",
+          "dark": "#f2f2f2"
+        },
+        "$type": "color"
+      },
+      "secondary": {
+        "$value": {
+          "light": "#333",
+          "dark": "#ccc"
+        },
+        "$type": "color"
+      },
+      "tertiary": {
+        "$value": {
+          "light": "#676767",
+          "dark": "#a8a8a8"
+        },
+        "$type": "color"
+      }
+    },
+    "bg": {
+      "content": {
+        "$value": {
+          "light": "#F7F7F7",
+          "dark": "#090909"
+        },
+        "$type": "color"
+      },
+      "background": {
+        "$value": {
+          "light": "#F7F7F7",
+          "dark": "#090909"
+        },
+        "$type": "color"
+      },
+      "content-Secondary": {
+        "$value": {
+          "light": "#fafafa",
+          "dark": "#1e1e1e"
+        },
+        "$type": "color"
+      },
+      "content-Tertiary": {
+        "$value": {
+          "light": "#ffffff",
+          "dark": "#252525"
+        },
+        "$type": "color"
+      },
+      "card": {
+        "$value": {
+          "light": "#ffffff",
+          "dark": "#1e1e1e"
+        },
+        "$type": "color"
+      },
+      "card-alt": {
+        "$value": {
+          "light": "#fafafa",
+          "dark": "#252525"
+        },
+        "$type": "color"
+      },
+      "result": {
+        "$value": {
+          "light": "#f5efff",
+          "dark": "#2b2440"
+        },
+        "$type": "color"
+      }
+    },
+    "stroke": {
+      "primary": {
+        "$value": {
+          "light": "#efefef",
+          "dark": "#2c2c2c"
+        },
+        "$type": "color"
+      }
+    },
+    "accent": {
+      "default": {
+        "$value": {
+          "light": "#4921fd",
+          "dark": "#6278FF"
+        },
+        "$type": "color"
+      },
+      "hover": {
+        "$value": {
+          "light": "#f0f0f0",
+          "dark": "#2c2c2c"
+        },
+        "$type": "color"
+      }
+    },
+    "btn": {
+      "bg": {
+        "$value": {
+          "light": "#ffffff",
+          "dark": "#1e1e1e"
+        },
+        "$type": "color"
+      },
+      "bg-hover": {
+        "$value": {
+          "light": "#f0f0",
+          "dark": "#2c2c2c"
+        },
+        "$type": "color"
+      },
+      "accent": {
+        "$value": {
+          "light": "#4921fd",
+          "dark": "#6278FF"
+        },
+        "$type": "color"
+      },
+      "danger": {
+        "$value": {
+          "light": "#fff1f2",
+          "dark": "rgba(136, 13, 20, 0.37)"
+        },
+        "$type": "color"
+      }
+    },
+    "first-nav": {
+      "text": {
+        "$value": {
+          "light": "#111",
+          "dark": "#11"
+        },
+        "$type": "color"
+      },
+      "btn-bg": {
+        "$value": {
+          "light": "rgba(255, 255, 255, 0.3)",
+          "dark": "rgba(0, 0, 0, 0.19)"
+        },
+        "$type": "color"
+      },
+      "btn-bg-hover": {
+        "$value": {
+          "light": "rgba(255, 255, 255, 0.45)",
+          "dark": "rgba(0, 0, 0, 0.45)"
+        },
+        "$type": "color"
+      }
+    },
+    "Ic": {
+      "primary": {
+        "$value": {
+          "light": "#111",
+          "dark": "#f2f2f2"
+        },
+        "$type": "color"
+      },
+      "secondary": {
+        "$value": {
+          "light": "#333",
+          "dark": "#ccc"
+        },
+        "$type": "color"
+      },
+      "tertiary": {
+        "$value": {
+          "light": "#676767",
+          "dark": "#a8a8a8"
+        },
+        "$type": "color"
+      }
+    }
+  },
+  "theme": {
+    "base": {
+      "neutral": {
+        "$value": "#111",
+        "$type": "color"
+      },
+      "accent": {
+        "$value": "#4921fd",
+        "$type": "color"
+      }
+    },
+    "neutral-1000": {
+      "$value": "#000000",
+      "$type": "color"
+    },
+    "neutral-990": {
+      "$value": "#0e1117",
+      "$type": "color"
+    },
+    "neutral-950": {
+      "$value": "#181d28",
+      "$type": "color"
+    },
+    "neutral-925": {
+      "$value": "#1d2431",
+      "$type": "color"
+    },
+    "neutral-900": {
+      "$value": "#222a39",
+      "$type": "color"
+    },
+    "neutral-800": {
+      "$value": "#293244",
+      "$type": "color"
+    },
+    "neutral-700": {
+      "$value": "#303a4f",
+      "$type": "color"
+    },
+    "neutral-600": {
+      "$value": "#3a4760",
+      "$type": "color"
+    },
+    "neutral-500": {
+      "$value": "{base.neutral}",
+      "$type": "color"
+    },
+    "neutral-400": {
+      "$value": "#69758e",
+      "$type": "color"
+    },
+    "neutral-300": {
+      "$value": "#858fa3",
+      "$type": "color"
+    },
+    "neutral-200": {
+      "$value": "#a1a9b8",
+      "$type": "color"
+    },
+    "neutral-100": {
+      "$value": "#d0d4dc",
+      "$type": "color"
+    },
+    "neutral-50": {
+      "$value": "#eceef1",
+      "$type": "color"
+    },
+    "neutral-25": {
+      "$value": "#f6f6f8",
+      "$type": "color"
+    },
+    "neutral-10": {
+      "$value": "#f9fafb",
+      "$type": "color"
+    },
+    "neutral-0": {
+      "$value": "#ffffff",
+      "$type": "color"
+    },
+    "accent-1000": {
+      "$value": "#00000",
+      "$type": "color"
+    },
+    "accent-990": {
+      "$value": "#021306",
+      "$type": "color"
+    },
+    "accent-950": {
+      "$value": "#04210b",
+      "$type": "color"
+    },
+    "accent-925": {
+      "$value": "#05280d",
+      "$type": "color"
+    },
+    "accent-900": {
+      "$value": "#062e0f",
+      "$type": "color"
+    },
+    "accent-800": {
+      "$value": "#073812",
+      "$type": "color"
+    },
+    "accent-700": {
+      "$value": "#084115",
+      "$type": "color"
+    },
+    "accent-600": {
+      "$value": "#094f1a",
+      "$type": "color"
+    },
+    "accent-500": {
+      "$value": "{base.accent}",
+      "$type": "color"
+    },
+    "accent-400": {
+      "$value": "#3c7d4b",
+      "$type": "color"
+    },
+    "accent-300": {
+      "$value": "#60966d",
+      "$type": "color"
+    },
+    "accent-200": {
+      "$value": "#85ae8f",
+      "$type": "color"
+    },
+    "accent-100": {
+      "$value": "#c2d6c7",
+      "$type": "color"
+    },
+    "accent-50": {
+      "$value": "#e7efe9",
+      "$type": "color"
+    },
+    "accent-25": {
+      "$value": "#f3f7f4",
+      "$type": "color"
+    },
+    "accent-10": {
+      "$value": "#f8faf8",
+      "$type": "color"
+    },
+    "accent-0": {
+      "$value": "#ffffff",
+      "$type": "color"
+    }
+  }
+}

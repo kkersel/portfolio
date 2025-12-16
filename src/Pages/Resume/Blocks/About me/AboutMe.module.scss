@@ -1,0 +1,31 @@
+@import "~breakpoint-sass";
+
+$bk-desktop: 1920px 1440px;
+$bk-table-landscape: 1440px 811px;
+$bk-table: 811px 611px;
+$bk-phone: 611px 0px;
+
+
+.Wrapper {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  text-align: center;
+  gap: 120px;
+  margin: 100px 0;
+
+  span {
+    word-wrap: break-word;
+    width: 100%;
+  }
+
+  @include breakpoint($bk-phone) {
+    font-size: 32px;
+    padding: 24px;
+    gap: 40px;
+  }
+
+  font-size: 64px;
+  font-weight: 900;
+  color: var(--accent-default);
+}

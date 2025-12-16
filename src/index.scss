@@ -1,0 +1,309 @@
+@import "~breakpoint-sass";
+
+/* Breakpoints */
+$breakpoint-desktop: 1440px;
+$breakpoint-tablet-landscape: 1024px;
+$breakpoint-tablet: 768px;
+$breakpoint-phone: 480px;
+
+:root {
+  /* Color System */
+  /* Foreground (text) colors */
+  --fg-default: #111111;
+  --fg-soft: #333333;
+  --fg-muted: #676767;
+  --fg-disabled: #a8a8a8;
+  --fg-on-accent: #ffffff;
+  --fg-on-container: #ffffff;
+
+  /* Background colors */
+  --bg-default: #F7F7F7;
+  --bg-surface1: #ffffff;
+  --bg-surface2: #fafafa;
+  --bg-surface3: #f0f0f0;
+  --bg-container: #f5efff;
+  --bg-muted: #efefef;
+  --bg-disabled: #f5f5f5;
+
+  /* Accent colors */
+  --accent-default: #4921fd;
+  --accent-soft: #6278FF;
+  --accent-muted: #a6b5ff;
+  --accent-hover: #3a1ac9;
+  --accent-active: #2b13a5;
+  --accent-on-accent: #ffffff;
+  --accent-on-container: #111111;
+
+  /* Border colors */
+  --border-default: #efefef;
+  --border-strong: #d0d0d0;
+  --border-muted: #f0f0f0;
+  --border-accent: #4921fd;
+
+  /* State colors */
+  --error-default: #ff4757;
+  --error-soft: #fff1f2;
+  --error-on-error: #ffffff;
+  --success-default: #2ed573;
+  --warning-default: #ffa502;
+
+   /* Spacing */
+   --border-s: 16px;
+   --spacing-xs: 4px;
+   --spacing-s: 8px;
+   --spacing-m: 16px;
+   --spacing-l: 24px;
+   --spacing-xl: 32px;
+   --spacing-xxl: 48px;
+ 
+   /* Fonts */
+   --font-size-xl: 32px;
+   --font-size-l: 24px;
+   --font-size-m: 18px;
+   --font-size-s: 16px;
+   --font-size-xs: 14px;
+   --font-size-xxs: 12px;
+   
+   @include breakpoint(max-width $breakpoint-phone) {
+     --font-size-xl: 26px;
+     --font-size-l: 20px;
+     --font-size-m: 16px;
+     --font-size-s: 15px;
+     --font-size-xs: 12px;
+     --font-size-xxs: 10px;
+   }
+ 
+   --font-weight-bold: 700;
+   --font-weight-semibold: 600;
+   --font-weight-medium: 500;
+   --font-weight-regular: 400;
+   --font-line-height-tight: 1.3;
+   --font-line-height-normal: 1.5;
+   --font-line-height-loose: 1.6;
+
+  /* Component-specific variables using color system */
+  /* Buttons */
+  --btn-bg: var(--bg-surface1);
+  --btn-bg-hover: var(--bg-surface3);
+  --btn-accent: var(--accent-default);
+  --btn-accent-hover: var(--accent-hover);
+  --btn-accent-active: var(--accent-active);
+  --btn-accent-text: var(--accent-on-accent);
+  --btn-red: var(--error-soft);
+  --btn-red-hover: #ffe0e2;
+  --btn-red-text: var(--error-default);
+
+  /* Navigation */
+  --nav-text-color: var(--fg-default);
+  --nav-button-bg: rgba(255, 255, 255, 0.3);
+  --nav-button-bg-hover: rgba(255, 25, 255, 0.45);
+}
+
+body.dark-theme {
+ /* Dark mode color system */
+  /* Foreground (text) colors */
+  --fg-default: #f2f2f2;
+  --fg-soft: #cccccc;
+  --fg-muted: #a8a8a8;
+  --fg-disabled: #666666;
+  --fg-on-accent: #ffffff;
+  --fg-on-container: #ffffff;
+
+  /* Background colors */
+  --bg-default: #090909;
+  --bg-surface1: #1e1e1e;
+  --bg-surface2: #252525;
+  --bg-surface3: #2c2c2c;
+  --bg-container: #2b2440;
+  --bg-muted: #2c2c2c;
+  --bg-disabled: #1a1a1a;
+
+  /* Accent colors */
+  --accent-default: #6278FF;
+  --accent-soft: #8a9bff;
+  --accent-muted: #4a5cd9;
+  --accent-hover: #7a8aff;
+  --accent-active: #5268e6;
+  --accent-on-accent: #ffffff;
+  --accent-on-container: #ffffff;
+
+  /* Border colors */
+  --border-default: #2c2c2c;
+  --border-strong: #444444;
+  --border-muted: #202020;
+  --border-accent: #6278FF;
+
+  /* State colors */
+  --error-default: #ff6b7a;
+  --error-soft: rgba(136, 13, 20, 0.37);
+  --error-on-error: #ffffff;
+  --success-default: #4cd98c;
+  --warning-default: #ffb84d;
+
+  /* Component-specific variables for dark mode */
+  /* Buttons */
+  --btn-bg: var(--bg-surface1);
+  --btn-bg-hover: var(--bg-surface3);
+  --btn-accent: var(--accent-default);
+  --btn-accent-hover: var(--accent-hover);
+  --btn-accent-active: var(--accent-active);
+  --btn-accent-text: var(--accent-on-accent);
+  --btn-red: var(--error-soft);
+  --btn-red-hover: rgba(156, 23, 32, 0.5);
+  --btn-red-text: var(--error-default);
+
+  /* Navigation */
+  --nav-text-color: var(--fg-default);
+  --nav-button-bg: rgba(0, 0, 0.19);
+  --nav-button-bg-hover: rgba(0, 0, 0.45);
+}
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, Manrope, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  background-color: var(--bg-default);
+  color: var(--fg-default);
+  overflow-x: hidden;
+  line-height: var(--font-line-height-normal);
+  cursor: none;
+}
+
+/* Убираем курсор везде */
+* {
+  cursor: none;
+}
+
+/* Восстанавливаем курсор для интерактивных элементов */
+button,
+input,
+select,
+textarea,
+a {
+  cursor: pointer;
+}
+
+/* Стили для скроллбара */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+ background: var(--bg-muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-default);
+}
+
+/* Стили для фокуса (для доступности) */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+a:focus {
+  outline: 2px solid var(--accent-default);
+  outline-offset: 2px;
+}
+
+/* Скрытие нативного фокуса при использовании мыши */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Показ фокуса только при использовании клавиатуры */
+:focus-visible {
+  outline: 2px solid var(--accent-default);
+ outline-offset: 2px;
+}
+
+/* Убираем выделение при тапе на мобильных устройствах */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+.Cursor {
+  @include breakpoint(max-width $breakpoint-phone) {
+    display: none;
+    opacity: 0;
+  }
+}
+
+
+.Line {
+  width: 100%;
+  border: 1px solid var(--border-default);
+}
+
+@include breakpoint(max-width $breakpoint-phone) {
+  .custom-cursor {
+    display: none;
+  }
+}
+
+/* Typography */
+p {
+  font-weight: var(--font-weight-regular);
+  color: var(--fg-soft);
+  line-height: var(--font-line-height-loose);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--fg-default);
+  line-height: var(--font-line-height-tight);
+}
+
+h1 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+h2 {
+  font-size: var(--font-size-l);
+  font-weight: var(--font-weight-semibold);
+}
+
+h3 {
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-semibold);
+}
+
+h4 {
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-medium);
+}
+
+h5 {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+}
+
+h6 {
+  font-size: var(--font-size-xxs);
+  font-weight: var(--font-weight-medium);
+}
