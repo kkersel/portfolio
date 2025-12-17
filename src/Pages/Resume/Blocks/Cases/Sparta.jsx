@@ -28,7 +28,7 @@ const Sparta = () => {
             </div>
 
             <div className={styles.BlockContainer}>
-                <h2 className={styles.BlockTitle}>Проблема</h2>
+                <h2 className={styles.BlockTitle}>Проблема / Решение</h2>
                 <div className={styles.BlockText}>
                     <p className={styles.Paragraph}>Бизнес был зависим от одного разработчика и старое решение было сложно масштабировать</p>
                     <p className={styles.Paragraph}>&nbsp;</p>

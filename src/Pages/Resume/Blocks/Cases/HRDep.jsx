@@ -22,7 +22,7 @@ const HRDep = () => {
             </div>
 
             <div className={styles.BlockContainer}>
-                <h2 className={styles.BlockTitle}>Проблема</h2>
+                <h2 className={styles.BlockTitle}>Проблема:</h2>
                 <div className={styles.BlockText}>
                     <p className={styles.Paragraph}>HRы тратили слишком много времени на закрытие типовых вопросов от
                         новых сотрудников.</p>
