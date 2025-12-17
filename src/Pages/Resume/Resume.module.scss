@@ -413,7 +413,6 @@
 @media (max-width: 480px) {
   .ContentLayout {
     gap: var(--spacing-m);
-    padding: 120px var(--spacing-xs) 0; /* Увеличиваем верхний отступ, чтобы учесть фиксированный LeftSide */
   }
 
   .Profile, .IntroCard, .ExperienceCard {
