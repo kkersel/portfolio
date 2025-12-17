@@ -20,7 +20,10 @@ const Tinkoff = () => {
            <div className={styles.ResultBlock}>
                <h2 className={styles.BlockTitle}>Что сделал?</h2>
                <p className={styles.BlockDescription}>
-                   Сократил time on task сотрудников, снизил нагрузку на пользователей, повысил качество работы и производительность; внедрил новые интерфейсы "Performance Review".
+                   – Сократил time on task сотрудников; <br/>
+                   – Снизил нагрузку на пользователей; <br/>
+                   – Повысил качество работы и производительность;<br/>
+                   – Внедрил новые интерфейсы "Performance Review";
                </p>
            </div>
 

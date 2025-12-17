@@ -15,12 +15,12 @@ const Chatlab = () => {
             <div className={styles.ResultBlock}>
                 <h2 className={styles.BlockTitle}>Что сделал?</h2>
                 <p className={styles.BlockDescription}>
-                    Повысил конверсию подключения мессенджеров на 7%
+                    – Повысил конверсию подключения мессенджеров на 7%
                 </p>
             </div>
 
             <div className={styles.BlockContainer}>
-                <h2 className={styles.BlockTitle}>Проблема / Решение</h2>
+                <h2 className={styles.BlockTitle}>Проблема</h2>
                 <div className={styles.BlockText}>
                     <p className={styles.Paragraph}>Маркетинг пришел с проблемой, юзеры уходят при добавлении новых мессенжеров</p>
                     <p className={styles.Paragraph}>&nbsp;</p>

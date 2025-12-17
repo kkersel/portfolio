@@ -15,8 +15,8 @@ const TennisBooking = () => {
             <div className={styles.ResultBlock}>
                 <h2 className={styles.BlockTitle}>Что сделал?</h2>
                 <p className={styles.BlockDescription}>
-                    Надипкодил WebApp в tg для бронирования теннисных кортов;<br/>
-                    Создал админ-панель для управления кортами и просмотра аналитики;
+                    – Надипкодил WebApp в tg для бронирования теннисных кортов;<br/>
+                    – Создал админ-панель для управления кортами и просмотра аналитики;
                 </p>
             </div>
 
