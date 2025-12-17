@@ -11,6 +11,10 @@ const Sparta = () => {
                 </p>
             </div>
 
+            <div className={styles.VideoBlock}>
+                <img className={styles.VideoElement} src="/Sparta.png" alt="Скриншоты проекта Sparta"/>
+            </div>
+
             <div className={styles.ResultBlock}>
                 <h2 className={styles.BlockTitle}>Что сделал?</h2>
                 <p className={styles.BlockDescription}>
@@ -56,10 +60,6 @@ const Sparta = () => {
 
             <div className={styles.VideoBlock}>
                 <img className={styles.VideoElement} src="/maket.png" alt="Макеты проекта Sparta"/>
-            </div>
-
-            <div className={styles.VideoBlock}>
-                <img className={styles.VideoElement} src="/Sparta.png" alt="Скриншоты проекта Sparta"/>
             </div>
         </div>
     );

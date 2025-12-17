@@ -51,6 +51,8 @@ const Bazgain = () => {
                 </p>
             </div>
 
+            <img className={styles.VideoElement} src="/bazgain1.png" alt="Макеты проекта Sparta"/>
+
             <div className={styles.ResultBlock}>
                 <h2 className={styles.BlockTitle}>Что сделал?</h2>
                 <p className={styles.BlockDescription}>
@@ -67,10 +69,10 @@ const Bazgain = () => {
                         экранов, ошибок и правок.</p>
                     <p className={styles.Paragraph}>&nbsp;</p>
                     <p className={styles.Paragraph}>Я взял за основу несколько стабильных систем (VKUI, Atomaro),
-                       пересобрал палитру, подобрал наборы иконок и оформил компоненты так, чтобы сократить кол-во
-                       ошибок от джунов.</p> <br/>
+                        пересобрал палитру, подобрал наборы иконок и оформил компоненты так, чтобы сократить кол-во
+                        ошибок от джунов.</p> <br/>
                     <p className={styles.Paragraph}>Главная цель была простая: дать команде единый язык интерфейса и
-                       сократить время на проектирование и разработку в долгосрок.</p>
+                        сократить время на проектирование и разработку в долгосрок.</p>
                 </div>
             </div>
 
@@ -135,9 +137,10 @@ const Bazgain = () => {
                         aria-label="Следующий скриншот"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="15" viewBox="0 0 8 15" fill="none">
-                            <path d="M1.46042 0.175L6.89375 5.6083C7.53542 6.25 7.53542 7.3 6.89375 7.9417L1.46042 13.375"
-                                  stroke="#0E17" strokeWidth="1.25" strokeMiterlimit="10" strokeLinecap="round"
-                                  strokeLinejoin="round"/>
+                            <path
+                                d="M1.46042 0.175L6.89375 5.6083C7.53542 6.25 7.53542 7.3 6.89375 7.9417L1.46042 13.375"
+                                stroke="#0E17" strokeWidth="1.25" strokeMiterlimit="10" strokeLinecap="round"
+                                strokeLinejoin="round"/>
                         </svg>
                     </button>
                     <div className={styles.Indicators}>
@@ -153,10 +156,12 @@ const Bazgain = () => {
                 </div>
                 <div className={styles.AppStoresBlock}>
                     <div className={styles.ButtonsContainer}>
-                        <a href="https://apps.apple.com/us/app/%D0%B1%D0%B0%D0%B7%D0%B3%D0%B0%D0%B8%D0%BD-%D1%82%D1%83%D1%80%D0%B8%D0%B7%D0%BC/id6745242907?l=ru" target="_blank" rel="noopener noreferrer">
+                        <a href="https://apps.apple.com/us/app/%D0%B1%D0%B0%D0%B7%D0%B3%D0%B0%D0%B8%D0%BD-%D1%82%D1%83%D1%80%D0%B8%D0%B7%D0%BC/id6745242907?l=ru"
+                           target="_blank" rel="noopener noreferrer">
                             <Button variant='secondary'>AppStore</Button>
                         </a>
-                        <a href="https://www.rustore.ru/catalog/app/com.wayflare.bazgain" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.rustore.ru/catalog/app/com.wayflare.bazgain" target="_blank"
+                           rel="noopener noreferrer">
                             <Button variant='secondary'>RuStore</Button>
                         </a>
                     </div>

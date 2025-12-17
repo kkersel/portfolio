@@ -12,6 +12,11 @@ const Tinkoff = () => {
            </div>
 
 
+           <div className={styles.VideoBlock}>
+               <img className={styles.VideoElement} src="/tinkoff.png" alt="Скриншоты проекта Sparta"/>
+           </div>
+
+
            <div className={styles.ResultBlock}>
                <h2 className={styles.BlockTitle}>Что сделал?</h2>
                <p className={styles.BlockDescription}>
