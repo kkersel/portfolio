@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './CommonBlocks.module.scss';
-import Button from "../../../../Components/Buttons/Button/Button";
+import Button from "../../../../Components/Buttons/Button";
 
 const TennisBooking = () => {
     return (
@@ -15,8 +15,8 @@ const TennisBooking = () => {
             <div className={styles.ResultBlock}>
                 <h2 className={styles.BlockTitle}>Что сделал?</h2>
                 <p className={styles.BlockDescription}>
-                    Надипкодил WebApp в tg для бронирования теннисных кортов;<br/>
-                    Создал админ-панель для управления кортами и просмотра аналитики;
+                    – Надипкодил WebApp в tg для бронирования теннисных кортов;<br/>
+                    – Создал админ-панель для управления кортами и просмотра аналитики;
                 </p>
             </div>
 
@@ -54,16 +54,20 @@ const TennisBooking = () => {
 
             <div className={styles.GalleryBlock}>
                 <div className={styles.GalleryContainer}>
-                    <video
-                        className={styles.VideoElementTennis}
-                        autoPlay
-                        controlsList="nodownload"
-                        loop
-                        muted
-                    >
-                        <source src="/Tennis.webm" type="video/webm"/>
-                        Ваш браузер не поддерживает видео
-                    </video>
+                    <div className={styles.deviceMockup}>
+                        <div className={styles.deviceFrame}>
+                            <video
+                                className={styles.videoInDevice}
+                                autoPlay
+                                controlsList="nodownload"
+                                loop
+                                muted
+                            >
+                                <source src="/Tennis.webm" type="video/webm"/>
+                                Ваш браузер не поддерживает видео
+                            </video>
+                        </div>
+                    </div>
                 </div>
                 <div className={styles.AppStoresBlock}>
                     <a href="https://t.me/tbookcao_bot" target="_blank" rel="noopener noreferrer">

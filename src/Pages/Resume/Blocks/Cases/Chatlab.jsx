@@ -15,18 +15,18 @@ const Chatlab = () => {
             <div className={styles.ResultBlock}>
                 <h2 className={styles.BlockTitle}>Что сделал?</h2>
                 <p className={styles.BlockDescription}>
-                    Повысил конверсию подключения мессенджеров на 7%
+                    – Повысил конверсию подключения мессенджеров на 7%
                 </p>
             </div>
 
             <div className={styles.BlockContainer}>
-                <h2 className={styles.BlockTitle}>Проблема / Решение</h2>
+                <h2 className={styles.BlockTitle}>Проблема</h2>
                 <div className={styles.BlockText}>
                     <p className={styles.Paragraph}>Маркетинг пришел с проблемой, юзеры уходят при добавлении новых мессенжеров</p>
                     <p className={styles.Paragraph}>&nbsp;</p>
                     <p className={styles.Paragraph}>Я провёл короткие интервью с теми, кто бросал процесс. Основной страх – люди не понимали, кто увидит их переписки и куда могут уйти пароли. Недоверие возникало ровно в моменте ввода данных.</p>
                     <p className={styles.Paragraph}>&nbsp;</p>
-                    <p className={styles.Paragraph}>Решение: Добавил баннер, где объяснили пользователям, что их данные зашифрованы и у платформы нет к ним доступа</p>
+                    <p className={styles.Paragraph}>Добавил баннер, где объяснили пользователям, что их данные зашифрованы и у платформы нет к ним доступа</p>
                 </div>
             </div>
 
