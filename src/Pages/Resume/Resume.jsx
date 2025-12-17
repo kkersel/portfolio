@@ -18,10 +18,10 @@ const Sparta = lazy(() => import("./Blocks/Cases/Sparta"));
 const HRDep = lazy(() => import("./Blocks/Cases/HRDep"));
 
 // Заглушка для ленивой загрузки
-const LoadingComponent = ({ children }) => (
-  <div style={{ minHeight: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-    {children}
-  </div>
+const LoadingComponent = ({children}) => (
+    <div style={{minHeight: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+        {children}
+    </div>
 );
 
 const Resume = () => {
@@ -122,65 +122,67 @@ const Resume = () => {
     };
 
     return (
-       <div className={a.ResumePage}>
-           <div className={a.ContentLayout}>
-               <div className={a.RightSide}>
-                   <div className={a.WrapperInfo}>
-                       <div className={a.WrapperHeader}>
-                           <div className={a.IntroCard}>
-                               <p className={a.IntroTitle}>Привет!</p>
-                               <div className={a.IntroBlock}>
-                                   <p className={a.IntroText}>
-                                       Я Саша, Product Designer с 5-летним опытом. Работал в B2E, B2B, B2C проектах: от
-                                       стартапов до крупных компаний. За все время работы помог компаниям скорить TTM, повышал конверсию, поднимал вовлеченность, снижал нагрузку на сотрудников и поддержку, спроектировал дизайн для 3 MVPшек с нуля.
-                                   </p>
-                               </div>
-                           </div>
-                           <Suspense fallback={<LoadingComponent>Загрузка профиля...</LoadingComponent>}>
-                               <WorkExp/>
-                           </Suspense>
-                       </div>
+        <div className={a.ResumePage}>
+            <div className={a.ContentLayout}>
+                <div className={a.RightSide}>
+                    <div className={a.WrapperInfo}>
+                        <div className={a.WrapperHeader}>
+                            <div className={a.IntroCard}>
+                                <p className={a.IntroTitle}>Привет!</p>
+                                <div className={a.IntroBlock}>
+                                    <p className={a.IntroText}>
+                                        Я Саша, Product Designer с 5-летним опытом. Работал в B2E, B2B, B2C проектах: от
+                                        стартапов до крупных компаний. За все время работы помог компаниям скорить TTM,
+                                        повышал конверсию, поднимал вовлеченность, снижал нагрузку на сотрудников и
+                                        поддержку, спроектировал дизайн для 3 MVPшек с нуля.
+                                    </p>
+                                </div>
+                            </div>
+                            <Suspense fallback={<LoadingComponent>Загрузка профиля...</LoadingComponent>}>
+                                <WorkExp/>
+                            </Suspense>
+                        </div>
 
-                       {/*Cases - ленивая загрузка для улучшения производительности */}
-                       <Suspense fallback={<LoadingComponent>Загрузка кейса...</LoadingComponent>}>
-                           <Bazgain/>
-                       </Suspense>
-                       <Suspense fallback={<LoadingComponent>Загрузка кейса...</LoadingComponent>}>
-                           <Sparta/>
-                       </Suspense>
-                       <Suspense fallback={<LoadingComponent>Загрузка кейса...</LoadingComponent>}>
-                           <HRDep/>
-                       </Suspense>
-                       <Suspense fallback={<LoadingComponent>Загрузка кейса...</LoadingComponent>}>
-                           <Chatlab/>
-                       </Suspense>
-                       <Suspense fallback={<LoadingComponent>Загрузка кейса...</LoadingComponent>}>
-                           <Tinkoff/>
-                       </Suspense>
-                       <Suspense fallback={<LoadingComponent>Загрузка кейса...</LoadingComponent>}>
-                           <TennisBooking/>
-                       </Suspense>
+                        {/*Cases - ленивая загрузка для улучшения производительности */}
+                        <Suspense fallback={<LoadingComponent>Загрузка кейса...</LoadingComponent>}>
+                            <Bazgain/>
+                        </Suspense>
+                        <Suspense fallback={<LoadingComponent>Загрузка кейса...</LoadingComponent>}>
+                            <Sparta/>
+                        </Suspense>
+                        <Suspense fallback={<LoadingComponent>Загрузка кейса...</LoadingComponent>}>
+                            <HRDep/>
+                        </Suspense>
+                        <Suspense fallback={<LoadingComponent>Загрузка кейса...</LoadingComponent>}>
+                            <Chatlab/>
+                        </Suspense>
+                        <Suspense fallback={<LoadingComponent>Загрузка кейса...</LoadingComponent>}>
+                            <Tinkoff/>
+                        </Suspense>
+                        <Suspense fallback={<LoadingComponent>Загрузка кейса...</LoadingComponent>}>
+                            <TennisBooking/>
+                        </Suspense>
 
-                       <Suspense fallback={<LoadingComponent>Загрузка интервью...</LoadingComponent>}>
-                           <VirtualInterviewComponent/>
-                       </Suspense>
-                   </div>
-               </div>
-               <LeftSide darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
-               <FeedbackModal
-                   isOpen={showFeedbackModal}
-                   onClose={() => setShowFeedbackModal(false)}
-                   onSubmit={handleFeedbackSubmit}
-                   sessionDurationSeconds={Math.floor((Date.now() - visitStartTime.current) / 1000)}
-               />
-           </div>
-           <Suspense fallback={<LoadingComponent>Загрузка информации обо мне...</LoadingComponent>}>
-               <AboutMe/>
-           </Suspense>
-           <Footer/>
-       </div>
-   )
-       ;
+                        <Suspense fallback={<LoadingComponent>Загрузка интервью...</LoadingComponent>}>
+                            <VirtualInterviewComponent/>
+                        </Suspense>
+                    </div>
+                </div>
+                <LeftSide darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
+                <FeedbackModal
+                    isOpen={showFeedbackModal}
+                    onClose={() => setShowFeedbackModal(false)}
+                    onSubmit={handleFeedbackSubmit}
+                    sessionDurationSeconds={Math.floor((Date.now() - visitStartTime.current) / 1000)}
+                />
+            </div>
+            <Suspense fallback={<LoadingComponent>Загрузка информации обо мне...</LoadingComponent>}>
+                <AboutMe/>
+            </Suspense>
+            <Footer/>
+        </div>
+    )
+        ;
 };
 
 export default Resume;
