@@ -152,32 +152,6 @@
   }
 }
 
-.GradientButton {
-  background: linear-gradient(45deg, #8A2BE2, #6A5ACD, #4B0082, #1E90FF, #00BFFF);
-  background-size: 400% 400%;
-  animation: gradientShift 6s ease-in-out infinite;
-  color: white;
-  border-radius: 16px;
-
-  &:hover {
-    background: linear-gradient(45deg, #8A2BE2, #6A5ACD, #4B0082, #1E90FF, #00BFFF);
-    background-size: 400% 400%;
-    animation: gradientShift 6s ease-in-out infinite;
-  }
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 .ButtonText {
   font-family: 'Manrope', sans-serif;
   font-weight: var(--font-weight-regular);

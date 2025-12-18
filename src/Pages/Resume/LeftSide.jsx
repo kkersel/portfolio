@@ -45,7 +45,7 @@ const LeftSide = ({ darkTheme, setDarkTheme }) => {
            rel="noreferrer">
           <p className={styles.ButtonText}>📅 Забронировать встречу</p>
         </a>
-        <a target='_blank' href="https://t.me/innv1" className={`${styles.ProfileButton} ${isFaqVisible ? styles.GradientButton : ''}`} rel="noreferrer">
+        <a target='_blank' href="https://t.me/innv1" className={styles.ProfileButton} rel="noreferrer">
           <p className={styles.ButtonText}>👋 Написать в телеграм</p>
         </a>
       </div>

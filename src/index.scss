@@ -175,10 +175,10 @@ body {
   font-family: -apple-system, Manrope, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -ms-user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
+  //-ms-user-select: none;
+  //-moz-user-select: none;
+  //-webkit-user-select: none;
+  //user-select: none;
   background-color: var(--bg-default);
   color: var(--fg-default);
   overflow-x: hidden;
