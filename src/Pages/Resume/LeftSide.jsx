@@ -3,13 +3,13 @@ import styles from './Resume.module.scss';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 
 const LeftSide = ({ darkTheme, setDarkTheme }) => {
-  const [faqRef, isFaqVisible] = useIntersectionObserver({
+  const [faqRef] = useIntersectionObserver({
     root: null,
     rootMargin: '0px',
     threshold: 0.1
   });
 
-  return (
+ return (
     <div className={styles.LeftSide}>
       {/* Скрытый элемент для отслеживания видимости FAQ */}
       <div ref={faqRef} style={{ position: 'absolute', top: 'calc(100vh - 10px)', left: 0, width: '1px', height: '1px', pointerEvents: 'none' }}></div>
