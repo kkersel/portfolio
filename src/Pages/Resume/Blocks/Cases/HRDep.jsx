@@ -8,7 +8,14 @@ const HRDep = () => {
                 <h2 className={styles.BlockTitle}>MarketLab • HR Department</h2>
             </div>
 
-            <img className={styles.VideoElement} src="/cat.png" alt="Скриншоты проекта Sparta"/>
+            <div className={styles.BlockContainer}>
+                <h2 className={styles.BlockTitle}>Проблема</h2>
+                <div className={styles.BlockText}>
+                    <p className={styles.Paragraph}>HRы тратили слишком много времени на закрытие типовых вопросов от
+                        новых сотрудников.</p>
+                    <p className={styles.Paragraph}>Отсутствие консистентности и редполитики.</p>
+                </div>
+            </div>
 
             <div className={styles.ResultBlock}>
                 <h2 className={styles.BlockTitle}>Что сделал?</h2>
@@ -21,15 +28,7 @@ const HRDep = () => {
                 </p>
             </div>
 
-            <div className={styles.BlockContainer}>
-                <h2 className={styles.BlockTitle}>Проблема</h2>
-                <div className={styles.BlockText}>
-                    <p className={styles.Paragraph}>HRы тратили слишком много времени на закрытие типовых вопросов от
-                        новых сотрудников.</p>
-                    <p className={styles.Paragraph}>Отсутствие консистентности и редполитики.</p>
-                </div>
-            </div>
-
+            <img className={styles.VideoElement} src="/cat.png" alt="HRDep"/>
         </div>
     );
 };

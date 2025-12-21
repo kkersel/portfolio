@@ -11,22 +11,6 @@ const Sparta = () => {
                 </p>
             </div>
 
-            <div className={styles.VideoBlock}>
-                <img className={styles.VideoElement} src="/Sparta.png" alt="Скриншоты проекта Sparta"/>
-            </div>
-
-            <div className={styles.ResultBlock}>
-                <h2 className={styles.BlockTitle}>Что сделал?</h2>
-                <p className={styles.BlockDescription}>
-                    – Собрали бизнес требования к продукту; <br/>
-                    – Собрал фидбэк от пользователей и предложил пул новых фичей; <br/>
-                    – Выстроил архитектуру совместо с продактом; <br/>
-                    – Спроектировали все основные сценарии пользователей и интерфейсы; <br/>
-                    – Провел A/B тестирование;
-                </p>
-                <p className={styles.BlockDescription}>Время работы сотрудников на новом продукте сократилось в 2.5 раза</p>
-            </div>
-
             <div className={styles.BlockContainer}>
                 <h2 className={styles.BlockTitle}>Проблема</h2>
                 <div className={styles.BlockText}>
@@ -34,6 +18,19 @@ const Sparta = () => {
                     <p className={styles.Paragraph}>&nbsp;</p>
                     <p className={styles.Paragraph}>Была сформирована продуктовая команда, для разработки нового продукта с учетом всех необходимых бизнес требований и запросов от пользователей</p>
                 </div>
+            </div>
+
+
+            <div className={styles.ResultBlock}>
+                <h2 className={styles.BlockTitle}>Что сделал?</h2>
+                <p className={styles.BlockDescription}>
+                    – Собрали бизнес требования к продукту; <br/>
+                    – Собрал фидбэк от пользователей и предложил пул новых фичей; <br/>
+                    – Выстроил архитектуру совместо с продактом; <br/>
+                    – Спроектировали все основные сценарии пользователей интерфейсы; <br/>
+                    – Провел A/B тестирование;
+                </p>
+                <p className={styles.BlockDescription}>Время работы сотрудников на новом продукте сократилось в 2.5 раза</p>
             </div>
 
             <div className={styles.BlockContainer}>
@@ -52,6 +49,10 @@ const Sparta = () => {
                         Ваш браузер не поддерживает видео
                     </video>
                 </div>
+            </div>
+
+            <div className={styles.VideoBlock}>
+                <img className={styles.VideoElement} src="/Sparta.png" alt="Скриншоты проекта Sparta"/>
             </div>
 
             <div className={styles.BlockContainer}>

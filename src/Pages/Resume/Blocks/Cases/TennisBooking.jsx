@@ -12,18 +12,18 @@ const TennisBooking = () => {
                 </p>
             </div>
 
+            <div className={styles.BlockContainer}>
+                <h2 className={styles.BlockTitle}>Проблема</h2>
+                <p className={styles.BlockDescription}>
+                    Сейчас люди бронируют теннисные корты через телеграм чаты, что ужасно неудобно
+                </p>
+            </div>
+
             <div className={styles.ResultBlock}>
                 <h2 className={styles.BlockTitle}>Что сделал?</h2>
                 <p className={styles.BlockDescription}>
                     – Надипкодил WebApp в tg для бронирования теннисных кортов;<br/>
                     – Создал админ-панель для управления кортами и просмотра аналитики;
-                </p>
-            </div>
-
-            <div className={styles.BlockContainer}>
-                <h2 className={styles.BlockTitle}>Проблема</h2>
-                <p className={styles.BlockDescription}>
-                    Сейчас люди бронируют теннисные корты через телеграм чаты, что ужасно неудобно
                 </p>
             </div>
 

@@ -51,7 +51,7 @@ const Bazgain = () => {
                 </p>
             </div>
 
-            <img className={styles.VideoElement} src="/bazgain1.png" alt="Макеты проекта Sparta"/>
+            {/*<img className={styles.VideoElement} src="/bazgain1.png" alt="Макеты проекта Sparta"/>*/}
 
             <div className={styles.ResultBlock}>
                 <h2 className={styles.BlockTitle}>Что сделал?</h2>
