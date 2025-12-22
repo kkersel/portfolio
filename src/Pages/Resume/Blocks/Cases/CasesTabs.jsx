@@ -14,14 +14,14 @@ const casesData = [
     id: 'sparta',
     title: 'MarketLab • Sparta',
     description: 'Система для рассылок внутри телеграм.',
-    image: '/Sparta.png',
+    image: '/Preview/Sparta.png',
     category: 'web'
   },
   {
     id: 'bazgain',
     title: 'Bazgain Туризм',
     description: 'Мобильное приложение для поиска крутых маршрутов и аренды авто в Дагестане.',
-    image: '/place.png',
+    image: '/Preview/Bazgain.gif',
     category: 'mobile'
   },
   {
@@ -34,7 +34,7 @@ const casesData = [
   {
     id: 'chatlab',
     title: 'ChatLab',
-    description: 'AI ассистент для маркетплейсов',
+    description: 'Агрегатор мессенджеров и социальных сетей.',
     image: '/ChatLab.png',
     category: 'web'
   },

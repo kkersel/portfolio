@@ -1,7 +1,7 @@
 /* CustomCursor.scss */
 
 @import "~breakpoint-sass";
-$bk-desktop: 1920px 1440px;
+$bk-desktop: 1920px 140px;
 $bk-table-landscape: 1440px 811px;
 $bk-table: 811px 611px;
 $bk-phone: 611px 0px;
@@ -9,31 +9,56 @@ $bk-phone: 611px 0px;
 .custom-cursor {
   position: fixed;
  pointer-events: none;
-  width: 64px;
-  height: 64px;
+  width: 32px;
+  height: 32px;
   background-size: contain;
   background-repeat: no-repeat;
-  transform: translate(-50%, -50%);
+ transform: translate(-50%, -50%);
   z-index: 9999;
-  transition: background-image 0.1s linear, transform 0.1s ease-out, width 0.1s ease-out, height 0.1s ease-out;
-  
-  &.hover {
-    transform: translate(-50%, -50%) scale(1.2);
-    width: 70px;
-    height: 70px;
-  }
-  
-  &.active {
-    transform: translate(-50%, -50%) scale(0.9);
-    width: 60px;
-    height: 60px;
-  }
-  
-  @include breakpoint(max-width $bk-phone) {
+  transition: background-image 0.1s linear;
+  @include breakpoint(bk-phone) {
     display: none;
   }
-  
-  @include breakpoint(max-width $bk-table) {
+  @include breakpoint(bk-tablet) {
     display: none;
   }
+}
+
+// Убираем стандартный курсор при наведении на интерактивные элементы
+.cursorhover,
+button,
+a,
+.link,
+.badge,
+.cursor-pointer,
+.button,
+.nav-item,
+.case-card,
+.project-card,
+.card,
+.btn,
+.nav-link,
+.menu-item,
+.clickable,
+.interactive,
+.tab,
+.tabs,
+.tab-item,
+.tab-link {
+ cursor: none !important;
+ cursor: url('data:image.svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="transparent"/></svg>') 12 12, auto !important;
+ user-select: none; // Отключаем выделение текста
+ -webkit-user-select: none; // Для Safari
+-moz-user-select: none; // Для Firefox
+-ms-user-select: none; // Для IE
+}
+
+// Отключаем выделение текста глобально при активном кастомном курсоре
+body {
+ &.custom-cursor-active {
+   user-select: none;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+ }
 }
