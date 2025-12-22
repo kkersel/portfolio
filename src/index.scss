@@ -9,43 +9,43 @@ $breakpoint-phone: 480px;
 :root {
   /* Color System */
   /* Foreground (text) colors */
-  --fg-default: #111111;
-  --fg-soft: #333333;
-  --fg-muted: #676767;
-  --fg-disabled: #a8a8a8;
+  --fg-default: #212121;
+  --fg-soft: #424242;
+  --fg-muted: #757575;
+  --fg-disabled: #bdbdbd;
   --fg-on-accent: #ffffff;
   --fg-on-container: #ffffff;
 
   /* Background colors */
-  --bg-default: #F7F7F7;
+  --bg-default: #f8f9fa;
   --bg-surface1: #ffffff;
   --bg-surface2: #fafafa;
-  --bg-surface3: #f0f0f0;
-  --bg-container: #f5efff;
-  --bg-muted: #efefef;
-  --bg-disabled: #f5f5f5;
+  --bg-surface3: #f5f5f5;
+ --bg-container: #f0f4ff;
+ --bg-muted: #e9ecef;
+  --bg-disabled: #f8f9fa;
 
   /* Accent colors */
-  --accent-default: #4921fd;
-  --accent-soft: #6278FF;
-  --accent-muted: #a6b5ff;
-  --accent-hover: #3a1ac9;
-  --accent-active: #2b13a5;
-  --accent-on-accent: #ffffff;
-  --accent-on-container: #111111;
+  --accent-default: #5b5bfc;
+  --accent-soft: #7b7bfc;
+  --accent-muted: #b8c1ff;
+ --accent-hover: #4a4aeb;
+  --accent-active: #3939d9;
+ --accent-on-accent: #ffffff;
+  --accent-on-container: #212121;
 
   /* Border colors */
-  --border-default: #efefef;
-  --border-strong: #d0d0d0;
-  --border-muted: #f0f0f0;
-  --border-accent: #4921fd;
+  --border-default: #e0e0;
+ --border-strong: #bdbdbd;
+ --border-muted: #f0f0f0;
+ --border-accent: #5b5bfc;
 
   /* State colors */
-  --error-default: #ff4757;
-  --error-soft: #fff1f2;
+  --error-default: #d32f2f;
+ --error-soft: #ffebee;
   --error-on-error: #ffffff;
-  --success-default: #2ed573;
-  --warning-default: #ffa502;
+ --success-default: #388e3c;
+  --warning-default: #ffa000;
 
    /* Spacing */
    --border-s: 16px;
@@ -85,38 +85,38 @@ $breakpoint-phone: 480px;
   /* Buttons */
   --btn-bg: var(--bg-surface1);
   --btn-bg-hover: var(--bg-surface3);
-  --btn-accent: var(--accent-default);
-  --btn-accent-hover: var(--accent-hover);
+ --btn-accent: var(--accent-default);
+ --btn-accent-hover: var(--accent-hover);
   --btn-accent-active: var(--accent-active);
-  --btn-accent-text: var(--accent-on-accent);
+ --btn-accent-text: var(--accent-on-accent);
   --btn-red: var(--error-soft);
   --btn-red-hover: #ffe0e2;
   --btn-red-text: var(--error-default);
 
   /* Navigation */
   --nav-text-color: var(--fg-default);
-  --nav-button-bg: rgba(255, 255, 255, 0.3);
-  --nav-button-bg-hover: rgba(255, 25, 255, 0.45);
+ --nav-button-bg: rgba(255, 255, 255, 0.3);
+  --nav-button-bg-hover: rgba(255, 255, 0.45);
 }
 
 body.dark-theme {
- /* Dark mode color system */
+  /* Dark mode color system */
   /* Foreground (text) colors */
   --fg-default: #f2f2f2;
-  --fg-soft: #cccccc;
+ --fg-soft: #cccccc;
   --fg-muted: #a8a8a8;
-  --fg-disabled: #666666;
+  --fg-disabled: #66666;
   --fg-on-accent: #ffffff;
   --fg-on-container: #ffffff;
 
   /* Background colors */
   --bg-default: #090909;
   --bg-surface1: #1e1e1e;
-  --bg-surface2: #252525;
+  --bg-surface2: #2525;
   --bg-surface3: #2c2c2c;
   --bg-container: #2b2440;
   --bg-muted: #2c2c2c;
-  --bg-disabled: #1a1a1a;
+ --bg-disabled: #1a1a1a;
 
   /* Accent colors */
   --accent-default: #6278FF;
@@ -129,9 +129,9 @@ body.dark-theme {
 
   /* Border colors */
   --border-default: #2c2c2c;
-  --border-strong: #444444;
-  --border-muted: #202020;
-  --border-accent: #6278FF;
+  --border-strong: #4444;
+ --border-muted: #202020;
+ --border-accent: #6278FF;
 
   /* State colors */
   --error-default: #ff6b7a;
@@ -146,7 +146,7 @@ body.dark-theme {
   --btn-bg-hover: var(--bg-surface3);
   --btn-accent: var(--accent-default);
   --btn-accent-hover: var(--accent-hover);
-  --btn-accent-active: var(--accent-active);
+ --btn-accent-active: var(--accent-active);
   --btn-accent-text: var(--accent-on-accent);
   --btn-red: var(--error-soft);
   --btn-red-hover: rgba(156, 23, 32, 0.5);
@@ -176,11 +176,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   //-ms-user-select: none;
-  //-moz-user-select: none;
+ //-moz-user-select: none;
   //-webkit-user-select: none;
   //user-select: none;
-  background-color: var(--bg-default);
-  color: var(--fg-default);
+ background-color: var(--bg-default);
+ color: var(--fg-default);
   overflow-x: hidden;
   line-height: var(--font-line-height-normal);
   cursor: none;
@@ -207,7 +207,7 @@ a {
 }
 
 ::-webkit-scrollbar-track {
- background: var(--bg-muted);
+  background: var(--bg-muted);
   border-radius: 4px;
 }
 
@@ -226,7 +226,7 @@ input:focus,
 select:focus,
 textarea:focus,
 a:focus {
-  outline: 2px solid var(--accent-default);
+ outline: 2px solid var(--accent-default);
   outline-offset: 2px;
 }
 
@@ -238,7 +238,7 @@ a:focus {
 /* Показ фокуса только при использовании клавиатуры */
 :focus-visible {
   outline: 2px solid var(--accent-default);
- outline-offset: 2px;
+  outline-offset: 2px;
 }
 
 /* Убираем выделение при тапе на мобильных устройствах */
@@ -261,7 +261,7 @@ a:focus {
 }
 
 @include breakpoint(max-width $breakpoint-phone) {
-  .custom-cursor {
+ .custom-cursor {
     display: none;
   }
 }
