@@ -77,13 +77,13 @@ const WorkExp = () => {
                         <img src="/OS.jpg" alt="OkzoSystmes" className={styles.companyLogo} />
                         <div>
                             <p className={styles.title} data-node-id="73:419">okzo-systems</p>
-                            <p className={styles.description} data-node-id="73:420">Front-end dev 2020 – 2021</p>
+                            <p className={styles.description} data-node-id="73:420">Front-end dev 20 – 2021</p>
                         </div>
                     </div>
                 </a>
             </div>
 
-            
+
                 <div className={styles.WorkExpWrapper}>
                     <h3>Pet-проекты</h3>
                     <a href="https://t.me/tbookcao_bot" target="_blank" rel="noopener noreferrer"

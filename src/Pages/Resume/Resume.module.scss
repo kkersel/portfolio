@@ -1,7 +1,7 @@
 .ResumePage {
   min-height: 100vh;
- display: flex;
- align-items: stretch;
+  display: flex;
+  align-items: stretch;
   flex-direction: column;
   width: 100%;
   max-width: 1104px;
@@ -57,7 +57,7 @@
 }
 
 .Profile {
- border: 1px solid var(--border-default);
+  border: 1px solid var(--border-default);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-s);
@@ -93,13 +93,13 @@
   object-fit: cover;
   pointer-events: none;
   border-radius: 200px;
- width: 100%;
+  width: 100%;
   height: 100%;
 }
 
 .ProfileInfo {
   display: flex;
- flex-direction: column;
+  flex-direction: column;
   align-items: center;
   width: 100%;
 }
@@ -110,7 +110,7 @@
   line-height: 26px;
   font-size: var(--font-size-l);
   color: var(--fg-default);
- white-space: pre;
+  white-space: pre;
   margin: 0;
 }
 
@@ -158,7 +158,7 @@
   line-height: 20px;
   font-size: var(--font-size-s);
   color: var(--fg-default);
- white-space: pre;
+  white-space: pre;
   margin: 0;
 }
 
@@ -181,7 +181,7 @@
     border-radius: 4px;
   }
 
- &::-webkit-scrollbar-thumb {
+  &::-webkit-scrollbar-thumb {
     background: var(--accent-muted);
     border-radius: 4px;
   }
@@ -207,7 +207,7 @@
   align-items: flex-start;
   padding: var(--spacing-m) var(--spacing-l);
   border-radius: 16px;
- width: 100%;
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -215,7 +215,7 @@
   font-family: 'Manrope', sans-serif;
   font-weight: var(--font-weight-semibold);
   line-height: 26px;
- font-size: var(--font-size-l);
+  font-size: var(--font-size-l);
   color: var(--fg-default);
   white-space: pre;
   margin: 0;
@@ -252,7 +252,7 @@
 
 .ExperienceHeader {
   display: flex;
- gap: 12px;
+  gap: 12px;
   align-items: flex-start;
   width: 100%;
 }
@@ -277,9 +277,9 @@
 .CompanyInfo {
   flex: 1 0;
   display: flex;
- flex-direction: column;
+  flex-direction: column;
   gap: 4px;
- align-items: flex-start;
+  align-items: flex-start;
   justify-content: center;
   line-height: normal;
 }

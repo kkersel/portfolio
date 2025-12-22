@@ -4,6 +4,7 @@ import Resume from "./Pages/Resume/Resume";
 import NotFound from "./Components/404Page/NotFound";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import { CustomCursor } from './Components/Cursor/CustomCursor';
+import CaseDetail from "./Pages/Resume/Blocks/Cases/CaseDetail";
 
 function App() {
     useEffect(() => {
@@ -38,8 +39,9 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Resume/>}/>
-                    <Route path="*" element={<NotFound/>}/>
                     <Route path="/Resume" element={<Resume/>}/>
+                    <Route path="/case/:caseId" element={<CaseDetail/>}/>
+                    <Route path="*" element={<NotFound/>}/>
                 </Routes>
             </BrowserRouter>
         </div>

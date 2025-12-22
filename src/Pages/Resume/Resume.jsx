@@ -16,6 +16,7 @@ const TennisBooking = lazy(() => import("./Blocks/Cases/TennisBooking"));
 const Tinkoff = lazy(() => import("./Blocks/Cases/Tinkoff"));
 const Sparta = lazy(() => import("./Blocks/Cases/Sparta"));
 const HRDep = lazy(() => import("./Blocks/Cases/HRDep"));
+const CasesTabs = lazy(() => import("./Blocks/Cases/CasesTabs"));
 
 // Заглушка для ленивой загрузки
 const LoadingComponent = ({children}) => (
@@ -131,10 +132,8 @@ const Resume = () => {
                                 <p className={a.IntroTitle}>Привет!</p>
                                 <div className={a.IntroBlock}>
                                     <p className={a.IntroText}>
-                                        Я Саша, Product Designer с 5-летним опытом. Работал в B2E, B2B, B2C проектах: от
-                                        стартапов до крупных компаний. За все время работы помог компаниям скорить TTM,
-                                        повышал конверсию, поднимал вовлеченность, снижал нагрузку на сотрудников и
-                                        поддержку, спроектировал дизайн для 3 MVPшек с нуля.
+                                        Я Саша, Product Designer. В дизайне уже 5 лет, работал с B2E, B2B, B2C: от
+                                        стартапов до крупных компаний. <br/> Делаю сложное – понятным, с чистым UI
                                     </p>
                                 </div>
                             </div>
@@ -143,29 +142,11 @@ const Resume = () => {
                             </Suspense>
                         </div>
 
-                        {/*Cases - ленивая загрузка для улучшения производительности */}
-                        <Suspense fallback={<LoadingComponent>Загрузка кейса...</LoadingComponent>}>
-                            <Bazgain/>
-                        </Suspense>
-                        <Suspense fallback={<LoadingComponent>Загрузка кейса...</LoadingComponent>}>
-                            <Sparta/>
-                        </Suspense>
-                        <Suspense fallback={<LoadingComponent>Загрузка кейса...</LoadingComponent>}>
-                            <HRDep/>
-                        </Suspense>
-                        <Suspense fallback={<LoadingComponent>Загрузка кейса...</LoadingComponent>}>
-                            <Chatlab/>
-                        </Suspense>
-                        <Suspense fallback={<LoadingComponent>Загрузка кейса...</LoadingComponent>}>
-                            <Tinkoff/>
-                        </Suspense>
-                        <Suspense fallback={<LoadingComponent>Загрузка кейса...</LoadingComponent>}>
-                            <TennisBooking/>
+                        {/* Табы для кейсов */}
+                        <Suspense fallback={<LoadingComponent>Загрузка табов...</LoadingComponent>}>
+                            <CasesTabs/>
                         </Suspense>
 
-                        <Suspense fallback={<LoadingComponent>Загрузка интервью...</LoadingComponent>}>
-                            <VirtualInterviewComponent/>
-                        </Suspense>
                     </div>
                 </div>
                 <LeftSide darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>

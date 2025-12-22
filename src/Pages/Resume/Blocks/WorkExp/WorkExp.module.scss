@@ -1,14 +1,14 @@
 @import "~breakpoint-sass";
 
 $bk-desktop: 1920px 1440px;
-$bk-table-landscape: 1440px 811px;
+$bk-table-landscape: 1440px 81px;
 $bk-table: 811px 611px;
 $bk-phone: 611px 0px;
 
 
 .workExpCard {
   border: 1px solid var(--border-default);
-  padding: 24px;
+ padding: 24px;
   width: 100%;
   min-width: 350px;
   display: grid;
@@ -79,4 +79,206 @@ h3 {
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-s);
   color: var(--fg-muted);
+}
+
+// Стили для табов
+.tabsContainer {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.tabButton {
+  padding: 8px 16px;
+  border: 1px solid var(--border-default);
+  background-color: transparent;
+  color: var(--fg-default);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: var(--font-size-s);
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: var(--bg-hover);
+  }
+
+  &.activeTab {
+    background-color: var(--accent-default);
+    color: var(--fg-on-accent);
+    border-color: var(--accent-default);
+ }
+}
+
+// Стили для категорий кейсов
+.categoriesContainer {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.categoryTab {
+  padding: 6px 12px;
+  border: 1px solid var(--border-default);
+  background-color: transparent;
+  color: var(--fg-default);
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: var(--font-size-xs);
+  transition: all 0.2s ease;
+
+ &:hover {
+    background-color: var(--bg-hover);
+  }
+
+  &.activeCategory {
+    background-color: var(--accent-default);
+    color: var(--fg-on-accent);
+    border-color: var(--accent-default);
+  }
+}
+
+// Стили для секции кейсов
+.casesSection {
+  width: 100%;
+}
+
+// Стили для сетки кейсов
+.casesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+// Стили для карточки кейса
+.caseCard {
+  text-decoration: none;
+  color: inherit;
+ border: 1px solid var(--border-default);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background-color: var(--bg-card);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-color: var(--accent-default);
+  }
+}
+
+// Контейнер изображения кейса
+.caseImageContainer {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+}
+
+.caseImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.caseCard:hover .caseImage {
+  transform: scale(1.05);
+}
+
+// Контент карточки кейса
+.caseContent {
+  padding: 16px;
+}
+
+.caseTitle {
+  font-weight: 600;
+ font-size: var(--font-size-m);
+  color: var(--fg-default);
+ margin: 0 0 8px 0;
+}
+
+.caseDescription {
+  font-size: var(--font-size-s);
+  color: var(--fg-muted);
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+.detailButton {
+  padding: 8px 16px;
+  background-color: transparent;
+  border: 1px solid var(--border-default);
+ border-radius: 8px;
+  color: var(--accent-default);
+  cursor: pointer;
+  font-size: var(--font-size-s);
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: var(--accent-default);
+    color: var(--fg-on-accent);
+  }
+}
+
+// Стили для заголовка детального просмотра кейса
+.caseDetailHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.backButton {
+  padding: 8px 16px;
+  background-color: transparent;
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  color: var(--accent-default);
+  cursor: pointer;
+  font-size: var(--font-size-s);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  &:hover {
+    background-color: var(--accent-default);
+    color: var(--fg-on-accent);
+  }
+}
+
+.caseTitle {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  color: var(--fg-default);
+}
+
+// Стили для навигации между кейсами
+.caseNavigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+ padding-top: 20px;
+  border-top: 1px solid var(--border-default);
+}
+
+.navLink {
+  padding: 8px 16px;
+  background-color: transparent;
+  border: 1px solid var(--border-default);
+ border-radius: 8px;
+  color: var(--accent-default);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  &:hover {
+    background-color: var(--accent-default);
+    color: var(--fg-on-accent);
+  }
 }
