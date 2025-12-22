@@ -15,53 +15,49 @@ const casesData = [
     title: 'MarketLab • Sparta',
     description: 'Система для рассылок внутри телеграм.',
     image: '/Sparta.png',
-    category: 'market-lab'
+    category: 'web'
   },
   {
     id: 'bazgain',
     title: 'Bazgain Туризм',
     description: 'Мобильное приложение для поиска крутых маршрутов и аренды авто в Дагестане.',
     image: '/place.png',
-    category: 'mobile-app'
+    category: 'mobile'
   },
   {
     id: 'hrdep',
     title: 'MarketLab • HR Department',
     description: 'UX для онбординг бота',
     image: '/cat.png',
-    category: 'market-lab'
+    category: 'web'
   },
   {
     id: 'chatlab',
     title: 'ChatLab',
     description: 'AI ассистент для маркетплейсов',
     image: '/ChatLab.png',
-    category: 'ai'
+    category: 'web'
   },
   {
     id: 'tennisbooking',
     title: 'Tennis Booking',
     description: 'Full Stack 2025 – now',
     image: '/TB.jpg',
-    category: 'fullstack'
+    category: 'web'
   },
   {
     id: 'tinkoff',
     title: 'Tinkoff',
     description: 'Product designer. 2023',
     image: '/tinkoff.png',
-    category: 'product-design'
+    category: 'web'
   }
 ];
 
 const categories = [
-  { id: 'all', label: 'Все подряд' },
-  { id: 'market-lab', label: 'Папки' },
- { id: 'mobile-app', label: 'Mobile Apps' },
-  { id: 'ux-design', label: 'UX Design' },
- { id: 'ai', label: 'AI Products' },
-  { id: 'fullstack', label: 'Fullstack' },
-  { id: 'product-design', label: 'Product Design' }
+  { id: 'all', label: 'Все' },
+  { id: 'web', label: 'Веб' },
+  { id: 'mobile', label: 'Мобильные' }
 ];
 
 const CasesTabs = () => {
@@ -110,13 +106,13 @@ const CasesTabs = () => {
           className={`${workExpStyles.tabButton} ${activeTab === 'cases-grid' ? workExpStyles.activeTab : ''}`}
           onClick={() => setActiveTab('cases-grid')}
         >
-          Папки
+          <span className={workExpStyles.icon}>▦</span> Плитка
         </button>
         <button
           className={`${workExpStyles.tabButton} ${activeTab === 'cases-all' ? workExpStyles.activeTab : ''}`}
           onClick={() => setActiveTab('cases-all')}
         >
-          Все подряд
+          <span className={workExpStyles.icon}>☰</span> Все подряд
         </button>
       </div>
 

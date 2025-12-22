@@ -1,0 +1,88 @@
+@import "~breakpoint-sass";
+
+$bk-desktop: 1920px 1440px;
+$bk-table-landscape: 1440px 81px;
+$bk-table: 811px 611px;
+$bk-phone: 611px 0px;
+
+.WrapperInfo {
+  display: flex;
+  flex-flow: column;
+  gap: 80px;
+}
+
+.IntroCard {
+  //background-color: var(--bg-surface1);
+  border: 1px solid var(--border-default);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  padding: var(--spacing-m) var(--spacing-l);
+  border-radius: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.IntroTitle {
+  font-family: 'Manrope', sans-serif;
+  font-weight: var(--font-weight-semibold);
+  line-height: 26px;
+  font-size: var(--font-size-l);
+  color: var(--fg-default);
+  white-space: pre;
+  margin: 0;
+}
+
+.IntroBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+  align-items: flex-start;
+  width: 100%;
+}
+
+.IntroText {
+  font-family: 'Manrope', sans-serif;
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-line-height-normal);
+  font-size: var(--font-size-m);
+  color: var(--fg-default);
+ width: 100%;
+  margin: 0;
+
+  a {
+    color: var(--accent-default);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .ContentLayout {
+    gap: var(--spacing-m);
+  }
+
+  .Profile, .IntroCard, .ExperienceCard {
+    padding: var(--spacing-m);
+  }
+
+  .ProfileName {
+    font-size: var(--font-size-m);
+  }
+
+  .IntroTitle {
+    font-size: var(--font-size-m);
+  }
+
+  .CompanyName {
+    font-size: var(--font-size-s);
+  }
+
+  .JobInfo {
+    font-size: var(--font-size-xs);
+  }
+}

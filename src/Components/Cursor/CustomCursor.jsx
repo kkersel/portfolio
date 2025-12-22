@@ -3,33 +3,43 @@ import React, { useEffect, useState, useCallback } from "react";
 import './CustomCursor.scss';
 
 export const CustomCursor = () => {
-    const [position, setPosition] = useState({ x: 0, y: 0 });
     const [isHover, setIsHover] = useState(false);
     const [isPointerDown, setIsPointerDown] = useState(false);
     
     // Используем requestAnimationFrame для оптимизации анимации
     const [rafId, setRafId] = useState(null);
-    const [pendingPosition, setPendingPosition] = useState(null);
 
-    const updatePosition = useCallback(() => {
-        if (pendingPosition) {
-            setPosition(pendingPosition);
-            setPendingPosition(null);
-        }
-        setRafId(null);
-    }, [pendingPosition]);
+    // Для более плавного движения используем интерполяцию
+    const [smoothPosition, setSmoothPosition] = useState({ x: 0, y: 0 });
+    const [targetPosition, setTargetPosition] = useState({ x: 0, y: 0 });
+    const smoothness = 0.15; // Коэффициент плавности движения
+
+    // Функция для плавного перехода позиции
+    useEffect(() => {
+        const animate = () => {
+            setSmoothPosition(prevPos => ({
+                x: prevPos.x + (targetPosition.x - prevPos.x) * smoothness,
+                y: prevPos.y + (targetPosition.y - prevPos.y) * smoothness
+            }));
+            
+            setRafId(requestAnimationFrame(animate));
+        };
+
+        setRafId(requestAnimationFrame(animate));
+
+        return () => {
+            if (rafId) {
+                cancelAnimationFrame(rafId);
+            }
+        };
+    }, [targetPosition, smoothness, rafId]);
 
     const handleMouseMove = useCallback((e) => {
-        // Обновляем позицию только через requestAnimationFrame для лучшей производительности
-        setPendingPosition({ x: e.clientX, y: e.clientY });
-        
-        if (!rafId) {
-            setRafId(requestAnimationFrame(updatePosition));
-        }
-    }, [rafId, updatePosition]);
+        setTargetPosition({ x: e.clientX, y: e.clientY });
+    }, []);
 
     const handleMouseOver = useCallback((e) => {
-        if (e.target.closest('.cursorhover, button, a, .link, .badge, .cursor-pointer')) {
+        if (e.target.closest('.cursorhover, button, a, .link, .badge, .cursor-pointer, .button, .nav-item, .case-card, .project-card, .card')) {
             setIsHover(true);
         } else {
             setIsHover(false);
@@ -55,20 +65,24 @@ export const CustomCursor = () => {
             document.removeEventListener('mouseover', handleMouseOver);
             document.removeEventListener('mousedown', handleMouseDown);
             document.removeEventListener('mouseup', handleMouseUp);
-            
-            if (rafId) {
-                cancelAnimationFrame(rafId);
-            }
         };
-    }, [handleMouseMove, handleMouseOver, handleMouseDown, handleMouseUp, rafId]);
+    }, [handleMouseMove, handleMouseOver, handleMouseDown, handleMouseUp]);
+
+    // Определяем, какое изображение использовать
+    let cursorImage = '/pointer.ico';
+    if (isHover) {
+        cursorImage = '/default.ico';
+    }
 
     return (
         <div
             className={`custom-cursor ${isHover ? 'hover' : ''} ${isPointerDown ? 'active' : ''}`}
             style={{
-                left: `${position.x}px`,
-                top: `${position.y}px`,
+                left: `${smoothPosition.x}px`,
+                top: `${smoothPosition.y}px`,
+                backgroundImage: `url('${cursorImage}')`,
             }}
+            role="presentation"
         />
     );
 };

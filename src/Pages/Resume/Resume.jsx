@@ -1,16 +1,18 @@
 import React, {useState, useEffect, useRef, lazy, Suspense} from 'react';
 import a from './Resume.module.scss';
 import LeftSide from './LeftSide';
+import Navigation from '../../Components/Navigation/Navigation';
 import FeedbackModal from "../../Components/FeedbackModal/FeedbackModal";
 import Footer from "./Blocks/Footer/Footer";
 import {useNavigate} from "react-router-dom";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
+import IntroCard from "./Blocks/IntroCard/IntroCard";
 
 // Ленивая загрузка компонентов для оптимизации
 const VirtualInterviewComponent = lazy(() => import("./Blocks/Interview/VirtualInterviewComponent"));
 const AboutMe = lazy(() => import("./Blocks/About me/AboutMe"));
 const Chatlab = lazy(() => import("./Blocks/Cases/Chatlab"));
-const WorkExp = lazy(() => import("./Blocks/WorkExp/WorkExp"));
+// WorkExp был удален, так как информация об опыте работы теперь отображается в интро-блоке
 const Bazgain = lazy(() => import("./Blocks/Cases/Bazgain"));
 const TennisBooking = lazy(() => import("./Blocks/Cases/TennisBooking"));
 const Tinkoff = lazy(() => import("./Blocks/Cases/Tinkoff"));
@@ -123,47 +125,35 @@ const Resume = () => {
     };
 
     return (
-        <div className={a.ResumePage}>
-            <div className={a.ContentLayout}>
-                <div className={a.RightSide}>
-                    <div className={a.WrapperInfo}>
-                        <div className={a.WrapperHeader}>
-                            <div className={a.IntroCard}>
-                                <p className={a.IntroTitle}>Привет!</p>
-                                <div className={a.IntroBlock}>
-                                    <p className={a.IntroText}>
-                                        Я Саша, Product Designer. В дизайне уже 5 лет, работал с B2E, B2B, B2C: от
-                                        стартапов до крупных компаний. <br/> Делаю сложное – понятным, с чистым UI
-                                    </p>
-                                </div>
-                            </div>
-                            <Suspense fallback={<LoadingComponent>Загрузка профиля...</LoadingComponent>}>
-                                <WorkExp/>
-                            </Suspense>
-                        </div>
+       <div className={a.ResumePage}>
+           <Navigation darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
+           <div className={a.ContentLayout}>
+               <div className={a.RightSide}>
+                   <div className={a.WrapperInfo}>
+                       <div className={a.WrapperHeader}>
+                           <IntroCard/>
+                       </div>
 
-                        {/* Табы для кейсов */}
-                        <Suspense fallback={<LoadingComponent>Загрузка табов...</LoadingComponent>}>
-                            <CasesTabs/>
-                        </Suspense>
+                       {/* Табы для кейсов */}
+                       <Suspense fallback={<LoadingComponent>Загрузка табов...</LoadingComponent>}>
+                           <CasesTabs/>
+                       </Suspense>
 
-                    </div>
-                </div>
-                <LeftSide darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
-                <FeedbackModal
-                    isOpen={showFeedbackModal}
-                    onClose={() => setShowFeedbackModal(false)}
-                    onSubmit={handleFeedbackSubmit}
-                    sessionDurationSeconds={Math.floor((Date.now() - visitStartTime.current) / 1000)}
-                />
-            </div>
-            <Suspense fallback={<LoadingComponent>Загрузка информации обо мне...</LoadingComponent>}>
-                <AboutMe/>
-            </Suspense>
-            <Footer/>
-        </div>
-    )
-        ;
+                   </div>
+               </div>
+               <LeftSide darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
+               <FeedbackModal
+                   isOpen={showFeedbackModal}
+                   onClose={() => setShowFeedbackModal(false)}
+                   onSubmit={handleFeedbackSubmit}
+                   sessionDurationSeconds={Math.floor((Date.now() - visitStartTime.current) / 1000)}
+               />
+           </div>
+
+           {/*<Footer/>*/}
+       </div>
+   )
+       ;
 };
 
 export default Resume;

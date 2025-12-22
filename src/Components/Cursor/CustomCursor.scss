@@ -6,37 +6,34 @@ $bk-table-landscape: 1440px 811px;
 $bk-table: 811px 611px;
 $bk-phone: 611px 0px;
 
-/* Убираем стандартный курсор со всех элементов */
-* {
-  cursor: none !important;
-}
-
 .custom-cursor {
   position: fixed;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: var(--fg-default);
-  opacity: 80%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+ pointer-events: none;
+  width: 64px;
+  height: 64px;
+  background-size: contain;
+  background-repeat: no-repeat;
   transform: translate(-50%, -50%);
-  transition: transform 0s, background-color 0s, box-shadow 0s;
-  pointer-events: none;
   z-index: 9999;
-  mix-blend-mode: normal;
+  transition: background-image 0.1s linear, transform 0.1s ease-out, width 0.1s ease-out, height 0.1s ease-out;
   
   &.hover {
-    transform: translate(-50%, -50%) scale(0.8);
-    background-color: var(--fg-default);
-    opacity: 50%;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    transform: translate(-50%, -50%) scale(1.2);
+    width: 70px;
+    height: 70px;
+  }
+  
+  &.active {
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 60px;
+    height: 60px;
   }
   
   @include breakpoint(max-width $bk-phone) {
-   display: none;
-}
- 
- @include breakpoint(max-width $bk-table) {
-   display: none;
-}
+    display: none;
+  }
+  
+  @include breakpoint(max-width $bk-table) {
+    display: none;
+  }
 }

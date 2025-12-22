@@ -6,6 +6,7 @@
   width: 100%;
   max-width: 1104px;
   margin: 0 auto;
+  padding-top: calc(var(--spacing-xl) + 70px); // Добавляем отступ сверху для компенсации высоты навигации
 
   .ThameButton {
     height: 44px;
@@ -45,7 +46,7 @@
   gap: var(--spacing-m);
   align-items: stretch;
   position: sticky;
-  top: 20px;
+ top: calc(var(--spacing-xl) + 70px + 20px); /* Учитываем высоту навигации + отступ + 20px */
   width: 100%;
   height: fit-content;
 }
@@ -236,6 +237,15 @@
   font-size: var(--font-size-m);
   color: var(--fg-default);
   width: 100%;
+  
+  a {
+    color: var(--accent-default);
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .ExperienceCard {

@@ -10,42 +10,42 @@ const casesData = [
     title: 'MarketLab • Sparta',
     description: 'Система для рассылок внутри телеграм.',
     component: React.lazy(() => import('./Sparta')),
-    category: 'market-lab'
+    category: 'web'
   },
   {
     id: 'bazgain',
     title: 'Bazgain Туризм',
     description: 'Мобильное приложение для поиска крутых маршрутов и аренды авто в Дагестане.',
     component: React.lazy(() => import('./Bazgain')),
-    category: 'mobile-app'
+    category: 'mobile'
   },
   {
     id: 'hrdep',
     title: 'MarketLab • HR Department',
     description: 'UX для онбординг бота',
     component: React.lazy(() => import('./HRDep')),
-    category: 'ux-design'
+    category: 'web'
   },
   {
     id: 'chatlab',
     title: 'ChatLab',
     description: 'AI ассистент для маркетплейсов',
     component: React.lazy(() => import('./Chatlab')),
-    category: 'ai'
+    category: 'web'
   },
   {
     id: 'tennisbooking',
     title: 'Tennis Booking',
     description: 'Full Stack 2025 – now',
     component: React.lazy(() => import('./TennisBooking')),
-    category: 'fullstack'
+    category: 'web'
   },
   {
     id: 'tinkoff',
     title: 'Tinkoff',
     description: 'Product designer. 2023',
     component: React.lazy(() => import('./Tinkoff')),
-    category: 'product-design'
+    category: 'web'
   }
 ];
 

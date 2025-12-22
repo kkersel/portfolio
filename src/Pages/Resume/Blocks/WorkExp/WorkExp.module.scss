@@ -96,8 +96,11 @@ h3 {
   color: var(--fg-default);
   border-radius: 20px;
   cursor: pointer;
-  font-size: var(--font-size-s);
+ font-size: var(--font-size-s);
   transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 
   &:hover {
     background-color: var(--bg-hover);
@@ -107,6 +110,11 @@ h3 {
     background-color: var(--accent-default);
     color: var(--fg-on-accent);
     border-color: var(--accent-default);
+ }
+ 
+ .icon {
+   font-size: var(--font-size-m);
+   line-height: 1;
  }
 }
 

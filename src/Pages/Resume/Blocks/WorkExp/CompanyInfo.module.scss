@@ -1,0 +1,47 @@
+$info-padding: 12px;
+
+.info {
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: $info-padding 0;
+}
+
+.info:hover {
+  text-decoration: none;
+  color: var(--accent-hover);
+}
+
+.companyInfo {
+  display: flex;
+  align-items: start;
+  gap: var(--spacing-s);
+}
+
+.companyInfo:hover {
+  .title, .description {
+    text-decoration: none;
+    color: var(--accent-hover);
+  }
+}
+
+.companyLogo {
+  width: 24px;
+  margin-top: 4px;
+  height: 24px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.title {
+  font-weight: 590;
+  font-size: var(--font-size-m);
+  color: var(--fg-default);
+}
+
+.description {
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-s);
+  color: var(--fg-muted);
+}
