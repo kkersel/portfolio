@@ -3,48 +3,56 @@ import {useParams, useNavigate, Link} from 'react-router-dom';
 import workExpStyles from '../WorkExp/WorkExp.module.scss';
 import a from '../../Resume.module.scss'; // Импортируем стили главной страницы
 
+// Импорты компонентов кейсов
+const Sparta = React.lazy(() => import('./Sparta'));
+const Bazgain = React.lazy(() => import('./Bazgain'));
+const HRDep = React.lazy(() => import('./HRDep'));
+const Chatlab = React.lazy(() => import('./Chatlab'));
+const TennisBooking = React.lazy(() => import('./TennisBooking'));
+const Tinkoff = React.lazy(() => import('./Tinkoff'));
+
 // Данные для кейсов
 const casesData = [
     {
         id: 'sparta',
         title: 'MarketLab • Sparta',
         description: 'Система для рассылок внутри телеграм.',
-        component: React.lazy(() => import('./Sparta')),
+        component: Sparta,
         category: 'web'
     },
     {
         id: 'bazgain',
         title: 'Bazgain Туризм',
         description: 'Мобильное приложение для поиска крутых маршрутов и аренды авто в Дагестане.',
-        component: React.lazy(() => import('./Bazgain')),
+        component: Bazgain,
         category: 'mobile'
     },
     {
         id: 'hrdep',
         title: 'MarketLab • HR Department',
         description: 'UX для онбординг бота',
-        component: React.lazy(() => import('./HRDep')),
+        component: HRDep,
         category: 'web'
     },
     {
         id: 'chatlab',
         title: 'ChatLab',
         description: 'Агрегатор мессенджеров и социальных сетей.',
-        component: React.lazy(() => import('./Chatlab')),
+        component: Chatlab,
         category: 'web'
     },
     {
         id: 'tennisbooking',
         title: 'Tennis Booking',
         description: 'Full Stack 2025 – now',
-        component: React.lazy(() => import('./TennisBooking')),
+        component: TennisBooking,
         category: 'web'
     },
     {
         id: 'tinkoff',
         title: 'Tinkoff',
         description: 'Product designer. 2023',
-        component: React.lazy(() => import('./Tinkoff')),
+        component: Tinkoff,
         category: 'web'
     }
 ];
@@ -87,9 +95,6 @@ const CaseDetail = ({ darkTheme, setDarkTheme }) => {
         );
     }
 
-    // Получаем компонент кейса
-    const CaseComponent = currentCase.component;
-
     return (
         <div className={a.ResumePage}>
             <div className={a.ContentLayout}>
@@ -109,7 +114,7 @@ const CaseDetail = ({ darkTheme, setDarkTheme }) => {
 
                         {/* Основной контент кейса */}
                         <React.Suspense fallback={<div>Загрузка кейса...</div>}>
-                            <CaseComponent darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
+                            {React.createElement(currentCase.component, { darkTheme, setDarkTheme })}
                         </React.Suspense>
 
                         {/* Навигация между кейсами */}

@@ -1,26 +1,20 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import workExpStyles from '../WorkExp/WorkExp.module.scss';
-import Sparta from './Sparta';
-import Bazgain from './Bazgain';
-import HRDep from './HRDep';
-import Chatlab from './Chatlab';
-import Tinkoff from './Tinkoff';
-import TennisBooking from './TennisBooking';
 
 // Данные для кейсов
 const casesData = [
   {
     id: 'sparta',
     title: 'MarketLab • Sparta',
-    description: 'Система для рассылок внутри телеграм.',
+    description: 'Система для рассылок внутри телеграм',
     image: '/Preview/Sparta.png',
     category: 'web'
   },
   {
     id: 'bazgain',
     title: 'Bazgain Туризм',
-    description: 'Мобильное приложение для поиска крутых маршрутов и аренды авто в Дагестане.',
+    description: 'Мобильное приложение для поиска крутых маршрутов и аренды авто в Дагестане',
     image: '/Preview/Bazgain.gif',
     category: 'mobile'
   },
@@ -34,22 +28,22 @@ const casesData = [
   {
     id: 'chatlab',
     title: 'ChatLab',
-    description: 'Агрегатор мессенджеров и социальных сетей.',
-    image: '/ChatLab.png',
+    description: 'Агрегатор мессенджеров и социальных сетей',
+    image: '/Preview/ChatLab.png',
     category: 'web'
   },
   {
     id: 'tennisbooking',
     title: 'Tennis Booking',
-    description: 'Full Stack 2025 – now',
-    image: '/TB.jpg',
+    description: 'Приложение в telegram для бронирования теннисных кортов',
+    image: '/Preview/Tennis.png',
     category: 'mobile'
   },
   {
     id: 'tinkoff',
     title: 'Tinkoff',
-    description: 'Product designer. 2023',
-    image: '/tinkoff.png',
+    description: 'Perfomance review – Оценка сотрудников',
+    image: '/Preview/Tinkoff.png',
     category: 'web'
   }
 ];
@@ -68,7 +62,7 @@ const CasesTabs = ({ darkTheme, setDarkTheme }) => {
     ? casesData
     : casesData.filter(caseItem => caseItem.category === selectedCategory);
 
-  // Первый тип отображения - карточки с изображениями и кнопкой "Подробнее"
+ // Первый тип отображения - карточки с изображениями и кнопкой "Подробнее"
   const renderCaseCards = () => (
     <div className={workExpStyles.casesGrid}>
       {filteredCases.map((caseItem) => (
@@ -87,16 +81,36 @@ const CasesTabs = ({ darkTheme, setDarkTheme }) => {
   );
 
   // Второй тип отображения - как в оригинальном Resume.jsx (все кейсы подряд)
-  const renderAllCases = () => (
-      <div>
-        <Sparta darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
-        <Bazgain darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
-        <HRDep darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
-        <Chatlab darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
-        <Tinkoff darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
-        <TennisBooking darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
-      </div>
-    );
+   const renderAllCases = () => (
+       <React.Suspense fallback={<div>Загрузка кейсов...</div>}>
+         <div className={workExpStyles.casesContainer}>
+           {React.createElement(
+             React.lazy(() => import('./Sparta')),
+             { darkTheme, setDarkTheme }
+           )}
+           {React.createElement(
+             React.lazy(() => import('./Bazgain')),
+             { darkTheme, setDarkTheme }
+           )}
+           {React.createElement(
+             React.lazy(() => import('./HRDep')),
+             { darkTheme, setDarkTheme }
+           )}
+           {React.createElement(
+             React.lazy(() => import('./Chatlab')),
+             { darkTheme, setDarkTheme }
+           )}
+           {React.createElement(
+             React.lazy(() => import('./Tinkoff')),
+             { darkTheme, setDarkTheme }
+           )}
+           {React.createElement(
+             React.lazy(() => import('./TennisBooking')),
+             { darkTheme, setDarkTheme }
+           )}
+         </div>
+       </React.Suspense>
+     );
 
   return (
     <div className={workExpStyles.casesSection}>

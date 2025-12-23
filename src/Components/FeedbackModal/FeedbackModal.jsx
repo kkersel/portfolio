@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
-import Badge from '../Badge/Badge';
+import { Badge } from '../UI';
 import { supabase } from '../../utils/supabaseClient';
 import styles from './FeedbackModal.module.scss';
 

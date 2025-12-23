@@ -9,14 +9,8 @@ import IntroCard from "./Blocks/IntroCard/IntroCard";
 
 // Ленивая загрузка компонентов для оптимизации
 const VirtualInterviewComponent = lazy(() => import("./Blocks/Interview/VirtualInterviewComponent"));
-const AboutMe = lazy(() => import("./Blocks/About me/AboutMe"));
-const Chatlab = lazy(() => import("./Blocks/Cases/Chatlab"));
+const AboutMe = lazy(() => import("./Blocks/AboutMe/AboutMe"));
 // WorkExp был удален, так как информация об опыте работы теперь отображается в интро-блоке
-const Bazgain = lazy(() => import("./Blocks/Cases/Bazgain"));
-const TennisBooking = lazy(() => import("./Blocks/Cases/TennisBooking"));
-const Tinkoff = lazy(() => import("./Blocks/Cases/Tinkoff"));
-const Sparta = lazy(() => import("./Blocks/Cases/Sparta"));
-const HRDep = lazy(() => import("./Blocks/Cases/HRDep"));
 const CasesTabs = lazy(() => import("./Blocks/Cases/CasesTabs"));
 
 // Заглушка для ленивой загрузки
@@ -129,7 +123,6 @@ const Resume = ({ darkTheme, setDarkTheme }) => {
                        {(() => {
                            const WrappedCasesTabs = () => <CasesTabs darkTheme={darkTheme} setDarkTheme={setDarkTheme} />;
                            const WrappedVirtualInterviewComponent = () => <VirtualInterviewComponent darkTheme={darkTheme} setDarkTheme={setDarkTheme} />;
-                           const WrappedAboutMe = () => <AboutMe darkTheme={darkTheme} setDarkTheme={setDarkTheme} />;
 
                            return (
                                <>

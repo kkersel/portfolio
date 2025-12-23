@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './CommonBlocks.module.scss';
-import Button from "../../../../Components/Buttons/Button/Button";
+import { Button } from "../../../../Components/UI";
 
 const TennisBooking = ({ darkTheme, setDarkTheme }) => {
     return (

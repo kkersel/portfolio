@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import styles from './CommonBlocks.module.scss';
-import Button from "../../../../Components/Buttons/Button/Button";
+import { Button } from "../../../../Components/UI";
 
 const Bazgain = ({ darkTheme, setDarkTheme }) => {
     const [currentScreenshotIndex, setCurrentScreenshotIndex] = useState(0);

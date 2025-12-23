@@ -295,3 +295,11 @@ h3 {
     color: var(--fg-on-accent);
   }
 }
+
+// Стили для контейнера с кейсами, отображаемыми подряд
+.casesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+}
