@@ -39,7 +39,7 @@ export const CustomCursor = () => {
     }, []);
 
     const handleMouseOver = useCallback((e) => {
-        if (e.target.closest('.cursorhover, button, a, .link, .badge, .cursor-pointer, .button, .nav-item, .case-card, .project-card, .card, .btn, .nav-link, .menu-item, .clickable, .interactive, .tab, .tabs, .tab-item, .tab-link')) {
+        if (e.target.closest('.cursorhover, button, a, .link, .badge, .cursor-pointer, .button, .nav-item, .case-card, .project-card, .card, .btn, .nav-link, .menu-item, .clickable, .interactive, .tab, .tabs, .tab-item, .tab-link, [href], [onclick], [role="button"], [tabindex], .pointer, .hoverable, .selectable')) {
             setIsHover(true);
         } else {
             setIsHover(false);

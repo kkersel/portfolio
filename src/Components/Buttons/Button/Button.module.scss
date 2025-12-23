@@ -7,6 +7,9 @@
   border: none;
   border-radius: 12px;
   cursor: pointer;
+  body.custom-cursor-active & {
+    cursor: none !important;
+  }
   font-family: inherit;
   font-weight: 500;
  text-decoration: none;
@@ -77,6 +80,9 @@
   &--disabled {
     opacity: 0.6;
     cursor: not-allowed;
+    body.custom-cursor-active & {
+      cursor: none !important;
+    }
     
     &:hover {
       transform: none;

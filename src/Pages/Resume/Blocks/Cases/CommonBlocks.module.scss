@@ -42,6 +42,7 @@
 }
 
 .Paragraph {
+  max-width: 680px;
   margin: 0;
   line-height: var(--font-line-height-normal);
 }
@@ -160,7 +161,10 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  cursor: pointer;
+   cursor: pointer;
+   body.custom-cursor-active & {
+     cursor: none !important;
+   }
   display: flex;
   justify-content: center;
   align-items: center;
@@ -213,6 +217,9 @@
   border: none;
   background-color: var(--bg-muted);
   cursor: pointer;
+  body.custom-cursor-active & {
+    cursor: none !important;
+  }
   transition: background-color 0.3s ease;
 
   &.ActiveIndicator {

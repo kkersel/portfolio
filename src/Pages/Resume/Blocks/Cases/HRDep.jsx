@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './CommonBlocks.module.scss';
 
-const HRDep = () => {
+const HRDep = ({ darkTheme, setDarkTheme }) => {
     return (
         <div className={styles.Wrapper}>
             <div className={styles.BlockContainer}>

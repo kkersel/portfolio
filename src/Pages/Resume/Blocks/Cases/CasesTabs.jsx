@@ -43,7 +43,7 @@ const casesData = [
     title: 'Tennis Booking',
     description: 'Full Stack 2025 – now',
     image: '/TB.jpg',
-    category: 'web'
+    category: 'mobile'
   },
   {
     id: 'tinkoff',
@@ -56,11 +56,11 @@ const casesData = [
 
 const categories = [
   { id: 'all', label: 'Все' },
-  { id: 'web', label: 'Веб' },
-  { id: 'mobile', label: 'Мобильные' }
+  { id: 'web', label: 'Web' },
+  { id: 'mobile', label: 'Мобилка' }
 ];
 
-const CasesTabs = () => {
+const CasesTabs = ({ darkTheme, setDarkTheme }) => {
   const [activeTab, setActiveTab] = useState('cases-grid'); // 'cases-grid', 'cases-all'
   const [selectedCategory, setSelectedCategory] = useState('all');
 
@@ -88,15 +88,15 @@ const CasesTabs = () => {
 
   // Второй тип отображения - как в оригинальном Resume.jsx (все кейсы подряд)
   const renderAllCases = () => (
-    <div>
-      <Sparta />
-      <Bazgain />
-      <HRDep />
-      <Chatlab />
-      <Tinkoff />
-      <TennisBooking />
-    </div>
-  );
+      <div>
+        <Sparta darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
+        <Bazgain darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
+        <HRDep darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
+        <Chatlab darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
+        <Tinkoff darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
+        <TennisBooking darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
+      </div>
+    );
 
   return (
     <div className={workExpStyles.casesSection}>
@@ -112,7 +112,7 @@ const CasesTabs = () => {
           className={`${workExpStyles.tabButton} ${activeTab === 'cases-all' ? workExpStyles.activeTab : ''}`}
           onClick={() => setActiveTab('cases-all')}
         >
-          <span className={workExpStyles.icon}>☰</span> Все подряд
+          <span className={workExpStyles.icon}>☰</span> Смотреть все подряд
         </button>
       </div>
 

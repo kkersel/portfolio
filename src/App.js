@@ -1,12 +1,15 @@
 import './App.scss';
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import Resume from "./Pages/Resume/Resume";
 import NotFound from "./Components/404Page/NotFound";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import { CustomCursor } from './Components/Cursor/CustomCursor';
 import CaseDetail from "./Pages/Resume/Blocks/Cases/CaseDetail";
+import Navigation from "./Components/Navigation/Navigation";
 
 function App() {
+    const [darkTheme, setDarkTheme] = useState(true);
+
     useEffect(() => {
         // Определяем, есть ли поддержка тач-событий
         const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
@@ -32,16 +35,26 @@ function App() {
             document.body.style.webkitTapHighlightColor = 'transparent';
         }
     }, []);
+
+    // Добавляем или удаляем класс для темной темы
+    useEffect(() => {
+        if (darkTheme) {
+            document.body.classList.add("dark-theme");
+        } else {
+            document.body.classList.remove("dark-theme");
+        }
+    }, [darkTheme]);
     
     return (
         <div>
             <CustomCursor/>
             <BrowserRouter>
+                <Navigation darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
                 <Routes>
-                    <Route path="/" element={<Resume/>}/>
-                    <Route path="/Resume" element={<Resume/>}/>
-                    <Route path="/case/:caseId" element={<CaseDetail/>}/>
-                    <Route path="*" element={<NotFound/>}/>
+                    <Route path="/" element={<Resume darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
+                    <Route path="/Resume" element={<Resume darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
+                    <Route path="/case/:caseId" element={<CaseDetail darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
+                    <Route path="*" element={<NotFound darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
                 </Routes>
             </BrowserRouter>
         </div>

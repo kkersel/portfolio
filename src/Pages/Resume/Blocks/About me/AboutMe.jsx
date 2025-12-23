@@ -2,7 +2,7 @@ import React from 'react';
 import a from './AboutMe.module.scss'
 import {Fade} from "react-reveal";
 
-const AboutMe = () => {
+const AboutMe = ({ darkTheme, setDarkTheme }) => {
     return (
         <div className={a.Wrapper}>
             <Fade bottom>

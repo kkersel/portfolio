@@ -103,6 +103,9 @@ $bk-phone: 611px 0px;
   border: 1px solid var(--border-color);
   background-color: var(--btn-bg);
   cursor: pointer;
+  body.custom-cursor-active & {
+    cursor: none !important;
+  }
   font-weight: 600;
   transition: all 0.2s ease;
 

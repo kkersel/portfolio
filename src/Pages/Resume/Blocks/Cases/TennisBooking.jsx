@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './CommonBlocks.module.scss';
 import Button from "../../../../Components/Buttons/Button/Button";
 
-const TennisBooking = () => {
+const TennisBooking = ({ darkTheme, setDarkTheme }) => {
     return (
         <div className={styles.Wrapper}>
             <div className={styles.BlockContainer}>

@@ -96,6 +96,9 @@ h3 {
   color: var(--fg-default);
   border-radius: 20px;
   cursor: pointer;
+  body.custom-cursor-active & {
+    cursor: none !important;
+  }
   font-size: var(--font-size-s);
   transition: all 0.2s ease;
   display: flex;
@@ -133,6 +136,9 @@ h3 {
   color: var(--fg-default);
   border-radius: 16px;
   cursor: pointer;
+  body.custom-cursor-active & {
+    cursor: none !important;
+  }
   font-size: var(--font-size-xs);
   transition: all 0.2s ease;
 
@@ -214,6 +220,9 @@ h3 {
   border-radius: 8px;
   color: var(--accent-default);
   cursor: pointer;
+  body.custom-cursor-active & {
+    cursor: none !important;
+  }
   font-size: var(--font-size-s);
   transition: all 0.2s ease;
 
@@ -238,6 +247,9 @@ h3 {
   border-radius: 8px;
   color: var(--accent-default);
   cursor: pointer;
+  body.custom-cursor-active & {
+    cursor: none !important;
+  }
   font-size: var(--font-size-s);
   transition: all 0.2s ease;
   text-decoration: none;

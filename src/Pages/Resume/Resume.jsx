@@ -1,7 +1,6 @@
 import React, {useState, useEffect, useRef, lazy, Suspense} from 'react';
 import a from './Resume.module.scss';
 import LeftSide from './LeftSide';
-import Navigation from '../../Components/Navigation/Navigation';
 import FeedbackModal from "../../Components/FeedbackModal/FeedbackModal";
 import Footer from "./Blocks/Footer/Footer";
 import {useNavigate} from "react-router-dom";
@@ -27,32 +26,25 @@ const LoadingComponent = ({children}) => (
     </div>
 );
 
-const Resume = () => {
+const Resume = ({ darkTheme, setDarkTheme }) => {
     const navigate = useNavigate(); // eslint-disable-line no-unused-vars
-    const [darkTheme, setDarkTheme] = useState(true);
     const [showFeedbackModal, setShowFeedbackModal] = useState(false);
     const visitStartTime = useRef(null);
     const [hasSubmittedFeedback, setHasSubmittedFeedback] = useState(false);
     const [hasTriggeredFeedback, setHasTriggeredFeedback] = useState(false);
+    
     useIntersectionObserver({
         root: null,
         rootMargin: '0px',
         threshold: 0.1
     });
 
-    // Добавляем или удаляем класс для темной темы
-    useEffect(() => {
-        if (darkTheme) {
-            document.body.classList.add("dark-theme");
-        } else {
-            document.body.classList.remove("dark-theme");
-        }
-    }, [darkTheme]);
-
     // Инициализируем время начала визита
     useEffect(() => {
         visitStartTime.current = Date.now();
+    }, []);
 
+    useEffect(() => {
         const handleBeforeUnload = (e) => {
             const visitDuration = Date.now() - visitStartTime.current;
             const visitDurationInSeconds = visitDuration / 1000;
@@ -117,7 +109,7 @@ const Resume = () => {
             document.removeEventListener('mouseenter', handleMouseEnter);
             document.removeEventListener('visibilitychange', handleVisibilityChange);
         };
-    }, [hasSubmittedFeedback, hasTriggeredFeedback]);
+    }, [hasSubmittedFeedback, hasTriggeredFeedback, setShowFeedbackModal, setHasTriggeredFeedback]);
 
     const handleFeedbackSubmit = async (feedbackData) => {
         // Обновляем состояние, чтобы предотвратить повторный показ модального окна
@@ -126,7 +118,6 @@ const Resume = () => {
 
     return (
        <div className={a.ResumePage}>
-           <Navigation darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
            <div className={a.ContentLayout}>
                <div className={a.RightSide}>
                    <div className={a.WrapperInfo}>
@@ -134,10 +125,26 @@ const Resume = () => {
                            <IntroCard/>
                        </div>
 
-                       {/* Табы для кейсов */}
-                       <Suspense fallback={<LoadingComponent>Загрузка табов...</LoadingComponent>}>
-                           <CasesTabs/>
-                       </Suspense>
+                       {/* Создаем обертки для передачи пропсов темы в лениво загруженные компоненты */}
+                       {(() => {
+                           const WrappedCasesTabs = () => <CasesTabs darkTheme={darkTheme} setDarkTheme={setDarkTheme} />;
+                           const WrappedVirtualInterviewComponent = () => <VirtualInterviewComponent darkTheme={darkTheme} setDarkTheme={setDarkTheme} />;
+                           const WrappedAboutMe = () => <AboutMe darkTheme={darkTheme} setDarkTheme={setDarkTheme} />;
+
+                           return (
+                               <>
+                                   {/* Табы для кейсов */}
+                                   <Suspense fallback={<LoadingComponent>Загрузка табов...</LoadingComponent>}>
+                                       <WrappedCasesTabs />
+                                   </Suspense>
+
+                                   {/* Виртуальное интервью */}
+                                   <Suspense fallback={<LoadingComponent>Загрузка интервью...</LoadingComponent>}>
+                                       <WrappedVirtualInterviewComponent />
+                                   </Suspense>
+                               </>
+                           );
+                       })()}
 
                    </div>
                </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './CommonBlocks.module.scss';
 
-const Tinkoff = () => {
+const Tinkoff = ({ darkTheme, setDarkTheme }) => {
     return (
        <div className={styles.Wrapper}>
            <div className={styles.BlockContainer}>

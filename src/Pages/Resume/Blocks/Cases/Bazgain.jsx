@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styles from './CommonBlocks.module.scss';
 import Button from "../../../../Components/Buttons/Button/Button";
 
-const Bazgain = () => {
+const Bazgain = ({ darkTheme, setDarkTheme }) => {
     const [currentScreenshotIndex, setCurrentScreenshotIndex] = useState(0);
     const [animationDirection, setAnimationDirection] = useState(null);
 

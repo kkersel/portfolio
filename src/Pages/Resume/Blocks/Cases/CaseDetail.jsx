@@ -49,7 +49,7 @@ const casesData = [
     }
 ];
 
-const CaseDetail = () => {
+const CaseDetail = ({ darkTheme, setDarkTheme }) => {
     const {caseId} = useParams();
     const navigate = useNavigate();
     const [currentCase, setCurrentCase] = useState(null);
@@ -72,11 +72,19 @@ const CaseDetail = () => {
     const nextCase = currentIndex < casesData.length - 1 ? casesData[currentIndex + 1] : null;
 
     if (loading) {
-        return <div className={a.ResumePage}>Загрузка...</div>;
+        return (
+            <div className={a.ResumePage}>
+                <div>Загрузка...</div>
+            </div>
+        );
     }
 
     if (!currentCase) {
-        return <div className={a.ResumePage}>Кейс не найден</div>;
+        return (
+            <div className={a.ResumePage}>
+                <div>Кейс не найден</div>
+            </div>
+        );
     }
 
     // Получаем компонент кейса
@@ -101,7 +109,7 @@ const CaseDetail = () => {
 
                         {/* Основной контент кейса */}
                         <React.Suspense fallback={<div>Загрузка кейса...</div>}>
-                            <CaseComponent/>
+                            <CaseComponent darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
                         </React.Suspense>
 
                         {/* Навигация между кейсами */}

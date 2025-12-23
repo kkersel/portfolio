@@ -37,7 +37,7 @@ const QUESTIONS = [
     },
 ];
 
-export default function VirtualInterviewComponent() {
+export default function VirtualInterviewComponent({ darkTheme, setDarkTheme }) {
     const [feedback, setFeedback] = useState({helpful: 0, cringe: 0});
     const [userVote, setUserVote] = useState(null);
     const [loading, setLoading] = useState(true);

@@ -42,17 +42,25 @@
   }
 
   .feedbackModalClose {
-    background: none;
     border: none;
     font-size: 24px;
     cursor: pointer;
+    body.custom-cursor-active & {
+      cursor: none !important;
+    }
     color: var(--fg-muted);
     padding: 0;
-    width: 30px;
-    height: 30px;
+    width: 44px;
+    height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: var(--bg-surface2);
+    border-radius: 12px;
+    cursor: pointer;
+    body.custom-cursor-active & {
+      cursor: none !important;
+    }
 
     &:hover {
       color: var(--fg-soft);
@@ -71,6 +79,9 @@
 
     .feedbackBadge {
       cursor: pointer;
+      body.custom-cursor-active & {
+        cursor: none !important;
+      }
       transition: all 0.2s ease;
       border: 1px solid var(--border-default);
       padding: var(--spacing-s) var(--spacing-s);
@@ -126,6 +137,9 @@
      font-size: var(--font-size-s);
      font-weight: var(--font-weight-semibold);
      cursor: pointer;
+     body.custom-cursor-active & {
+       cursor: none !important;
+     }
      transition: background-color 0.2s ease;
  
      &:hover:not(:disabled) {
@@ -135,6 +149,9 @@
      &:disabled {
        background-color: var(--btn-bg-hover);
        cursor: not-allowed;
+       body.custom-cursor-active & {
+         cursor: none !important;
+       }
      }
    }
  
