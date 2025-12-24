@@ -104,12 +104,11 @@ const CaseDetail = ({ darkTheme, setDarkTheme }) => {
                         <div className={workExpStyles.caseDetailHeader}>
                             <button
                                 className={workExpStyles.backButton}
-                                onClick={() => navigate(-1)}
+                                onClick={() => navigate('/')}
                                 aria-label="Вернуться назад"
                             >
                                 ← Назад
                             </button>
-                            <h1 className={workExpStyles.caseTitle}>{currentCase.title}</h1>
                         </div>
 
                         {/* Основной контент кейса */}

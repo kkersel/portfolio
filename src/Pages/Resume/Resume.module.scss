@@ -153,6 +153,56 @@
   }
 }
 
+.ImageRatingBanner {
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+
+  &:hover {
+    border-color: var(--accent-default);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .BannerLink {
+    display: block;
+    padding: var(--spacing-l);
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .BannerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+
+    h3 {
+      margin: 0;
+      font-family: 'Manrope', sans-serif;
+      font-weight: var(--font-weight-semibold);
+      font-size: var(--font-size-m);
+      color: var(--fg-default);
+      text-align: center;
+    }
+
+    p {
+      margin: 0;
+      font-family: 'Manrope', sans-serif;
+      font-weight: var(--font-weight-regular);
+      font-size: var(--font-size-s);
+      color: var(--fg-soft);
+      text-align: center;
+    }
+  }
+}
+
 .ButtonText {
   font-family: 'Manrope', sans-serif;
   font-weight: var(--font-weight-regular);

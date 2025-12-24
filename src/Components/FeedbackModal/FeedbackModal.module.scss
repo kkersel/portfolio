@@ -78,9 +78,9 @@
     gap: var(--spacing-s);
 
     .feedbackBadge {
-      cursor: pointer;
+      //cursor: pointer;
       body.custom-cursor-active & {
-        cursor: none !important;
+        //cursor: none !important;
       }
       transition: all 0.2s ease;
       border: 1px solid var(--border-default);
@@ -136,9 +136,9 @@
      padding: 14px;
      font-size: var(--font-size-s);
      font-weight: var(--font-weight-semibold);
-     cursor: pointer;
+     //cursor: pointer;
      body.custom-cursor-active & {
-       cursor: none !important;
+       //cursor: none !important;
      }
      transition: background-color 0.2s ease;
  

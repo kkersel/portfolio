@@ -34,7 +34,7 @@ const IntroCard = ({ title, subtitle, description, image, additionalContent }) =
         </p>
 
         <p className={a.IntroText}>
-          А еще работал front-end разработчиком на заводе <a href="https://okzo-systems.ru" target="_blank" rel="noopener noreferrer">okzo-systems</a>
+          А еще работал front-end разработчиком – <a href="https://okzo-systems.ru" target="_blank" rel="noopener noreferrer">okzo-systems</a>
         </p>
       </div>
     </div>

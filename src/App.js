@@ -6,6 +6,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import { CustomCursor } from './Components/Cursor/CustomCursor';
 import CaseDetail from "./Pages/Resume/Blocks/Cases/CaseDetail";
 import Navigation from "./Components/Navigation/Navigation";
+import ImageRating from "./Pages/ImageRating/ImageRating";
 
 function App() {
     const [darkTheme, setDarkTheme] = useState(true);
@@ -54,6 +55,7 @@ function App() {
                     <Route path="/" element={<Resume darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
                     <Route path="/Resume" element={<Resume darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
                     <Route path="/case/:caseId" element={<CaseDetail darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
+                    <Route path="/image-rating" element={<ImageRating darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
                     <Route path="*" element={<NotFound darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
                 </Routes>
             </BrowserRouter>

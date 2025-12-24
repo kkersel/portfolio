@@ -30,6 +30,14 @@ const LeftSide = ({ darkTheme, setDarkTheme }) => {
         </div>
 
       </div>
+      
+      <div className={styles.ImageRatingBanner}>
+        <a href="/image-rating" className={styles.BannerLink} onClick={() => window.isNavigatingInternally = true}>
+          <div className={styles.BannerContent}>
+            <h3>Просто UI хочу посмотреть 👀</h3>
+          </div>
+        </a>
+      </div>
     </div>
   );
 };

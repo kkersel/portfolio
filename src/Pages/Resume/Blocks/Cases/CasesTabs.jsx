@@ -29,7 +29,7 @@ const casesData = [
     id: 'chatlab',
     title: 'ChatLab',
     description: 'Агрегатор мессенджеров и социальных сетей',
-    image: '/Preview/ChatLab.png',
+    image: '/Preview/Chatlab.png',
     category: 'web'
   },
   {

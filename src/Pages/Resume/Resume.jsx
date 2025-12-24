@@ -43,6 +43,13 @@ const Resume = ({ darkTheme, setDarkTheme }) => {
             const visitDuration = Date.now() - visitStartTime.current;
             const visitDurationInSeconds = visitDuration / 1000;
 
+            // Проверяем, является ли переход внутренним (по ссылке на другую страницу внутри сайта)
+            if (window.isNavigatingInternally) {
+                // Не показываем предупреждение при внутреннем переходе
+                delete window.isNavigatingInternally;
+                return;
+            }
+
             if (visitDurationInSeconds < 30 && !hasSubmittedFeedback && !hasTriggeredFeedback) {
                 // Показываем модальное окно перед уходом
                 setShowFeedbackModal(true);
