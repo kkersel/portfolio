@@ -13,13 +13,13 @@
   //border: 1px solid hsla(0, 0%, 100%, .25);
   //border-radius: 32px;
   box-shadow: 0 .75rem 2rem rgba(0, 0, 0, .02);
-  
+
   // Темная тема
- [data-theme="dark"] & {
+  [data-theme="dark"] & {
     background-color: rgba(0, 0, 0.25); // Полупрозрачный темный фон
     border-bottom: 1px solid rgba(25, 255, 255, 0.1); // Более светлая граница для темной темы
   }
-  
+
   .NavContent {
     max-width: 1104px;
     margin: 0 auto;
@@ -28,37 +28,37 @@
     box-sizing: border-box;
   }
 
- .NavContentTop {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     width: 100%;
-   }
- 
-   .ThemeButton {
-      height: 44px;
-      width: 44px;
-      border-radius: 12px;
-      outline: none;
-      border: none;
-      color: var(--nav-text-color);
-      background: transparent;
-      transition: 0.5s;
- 
-      @media (hover: hover) and (pointer: fine) {
-        &:hover {
-          transition: 0.5s;
-          border: 1px solid var(--accent-default);
-          color: var(--accent-default);
-        }
+  .NavContentTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .ThemeButton {
+    height: 44px;
+    width: 44px;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    color: var(--nav-text-color);
+    background: transparent;
+    transition: 0.5s;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        transition: 0.5s;
+        border: 1px solid var(--accent-default);
+        color: var(--accent-default);
       }
     }
+  }
 
-   .NavButtonsMobile {
-     display: none;
-     gap: 15px;
-     align-items: center;
-   }
+  .NavButtonsMobile {
+    display: none;
+    gap: 15px;
+    align-items: center;
+  }
 
 
   .NavButtonsDesktop {
@@ -92,9 +92,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
+    width: min-content;
+    min-width: 44px;
     height: 44px;
     border-radius: 12px;
+    padding: var(--spacing-m);
     transition: background-color 0.2s ease;
     text-decoration: none;
     color: var(--nav-text-color);
@@ -125,7 +127,7 @@
     }
   }
 
- .ButtonText {
+  .ButtonText {
     font-family: 'Manrope', sans-serif;
     font-weight: var(--font-weight-regular);
     line-height: 20px;
