@@ -21,6 +21,7 @@ const ImageRating = ({darkTheme, setDarkTheme}) => {
             '/emply.png',
             '/pik.png',
             '/VK.png',
+            '/zvuk.png',
         ];
 
         const imageObjects = imagePaths.map((path, index) => ({
