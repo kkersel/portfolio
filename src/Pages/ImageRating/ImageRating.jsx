@@ -15,7 +15,7 @@ const ImageRating = ({darkTheme, setDarkTheme}) => {
             '/baz2.png',
             '/Sparta.png',
             '/Sparta2.png',
-            '/Chatlab.png',
+            '/ChatLab.png',
             '/22.png',
             '/Dash.png',
             '/emply.png',

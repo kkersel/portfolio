@@ -1,41 +1,15 @@
 // CustomCursor.jsx
-import React, { useEffect, useState, useCallback, useRef } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import './CustomCursor.scss';
 
 export const CustomCursor = () => {
     const [isHover, setIsHover] = useState(false);
     const [isPointerDown, setIsPointerDown] = useState(false);
     
-    // Для более плавного движения используем интерполяцию
-    const [smoothPosition, setSmoothPosition] = useState({ x: 0, y: 0 });
-    const [targetPosition, setTargetPosition] = useState({ x: 0, y: 0 });
-    const smoothness = 0.15; // Коэффициент плавности движения
-
-    // Используем useRef для хранения ID requestAnimationFrame
-    const rafIdRef = useRef(null);
-
-    // Функция для плавного перехода позиции
-    useEffect(() => {
-        const animate = () => {
-            setSmoothPosition(prevPos => ({
-                x: prevPos.x + (targetPosition.x - prevPos.x) * smoothness,
-                y: prevPos.y + (targetPosition.y - prevPos.y) * smoothness
-            }));
-            
-            rafIdRef.current = requestAnimationFrame(animate);
-        };
-
-        rafIdRef.current = requestAnimationFrame(animate);
-
-        return () => {
-            if (rafIdRef.current) {
-                cancelAnimationFrame(rafIdRef.current);
-            }
-        };
-    }, [targetPosition, smoothness]);
+    const [position, setPosition] = useState({ x: 0, y: 0 });
 
     const handleMouseMove = useCallback((e) => {
-        setTargetPosition({ x: e.clientX, y: e.clientY });
+        setPosition({ x: e.clientX, y: e.clientY });
     }, []);
 
     const handleMouseOver = useCallback((e) => {
@@ -90,8 +64,8 @@ export const CustomCursor = () => {
         <div
             className={`custom-cursor ${isHover ? 'hover' : ''} ${isPointerDown ? 'active' : ''}`}
             style={{
-                left: `${smoothPosition.x}px`,
-                top: `${smoothPosition.y}px`,
+                left: `${position.x}px`,
+                top: `${position.y}px`,
                 backgroundImage: `url('${cursorImage}')`,
             }}
             role="presentation"
