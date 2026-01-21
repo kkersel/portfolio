@@ -2,14 +2,12 @@ import React, {useState, useEffect, useRef, lazy, Suspense} from 'react';
 import a from './Resume.module.scss';
 import LeftSide from './LeftSide';
 import FeedbackModal from "../../Components/FeedbackModal/FeedbackModal";
-import Footer from "./Blocks/Footer/Footer";
 import {useNavigate} from "react-router-dom";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import IntroCard from "./Blocks/IntroCard/IntroCard";
 
 // Ленивая загрузка компонентов для оптимизации
 const VirtualInterviewComponent = lazy(() => import("./Blocks/Interview/VirtualInterviewComponent"));
-const AboutMe = lazy(() => import("./Blocks/AboutMe/AboutMe"));
 // WorkExp был удален, так как информация об опыте работы теперь отображается в интро-блоке
 const CasesTabs = lazy(() => import("./Blocks/Cases/CasesTabs"));
 
