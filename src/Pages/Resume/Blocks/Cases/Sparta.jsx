@@ -6,17 +6,35 @@ const Sparta = ({ darkTheme, setDarkTheme }) => {
         <div className={styles.Wrapper}>
             <div className={styles.BlockContainer}>
                 <h2 className={styles.BlockTitle}>MarketLab • Sparta</h2>
+                <b>О проекте:</b>
                 <p className={styles.BlockDescription}>
-                    Система для рассылок внутри телеграм.
+                    Внутренняя CRM-система для управления рассылками в telegram.<br/>
+                    Система позволяет полностью автоматизировать весь процесс работы 6 отделов: <br/>
+                    Создание ботов, каналов и аккаунтов<br/>
+                    Создание шаблонов, перевод контента на разные языки, постинг и управление командой<br/>
+                    Аналитика и фин. отчеты
                 </p>
             </div>
 
             <div className={styles.BlockContainer}>
                 <h2 className={styles.BlockTitle}>Проблема</h2>
                 <div className={styles.BlockText}>
-                    <p className={styles.Paragraph}>Бизнес был зависим от одного разработчика и старое решение было сложно масштабировать</p>
-                    <p className={styles.Paragraph}>&nbsp;</p>
-                    <p className={styles.Paragraph}>Была сформирована продуктовая команда, для разработки нового продукта с учетом всех необходимых бизнес требований и запросов от пользователей</p>
+                    <p className={styles.Paragraph}>
+                        Основные сценарии сотрудников, сильно тормозили процесс из-за сложного UX'a.<br/>
+                        Хаос внутри разделов и большое кол-во ошибок пользователей в процессе работы приводили к большим убыткам<br/>
+
+                        В добавок ко всему, решение было завязано на одном разработчике
+                    </p>
+                </div>
+            </div>
+
+            <div className={styles.BlockContainer}>
+                <h2 className={styles.BlockTitle}>Цель проекта</h2>
+                <div className={styles.BlockText}>
+                    <p className={styles.Paragraph}>
+                        Спроектировать для компании удобный и понятный продукт, в котором отделы и сотрудники смогут быстрее закрывать свои задачи.
+                        Сделать систему масштабируемой и понятной.
+                    </p>
                 </div>
             </div>
 
