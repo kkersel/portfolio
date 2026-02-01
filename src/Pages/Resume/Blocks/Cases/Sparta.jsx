@@ -29,11 +29,11 @@ const Sparta = ({ darkTheme, setDarkTheme }) => {
             </div>
 
             <div className={styles.BlockContainer}>
-                <h2 className={styles.BlockTitle}>Цель проекта</h2>
+                <h2 className={styles.BlockTitle}>Цель</h2>
                 <div className={styles.BlockText}>
                     <p className={styles.Paragraph}>
-                        Спроектировать для компании удобный и понятный продукт, в котором отделы и сотрудники смогут быстрее закрывать свои задачи.
-                        Сделать систему масштабируемой и понятной.
+                        Спроектировать удобный и понятный продукт, в котором сотрудники смогут быстрее закрывать свои задачи.
+                        Сделать систему масштабируемой.
                     </p>
                 </div>
             </div>
