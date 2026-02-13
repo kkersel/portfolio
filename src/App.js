@@ -4,7 +4,7 @@ import Resume from "./Pages/Resume/Resume";
 import NotFound from "./Components/404Page/NotFound";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import { CustomCursor } from './Components/Cursor/CustomCursor';
-import AllCases from "./Pages/Resume/Blocks/Cases/AllCases";
+import CasesSection from "./Pages/Resume/Blocks/Cases/CasesSection";
 import Navigation from "./Components/Navigation/Navigation";
 import ImageRating from "./Pages/ImageRating/ImageRating";
 
@@ -54,7 +54,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Resume darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
                     <Route path="/Resume" element={<Resume darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
-                    <Route path="/case/:caseId" element={<AllCases darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
+                    <Route path="/case/:caseId" element={<CasesSection darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
                     <Route path="/image-rating" element={<ImageRating darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
                     <Route path="*" element={<NotFound darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
                 </Routes>

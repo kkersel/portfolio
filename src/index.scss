@@ -167,7 +167,7 @@ body.dark-theme {
 
 html {
   font-size: 16px;
-  scroll-behavior: smooth;
+  scroll-behavior: initial;
 }
 
 body {
@@ -184,6 +184,7 @@ body {
   overflow-x: hidden;
   line-height: var(--font-line-height-normal);
   cursor: none;
+  scroll-behavior: initial;
 }
 
 /* Убираем курсор везде */

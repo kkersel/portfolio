@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Данные для кейсов
 export const casesData = [
     {
         id: 'sparta',

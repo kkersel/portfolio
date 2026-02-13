@@ -9,7 +9,7 @@ import IntroCard from "./Blocks/IntroCard/IntroCard";
 // Ленивая загрузка компонентов для оптимизации
 const VirtualInterviewComponent = lazy(() => import("./Blocks/Interview/VirtualInterviewComponent"));
 // WorkExp был удален, так как информация об опыте работы теперь отображается в интро-блоке
-const CasesTabs = lazy(() => import("./Blocks/Cases/CasesTabs"));
+const CasesSection = lazy(() => import("./Blocks/Cases/CasesSection"));
 
 // Заглушка для ленивой загрузки
 const LoadingComponent = ({children}) => (
@@ -126,14 +126,14 @@ const Resume = ({ darkTheme, setDarkTheme }) => {
 
                        {/* Создаем обертки для передачи пропсов темы в лениво загруженные компоненты */}
                        {(() => {
-                           const WrappedCasesTabs = () => <CasesTabs darkTheme={darkTheme} setDarkTheme={setDarkTheme} />;
+                           const WrappedCasesSection = () => <CasesSection darkTheme={darkTheme} setDarkTheme={setDarkTheme} />;
                            const WrappedVirtualInterviewComponent = () => <VirtualInterviewComponent darkTheme={darkTheme} setDarkTheme={setDarkTheme} />;
 
                            return (
                                <>
                                    {/* Табы для кейсов */}
                                    <Suspense fallback={<LoadingComponent>Загрузка табов...</LoadingComponent>}>
-                                       <WrappedCasesTabs />
+                                       <WrappedCasesSection />
                                    </Suspense>
 
                                    {/* Виртуальное интервью */}
