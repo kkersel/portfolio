@@ -3,18 +3,9 @@ import { createClient } from '@supabase/supabase-js';
 import StatsOverview from './StatsOverview';
 import styles from './AdminPanel.module.scss';
 
-const AdminPanel = () => {
+const AdminPanel = ({ supabase }) => {
   const [sessions, setSessions] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
-  const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
-
-  if (!supabaseUrl || !supabaseAnonKey) {
-    console.error('Supabase URL или ANON_KEY не установлены в .env файле');
-  }
-
-  const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
   const fetchSessions = React.useCallback(async () => {
     setLoading(true);
@@ -66,7 +57,7 @@ const AdminPanel = () => {
   return (
     <div className={styles.AdminPanel}>
       <h1>Админ-панель</h1>
-      <StatsOverview />
+      <StatsOverview supabase={supabase} />
       <h2>Сессии пользователей</h2>
       <button onClick={handleRefresh} className={styles.RefreshButton}>Обновить</button>
       <table className={styles.SessionsTable}>

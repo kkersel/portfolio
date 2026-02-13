@@ -1,5 +1,6 @@
 import './App.scss';
 import React, {useEffect, useState} from "react";
+import { createClient } from '@supabase/supabase-js';
 import Resume from "./Pages/Resume/Resume";
 import NotFound from "./Components/404Page/NotFound";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
@@ -13,6 +14,15 @@ import ProtectedRoute from "./Components/AdminPanel/ProtectedRoute";
 
 function App() {
     const [darkTheme, setDarkTheme] = useState(true);
+
+    const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+    const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
+
+    if (!supabaseUrl || !supabaseAnonKey) {
+        console.error('Supabase URL или ANON_KEY не установлены в .env файле');
+    }
+
+    const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
     useEffect(() => {
         // Определяем, есть ли поддержка тач-событий
@@ -62,7 +72,7 @@ function App() {
                     <Route path="/admin/login" element={<AdminLogin />} />
                     <Route path="/admin" element={
                         <ProtectedRoute>
-                            <AdminPanel />
+                            <AdminPanel supabase={supabase} />
                         </ProtectedRoute>
                     } />
                     <Route path="*" element={<NotFound darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>

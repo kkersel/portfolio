@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from 'recharts';
 import { createClient } from '@supabase/supabase-js';
 
-const StatsOverview = () => {
+const StatsOverview = ({ supabase }) => {
   const [stats, setStats] = useState({
     totalSessions: 0,
     uniqueUsers: 0,
@@ -12,15 +12,6 @@ const StatsOverview = () => {
   });
 
   useEffect(() => {
-    const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
-    const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
-
-    if (!supabaseUrl || !supabaseAnonKey) {
-      console.error('Supabase URL или ANON_KEY не установлены в .env файле');
-      return;
-    }
-
-    const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
     const fetchStats = async () => {
       // Получаем сессии за последнюю неделю
