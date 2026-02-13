@@ -1,12 +1,13 @@
-import React, {useState, useEffect} from 'react';
-import {useParams, useNavigate, Link} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import workExpStyles from '../WorkExp/WorkExp.module.scss';
-import a from '../../Resume.module.scss'; // Импортируем стили главной страницы
+import a from '../../Resume.module.scss';
 
 // Импорты компонентов кейсов
 const Sparta = React.lazy(() => import('./Sparta'));
 const Bazgain = React.lazy(() => import('./Bazgain'));
 const HRDep = React.lazy(() => import('./HRDep'));
+const BotDev = React.lazy(() => import('./BotDev'));
 const Chatlab = React.lazy(() => import('./Chatlab'));
 const TennisBooking = React.lazy(() => import('./TennisBooking'));
 const Tinkoff = React.lazy(() => import('./Tinkoff'));
@@ -35,6 +36,13 @@ const casesData = [
         category: 'web'
     },
     {
+        id: 'botdev',
+        title: 'BOT-DEV',
+        description: 'Роль дизайнера на проекте, собирать user-flow для телеграм ботов',
+        component: BotDev,
+        category: 'web'
+    },
+    {
         id: 'chatlab',
         title: 'ChatLab',
         description: 'Агрегатор мессенджеров и социальных сетей.',
@@ -57,42 +65,18 @@ const casesData = [
     }
 ];
 
-const CaseDetail = ({ darkTheme, setDarkTheme }) => {
-    const {caseId} = useParams();
+const AllCases = ({ darkTheme, setDarkTheme }) => {
+    const { caseId } = useParams();
     const navigate = useNavigate();
-    const [currentCase, setCurrentCase] = useState(null);
-    const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        const foundCase = casesData.find(c => c.id === caseId);
-        if (foundCase) {
-            setCurrentCase(foundCase);
-        } else {
-            // Если кейс не найден, перенаправляем на главную
-            navigate('/');
-        }
-        setLoading(false);
-    }, [caseId, navigate]);
+    // Находим индекс активного кейса
+    const activeCaseIndex = casesData.findIndex(c => c.id === caseId);
 
-    // Находим индексы соседних кейсов для навигации
-    const currentIndex = casesData.findIndex(c => c.id === caseId);
-    const prevCase = currentIndex > 0 ? casesData[currentIndex - 1] : null;
-    const nextCase = currentIndex < casesData.length - 1 ? casesData[currentIndex + 1] : null;
-
-    if (loading) {
-        return (
-            <div className={a.ResumePage}>
-                <div>Загрузка...</div>
-            </div>
-        );
-    }
-
-    if (!currentCase) {
-        return (
-            <div className={a.ResumePage}>
-                <div>Кейс не найден</div>
-            </div>
-        );
+    // Если указан активный кейс, перемещаем его в начало
+    let orderedCases = [...casesData];
+    if (activeCaseIndex !== -1) {
+        const [activeCase] = orderedCases.splice(activeCaseIndex, 1);
+        orderedCases.unshift(activeCase);
     }
 
     return (
@@ -111,26 +95,12 @@ const CaseDetail = ({ darkTheme, setDarkTheme }) => {
                             </button>
                         </div>
 
-                        {/* Основной контент кейса */}
-                        <React.Suspense fallback={<div>Загрузка кейса...</div>}>
-                            {React.createElement(currentCase.component, { darkTheme, setDarkTheme })}
-                        </React.Suspense>
-
-                        {/* Навигация между кейсами */}
-                        <div className={workExpStyles.caseNavigation}>
-                            {prevCase && (
-                                <Link to={`/case/${prevCase.id}`} className={workExpStyles.navLink}>
-                                    ← {prevCase.title}
-                                </Link>
-                            )}
-
-                            {!prevCase && <div></div>} {/* Пустой div для выравнивания */}
-
-                            {nextCase && (
-                                <Link to={`/case/${nextCase.id}`} className={workExpStyles.navLink}>
-                                    {nextCase.title} →
-                                </Link>
-                            )}
+                        <div className={workExpStyles.casesContainer}>
+                            {orderedCases.map((caseItem) => (
+                                <React.Suspense key={caseItem.id} fallback={<div>Загрузка кейса...</div>}>
+                                    {React.createElement(caseItem.component, { darkTheme, setDarkTheme })}
+                                </React.Suspense>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -139,4 +109,4 @@ const CaseDetail = ({ darkTheme, setDarkTheme }) => {
     );
 };
 
-export default CaseDetail;
+export default AllCases;

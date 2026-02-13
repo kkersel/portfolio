@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import styles from './CommonBlocks.module.scss';
-import { Button } from "../../../../Components/UI";
+import {Button} from "../../../../Components/UI";
 
-const Bazgain = ({ darkTheme, setDarkTheme }) => {
+const Bazgain = ({darkTheme, setDarkTheme}) => {
     const [currentScreenshotIndex, setCurrentScreenshotIndex] = useState(0);
     const [animationDirection, setAnimationDirection] = useState(null);
 
@@ -109,6 +109,11 @@ const Bazgain = ({ darkTheme, setDarkTheme }) => {
                     <p className={styles.Paragraph}>— дизайн и фронт ревью.</p>
                     <p className={styles.Paragraph}>— валидировать гипотезы и предлагать идеи.</p>
                 </div>
+            </div>
+
+
+            <div className={styles.VideoBlock}>
+                <img className={styles.VideoElement} src="/baz2.png" alt="Скриншоты проекта Bazgain"/>
             </div>
 
             <div className={styles.GalleryBlock}>

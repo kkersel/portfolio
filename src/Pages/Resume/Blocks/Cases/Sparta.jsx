@@ -73,12 +73,12 @@ const Sparta = ({ darkTheme, setDarkTheme }) => {
                 <img className={styles.VideoElement} src="/Sparta.png" alt="Скриншоты проекта Sparta"/>
             </div>
 
-            <div className={styles.BlockContainer}>
-                <p className={styles.Paragraph}>Спроектировал 15 разделов, собрал 600+ экранов</p>
+            <div className={styles.VideoBlock}>
+                <img className={styles.VideoElement} src="/Sparta2.png" alt="Скриншоты проекта Sparta"/>
             </div>
 
             <div className={styles.VideoBlock}>
-                <img className={styles.VideoElement} src="/maket.png" alt="Макеты проекта Sparta"/>
+                <img className={styles.VideoElement} src="/Sparta3.png" alt="Скриншоты проекта Sparta"/>
             </div>
         </div>
     );
