@@ -1,5 +1,5 @@
 .AdminPanel {
-  padding: 20px;
+  padding: 100px 20px 20px 20px; /* Добавляем отступ сверху */
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -16,6 +16,8 @@
   padding: 16px;
   flex: 1;
   text-align: center;
+  background-color: var(--bg-surface1); /* Добавляем фон */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавляем тень */
 }
 
 .stat-card h3 {
