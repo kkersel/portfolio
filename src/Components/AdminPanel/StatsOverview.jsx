@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from 'recharts';
-import { createClient } from '@supabase/supabase-js';
 
 const StatsOverview = ({ supabase }) => {
   const [stats, setStats] = useState({
@@ -81,7 +80,7 @@ const StatsOverview = ({ supabase }) => {
     };
 
     fetchStats();
-  }, []);
+  }, [supabase]);
 
   return (
     <div>

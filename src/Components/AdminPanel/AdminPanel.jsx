@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { createClient } from '@supabase/supabase-js';
 import StatsOverview from './StatsOverview';
 import styles from './AdminPanel.module.scss';
 
