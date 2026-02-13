@@ -1,65 +1,8 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
 import workExpStyles from '../WorkExp/WorkExp.module.scss';
-
-// Данные для кейсов
-const casesData = [
-    {
-        id: 'sparta',
-        title: 'MarketLab • Sparta',
-        description: 'Система для рассылок внутри телеграм',
-        image: '/Preview/Sparta.png',
-        category: 'web'
-    },
-    {
-        id: 'bazgain',
-        title: 'Bazgain Туризм',
-        description: 'Мобильное приложение для поиска крутых маршрутов и аренды авто в Дагестане',
-        image: '/Preview/Bazgain.gif',
-        category: 'mobile'
-    },
-    {
-        id: 'botdev',
-        title: 'BOT-DEV',
-        description: 'Роль дизайнера на проекте, собирать user-flow для телеграм ботов',
-        image: '/botDev.png',
-        category: 'web'
-    },
-    {
-        id: 'hrdep',
-        title: 'MarketLab • HR Department',
-        description: 'UX для онбординг бота',
-        image: '/cat.png',
-        category: 'web'
-    },
-    {
-        id: 'chatlab',
-        title: 'ChatLab',
-        description: 'Агрегатор мессенджеров и социальных сетей',
-        image: '/Preview/Chatlab.png',
-        category: 'web'
-    },
-    {
-        id: 'tennisbooking',
-        title: 'Tennis Booking',
-        description: 'Приложение в telegram для бронирования теннисных кортов',
-        image: '/Preview/Tennis.png',
-        category: 'mobile'
-    },
-    {
-        id: 'tinkoff',
-        title: 'Tinkoff',
-        description: 'Perfomance review – Оценка сотрудников',
-        image: '/Preview/Tinkoff.png',
-        category: 'web'
-    }
-];
-
-const categories = [
-    {id: 'all', label: 'Все'},
-    {id: 'web', label: 'Web'},
-    {id: 'mobile', label: 'Мобилка'}
-];
+import {casesData, categories} from './caseData';
+import CaseList from './CaseList';
+import CaseCard from './CaseCard';
 
 const CasesTabs = ({darkTheme, setDarkTheme}) => {
     const [activeTab, setActiveTab] = useState('cases-grid'); // 'cases-grid', 'cases-all'
@@ -73,55 +16,16 @@ const CasesTabs = ({darkTheme, setDarkTheme}) => {
     const renderCaseCards = () => (
         <div className={workExpStyles.casesGrid}>
             {filteredCases.map((caseItem) => (
-                <Link to={`/case/${caseItem.id}`} key={caseItem.id} className={workExpStyles.caseCard}>
-                    <div className={workExpStyles.caseImageContainer}>
-                        <img src={caseItem.image} alt={caseItem.title} className={workExpStyles.caseImage}/>
-                    </div>
-                    <div className={workExpStyles.caseContent}>
-                        <h4 className={workExpStyles.caseTitle}>{caseItem.title}</h4>
-                        <p className={workExpStyles.caseDescription}>{caseItem.description}</p>
-                        <button className={workExpStyles.detailButton}>Подробнее</button>
-                    </div>
-                </Link>
+                <CaseCard key={caseItem.id} caseItem={caseItem} />
             ))}
         </div>
     );
 
     // Второй тип отображения - как в оригинальном Resume.jsx (все кейсы подряд)
-    const renderAllCases = () => (
-        <React.Suspense fallback={<div>Загрузка кейсов...</div>}>
-            <div className={workExpStyles.casesContainer}>
-                {React.createElement(
-                    React.lazy(() => import('./Sparta')),
-                    {darkTheme, setDarkTheme}
-                )}
-                {React.createElement(
-                    React.lazy(() => import('./Bazgain')),
-                    {darkTheme, setDarkTheme}
-                )}
-                {React.createElement(
-                    React.lazy(() => import('./BotDev')),
-                    {darkTheme, setDarkTheme}
-                )}
-                {React.createElement(
-                    React.lazy(() => import('./HRDep')),
-                    {darkTheme, setDarkTheme}
-                )}
-                {React.createElement(
-                    React.lazy(() => import('./Chatlab')),
-                    {darkTheme, setDarkTheme}
-                )}
-                {React.createElement(
-                    React.lazy(() => import('./Tinkoff')),
-                    {darkTheme, setDarkTheme}
-                )}
-                {React.createElement(
-                    React.lazy(() => import('./TennisBooking')),
-                    {darkTheme, setDarkTheme}
-                )}
-            </div>
-        </React.Suspense>
-    );
+    const renderAllCases = () => {
+        const caseIds = filteredCases.map(caseItem => caseItem.id);
+        return <CaseList caseIds={caseIds} darkTheme={darkTheme} setDarkTheme={setDarkTheme} />;
+    };
 
     return (
         <div className={workExpStyles.casesSection}>
