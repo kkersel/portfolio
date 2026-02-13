@@ -35,6 +35,12 @@
     width: 100%;
   }
 
+  .ThemeAndOnline {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
   .ThemeButton {
     height: 44px;
     width: 44px;
@@ -135,6 +141,32 @@
     color: var(--fg-default);
     white-space: pre;
     margin: 0;
+  }
+
+  .OnlineIndicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .OnlineButton {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background-color: inherit;
+    color: var(--accent-default);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: var(--btn-bg-hover);
+    }
   }
 }
 

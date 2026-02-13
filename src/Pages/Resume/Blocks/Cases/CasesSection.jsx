@@ -47,12 +47,20 @@ const CasesSection = ({ darkTheme, setDarkTheme }) => {
 
         return (
             <div className={workExpStyles.casesContainer}>
-                {orderedCases.map((caseItem) => {
+                {orderedCases.map((caseItem, index) => {
                     const Component = caseComponents[caseItem.id];
                     return (
-                        <Suspense key={caseItem.id} fallback={<div>Загрузка кейса...</div>}>
-                            {Component ? React.createElement(Component, { darkTheme, setDarkTheme }) : null}
-                        </Suspense>
+                        <React.Fragment key={caseItem.id}>
+                            <Suspense fallback={<div>Загрузка кейса...</div>}>
+                                {Component ? React.createElement(Component, { darkTheme, setDarkTheme }) : null}
+                            </Suspense>
+                            {index < orderedCases.length - 1 && (
+                                <div className={workExpStyles.caseSeparator}>
+                                    <img src="/s1.png" alt="Separator" className={workExpStyles.separatorImage} />
+                                    <img src="/s2.png" alt="Separator" className={workExpStyles.separatorImage} />
+                                </div>
+                            )}
+                        </React.Fragment>
                     );
                 })}
             </div>

@@ -1,0 +1,22 @@
+.AdminPanel {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.SessionsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.SessionsTable th,
+.SessionsTable td {
+  border: 1px solid var(--border-default);
+  padding: 8px;
+  text-align: left;
+}
+
+.SessionsTable th {
+  background-color: var(--bg-muted);
+}

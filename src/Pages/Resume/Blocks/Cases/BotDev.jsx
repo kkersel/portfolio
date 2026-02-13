@@ -7,7 +7,7 @@ const BotDev = ({ darkTheme, setDarkTheme }) => {
             <div className={styles.BlockContainer}>
                 <h2 className={styles.BlockTitle}>BOT-DEV</h2>
                 <p className={styles.BlockDescription}>
-                    Роль дизайнера на проекте, собирать user-flow для телеграм ботов
+                    user-flow для телеграм ботов
                 </p>
             </div>
 

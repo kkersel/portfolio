@@ -1,0 +1,41 @@
+.AdminLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--bg-default);
+}
+
+.AdminLogin form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  background-color: var(--bg-surface1);
+  width: 300px;
+}
+
+.PasswordInput {
+  padding: 8px;
+  border: 1px solid var(--border-default);
+  border-radius: 4px;
+  font-size: var(--font-size-s);
+}
+
+.LoginButton {
+  padding: 8px;
+  border: 1px solid var(--border-default);
+  border-radius: 4px;
+  background-color: var(--accent-default);
+  color: var(--accent-on-accent);
+  font-size: var(--font-size-s);
+  cursor: pointer;
+}
+
+.ErrorMessage {
+  color: var(--error-default);
+  font-size: var(--font-size-xs);
+  margin: 0;
+}

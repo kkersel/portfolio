@@ -7,9 +7,13 @@ import { CustomCursor } from './Components/Cursor/CustomCursor';
 import CasesSection from "./Pages/Resume/Blocks/Cases/CasesSection";
 import Navigation from "./Components/Navigation/Navigation";
 import ImageRating from "./Pages/ImageRating/ImageRating";
+import AdminLogin from "./Components/AdminPanel/AdminLogin";
+import AdminPanel from "./Components/AdminPanel/AdminPanel";
+import ProtectedRoute from "./Components/AdminPanel/ProtectedRoute";
 
 function App() {
     const [darkTheme, setDarkTheme] = useState(true);
+    const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
 
     useEffect(() => {
         // Определяем, есть ли поддержка тач-событий
@@ -37,7 +41,7 @@ function App() {
         }
     }, []);
 
-    // Добавляем или удаляем класс для темной темы
+    // Добавляем или убираем класс для темной темы
     useEffect(() => {
         if (darkTheme) {
             document.body.classList.add("dark-theme");
@@ -45,7 +49,11 @@ function App() {
             document.body.classList.remove("dark-theme");
         }
     }, [darkTheme]);
-    
+
+    const handleAdminLogin = () => {
+        setIsAdminAuthenticated(true);
+    };
+
     return (
         <div>
             <CustomCursor/>
@@ -56,6 +64,12 @@ function App() {
                     <Route path="/Resume" element={<Resume darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
                     <Route path="/case/:caseId" element={<CasesSection darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
                     <Route path="/image-rating" element={<ImageRating darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
+                    <Route path="/admin/login" element={<AdminLogin onLogin={handleAdminLogin} />} />
+                    <Route path="/admin" element={
+                        <ProtectedRoute isAuthenticated={isAdminAuthenticated}>
+                            <AdminPanel />
+                        </ProtectedRoute>
+                    } />
                     <Route path="*" element={<NotFound darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
                 </Routes>
             </BrowserRouter>

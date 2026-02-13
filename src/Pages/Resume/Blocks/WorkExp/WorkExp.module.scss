@@ -311,3 +311,17 @@ h3 {
   margin: 0 auto;
   padding: 120px 20px;
 }
+
+// Стили для разграничения между кейсами
+.caseSeparator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin: 24px 0;
+}
+
+.separatorImage {
+  height: 64px;
+  object-fit: contain;
+}
