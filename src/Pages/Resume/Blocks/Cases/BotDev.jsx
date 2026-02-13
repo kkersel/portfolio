@@ -15,7 +15,7 @@ const BotDev = ({ darkTheme, setDarkTheme }) => {
                 <h2 className={styles.BlockTitle}>Проблема</h2>
                 <div className={styles.BlockText}>
                     <p className={styles.Paragraph}>
-                        – Большое кол-во обращений от разработчиков с целью уточнения инфы (часто путались в флоу из-за плохой навигации)
+                        – Разработчики часто путались в флоу из-за плохой навигации и перегруженного визуала)
                         <br/>
                         – Отсутствие консистенции в макетах
                     </p>
