@@ -53,7 +53,7 @@ const AdminPanel = () => {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, []);
+  }, [fetchSessions, supabase]);
 
   const handleRefresh = () => {
     fetchSessions();

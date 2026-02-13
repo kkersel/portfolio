@@ -55,7 +55,6 @@ const StatsOverview = () => {
 
       // Группируем сессии по дням
       const sessionsPerDayMap = {};
-      const averageDurationPerDayMap = {};
 
       sessions.forEach(session => {
         const date = new Date(session.created_at).toDateString();
