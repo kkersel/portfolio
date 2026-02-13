@@ -1,37 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
+import StatsOverview from './StatsOverview';
 import styles from './AdminPanel.module.scss';
 
 const AdminPanel = () => {
   const [sessions, setSessions] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
-    const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
+  const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+  const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
 
-    if (!supabaseUrl || !supabaseAnonKey) {
-      console.error('Supabase URL или ANON_KEY не установлены в .env файле');
-      setLoading(false);
-      return;
+  if (!supabaseUrl || !supabaseAnonKey) {
+    console.error('Supabase URL или ANON_KEY не установлены в .env файле');
+  }
+
+  const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+  const fetchSessions = async () => {
+    setLoading(true);
+    const { data, error } = await supabase
+      .from('user_sessions')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      console.error('Ошибка при получении сессий:', error);
+    } else {
+      setSessions(data);
     }
+    setLoading(false);
+  };
 
-    const supabase = createClient(supabaseUrl, supabaseAnonKey);
-
-    const fetchSessions = async () => {
-      const { data, error } = await supabase
-        .from('user_sessions')
-        .select('*')
-        .order('created_at', { ascending: false });
-
-      if (error) {
-        console.error('Ошибка при получении сессий:', error);
-      } else {
-        setSessions(data);
-      }
-      setLoading(false);
-    };
-
+  useEffect(() => {
     fetchSessions();
 
     // Подписка на изменения в таблице user_sessions
@@ -55,6 +55,10 @@ const AdminPanel = () => {
     };
   }, []);
 
+  const handleRefresh = () => {
+    fetchSessions();
+  };
+
   if (loading) {
     return <div className={styles.AdminPanel}>Загрузка...</div>;
   }
@@ -62,7 +66,9 @@ const AdminPanel = () => {
   return (
     <div className={styles.AdminPanel}>
       <h1>Админ-панель</h1>
+      <StatsOverview />
       <h2>Сессии пользователей</h2>
+      <button onClick={handleRefresh} className={styles.RefreshButton}>Обновить</button>
       <table className={styles.SessionsTable}>
         <thead>
           <tr>
@@ -78,7 +84,7 @@ const AdminPanel = () => {
             <tr key={session.id}>
               <td>{session.id}</td>
               <td>{new Date(session.created_at).toLocaleString()}</td>
-              <td>{session.ip_address}</td>
+              <td>{session.ip_address || 'Неизвестен'}</td> {/* Отображаем 'Неизвестен', если IP-адрес не установлен */}
               <td>{session.user_agent}</td>
               <td>
                 {session.end_time

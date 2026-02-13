@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './AdminLogin.module.scss';
 
-const AdminLogin = ({ onLogin }) => {
+const AdminLogin = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // Проверка пароля (в реальном приложении пароль должен быть захеширован и храниться в безопасном месте)
     if (password === process.env.REACT_APP_ADMIN_PASSWORD) {
-      onLogin();
+      sessionStorage.setItem('isAdminAuthenticated', 'true');
+      navigate('/admin');
     } else {
       setError('Неверный пароль');
     }

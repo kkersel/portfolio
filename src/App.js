@@ -13,7 +13,6 @@ import ProtectedRoute from "./Components/AdminPanel/ProtectedRoute";
 
 function App() {
     const [darkTheme, setDarkTheme] = useState(true);
-    const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
 
     useEffect(() => {
         // Определяем, есть ли поддержка тач-событий
@@ -50,10 +49,6 @@ function App() {
         }
     }, [darkTheme]);
 
-    const handleAdminLogin = () => {
-        setIsAdminAuthenticated(true);
-    };
-
     return (
         <div>
             <CustomCursor/>
@@ -64,9 +59,9 @@ function App() {
                     <Route path="/Resume" element={<Resume darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
                     <Route path="/case/:caseId" element={<CasesSection darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
                     <Route path="/image-rating" element={<ImageRating darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
-                    <Route path="/admin/login" element={<AdminLogin onLogin={handleAdminLogin} />} />
+                    <Route path="/admin/login" element={<AdminLogin />} />
                     <Route path="/admin" element={
-                        <ProtectedRoute isAuthenticated={isAdminAuthenticated}>
+                        <ProtectedRoute>
                             <AdminPanel />
                         </ProtectedRoute>
                     } />

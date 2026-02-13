@@ -55,17 +55,37 @@ const Navigation = ({ darkTheme, setDarkTheme }) => {
       }
     });
 
-    // Обновление времени окончания сессии и расчета продолжительности при размонтировании компонента
-    return () => {
+    // Функция для обновления времени окончания сессии
+    const updateEndTime = async () => {
       const endTime = new Date().toISOString();
 
-      supabase.from('user_sessions').update({ end_time: endTime }).eq('id', sessionId).then((result) => {
-        if (result.error) {
-          console.error('Ошибка при обновлении сессии:', result.error);
+      try {
+        const { error } = await supabase
+          .from('user_sessions')
+          .update({ end_time: endTime })
+          .eq('id', sessionId);
+
+        if (error) {
+          console.error('Ошибка при обновлении сессии:', error);
         }
-      }).catch((error) => {
+      } catch (error) {
         console.error('Ошибка при обновлении сессии:', error);
-      });
+      }
+    };
+
+    // Обработчик события beforeunload для обновления end_time при закрытии вкладки
+    const handleBeforeUnload = () => {
+      updateEndTime();
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    // Обновление времени окончания сессии и расчета продолжительности при размонтировании компонента
+    return () => {
+      updateEndTime();
+
+      // Удаляем обработчик события beforeunload
+      window.removeEventListener('beforeunload', handleBeforeUnload);
 
       // Отписка от канала
       supabase.removeChannel(channel);
