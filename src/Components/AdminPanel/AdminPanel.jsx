@@ -16,7 +16,7 @@ const AdminPanel = () => {
 
   const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-  const fetchSessions = async () => {
+  const fetchSessions = React.useCallback(async () => {
     setLoading(true);
     const { data, error } = await supabase
       .from('user_sessions')
@@ -29,7 +29,7 @@ const AdminPanel = () => {
       setSessions(data);
     }
     setLoading(false);
-  };
+  }, [supabase]);
 
   useEffect(() => {
     fetchSessions();
