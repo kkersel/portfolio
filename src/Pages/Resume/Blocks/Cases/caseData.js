@@ -4,49 +4,49 @@ export const casesData = [
     {
         id: 'sparta',
         title: 'MarketLab • Sparta',
-        description: 'Система для рассылок внутри телеграм.',
+        description: 'Система для рассылок внутри телеграм',
         image: '/Preview/Sparta.png',
         category: 'web'
     },
     {
         id: 'bazgain',
-        title: 'Bazgain Туризм',
-        description: 'Мобильное приложение для поиска крутых маршрутов и аренды авто в Дагестане.',
+        title: 'Сервис для путешествий',
+        description: 'ДС, Управление командой, MVP',
         image: '/Preview/Bazgain.gif',
         category: 'mobile'
     },
     {
         id: 'botdev',
-        title: 'BOT-DEV',
-        description: 'Роль дизайнера на проекте, собирать user-flow для телеграм ботов',
+        title: 'Проект Bot-Dev',
+        description: 'Выстроил процесс, ускорил TTM',
         image: '/Preview/Bot.png',
         category: 'web'
     },
     {
         id: 'hrdep',
-        title: 'MarketLab • HR Department',
-        description: 'UX для онбординг бота',
+        title: 'HR Department',
+        description: 'UX онбординг бота для новых сотрудников',
         image: '/cat.png',
         category: 'web'
     },
     {
         id: 'chatlab',
         title: 'ChatLab',
-        description: 'Агрегатор мессенджеров и социальных сетей.',
+        description: 'Агрегатор мессенджеров и социальных сетей',
         image: '/Preview/Chatlab.png',
         category: 'web'
     },
     {
         id: 'tennisbooking',
         title: 'Tennis Booking',
-        description: 'Full Stack 2025 – now',
+        description: 'Делаю свое приложение для бронирования общественных кортов',
         image: '/Preview/Tennis.png',
         category: 'web'
     },
     {
         id: 'tinkoff',
-        title: 'Tinkoff',
-        description: 'Product designer. 2023',
+        title: 'Tinkoff – Perfomance review',
+        description: 'Редизайн платформы',
         image: '/Preview/Tinkoff.png',
         category: 'web'
     }
