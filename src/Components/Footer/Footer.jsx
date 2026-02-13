@@ -1,12 +1,16 @@
 import React from 'react';
 import f from './Footer.module.scss'
-import {Fade} from "react-reveal";
+import { motion } from 'framer-motion';
 
 const Footer = ({ isFaqVisible = false }) => {
     return (
         <div className={f.Wrapper}>
             <div className={f.FooterWrapper}>
-                <Fade bottom>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
                     <a
                         href="https://t.me/innv1"
                         target="_blank"
@@ -24,7 +28,7 @@ const Footer = ({ isFaqVisible = false }) => {
                         <h2>2025</h2>
                     </div>
 
-                </Fade>
+                </motion.div>
             </div>
         </div>
     );
