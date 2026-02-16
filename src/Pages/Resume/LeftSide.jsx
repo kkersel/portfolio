@@ -2,44 +2,44 @@ import React from 'react';
 import styles from './Resume.module.scss';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 
-const LeftSide = ({ darkTheme, setDarkTheme }) => {
-  const [faqRef] = useIntersectionObserver({
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-  });
+const LeftSide = ({darkTheme, setDarkTheme}) => {
+    const [faqRef] = useIntersectionObserver({
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    });
 
- return (
-    <div className={styles.LeftSide}>
-      {/* Скрытый элемент для отслеживания видимости FAQ */}
-      <div ref={faqRef} style={{ position: 'absolute', top: 'calc(100vh - 10px)', left: 0, width: '1px', height: '1px', pointerEvents: 'none' }}></div>
+    return (
+        <div className={styles.LeftSide}>
+            {/* Скрытый элемент для отслеживания видимости FAQ */}
+            <div ref={faqRef} style={{
+                position: 'absolute',
+                top: 'calc(100vh - 10px)',
+                left: 0,
+                width: '1px',
+                height: '1px',
+                pointerEvents: 'none'
+            }}></div>
 
 
-      <div className={styles.Profile}>
-        <div className={styles.Avatar}>
-          <img
-            alt=""
-            className={styles.AvatarImage}
-            src="/Ava.png"
-          />
+            <div className={styles.Profile}>
+                <div className={styles.Avatar}>
+                    <img
+                        alt=""
+                        className={styles.AvatarImage}
+                        src="/Ava.png"
+                    />
+                </div>
+                <div className={styles.ProfileInfo}>
+                    <p className={styles.ProfileName}>
+                        Александр Соловьев
+                    </p>
+
+                    <p>Ищу работу</p>
+                </div>
+            </div>
         </div>
-        <div className={styles.ProfileInfo}>
-          <p className={styles.ProfileName}>
-            Александр Соловьев
-          </p>
-        </div>
-
-      </div>
-      
-      <div className={styles.ImageRatingBanner}>
-        <a href="/image-rating" className={styles.BannerLink} onClick={() => window.isNavigatingInternally = true}>
-          <div className={styles.BannerContent}>
-            <h3>Просто UI хочу посмотреть 👀</h3>
-          </div>
-        </a>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default LeftSide;

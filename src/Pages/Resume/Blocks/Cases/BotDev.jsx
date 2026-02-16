@@ -48,6 +48,10 @@ const BotDev = ({ darkTheme, setDarkTheme }) => {
                     </video>
                 </div>
             </div>
+
+            <div className={styles.GoldBlock}>
+                <h2>TIME TO MARKET -20%</h2>
+            </div>
         </div>
     );
 };

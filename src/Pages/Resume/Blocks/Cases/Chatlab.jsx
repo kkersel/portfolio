@@ -15,7 +15,7 @@ const Chatlab = ({ darkTheme, setDarkTheme }) => {
             <div className={styles.BlockContainer}>
                 <h2 className={styles.BlockTitle}>Проблема</h2>
                 <div className={styles.BlockText}>
-                    <p className={styles.Paragraph}>Маркетинг пришел с проблемой, юзеры уходят при добавлении новых мессенжеров</p>
+                    <p className={styles.Paragraph}>Маркетинг пришел с проблемой: юзеры уходят при авторизации в мессенжерах</p>
                     <p className={styles.Paragraph}>&nbsp;</p>
                     <p className={styles.Paragraph}>Я провёл короткие интервью с теми, кто бросал процесс. Основной страх – люди не понимали, кто увидит их переписки и куда могут уйти пароли. Недоверие возникало ровно в моменте ввода данных.</p>
                 </div>
@@ -24,7 +24,7 @@ const Chatlab = ({ darkTheme, setDarkTheme }) => {
             <div className={styles.ResultBlock}>
                 <h2 className={styles.BlockTitle}>Что сделал?</h2>
                 <p className={styles.BlockDescription}>
-                    – Добавил баннер, где объяснили пользователям, что их данные зашифрованы и у платформы нет к ним доступа <br/>
+                    – Добавил баннер, где объяснил пользователям, что их данные зашифрованы и у платформы нет к ним доступа <br/>
                     – Повысил конверсию подключения мессенджеров на 7%
                 </p>
             </div>

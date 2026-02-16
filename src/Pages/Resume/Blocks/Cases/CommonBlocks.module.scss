@@ -52,6 +52,11 @@
   background-color: var(--bg-container);
 }
 
+.GoldBlock {
+  @extend .BlockContainer;
+  background-color: var(--bg-gold);
+}
+
 .VideoBlock {
   width: 100%;
   border-radius: 16px;

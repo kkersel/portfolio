@@ -5,6 +5,7 @@ import Line from '../../../../Components/Line'
 const IntroCard = ({ title, subtitle, description, image, additionalContent }) => {
  return (
     <div className={a.IntroCard}>
+
       <p className={a.IntroTitle}>Привет!</p>
       <div className={a.IntroBlock}>
         <p className={a.IntroText}>

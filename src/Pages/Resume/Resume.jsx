@@ -5,6 +5,7 @@ import FeedbackModal from "../../Components/FeedbackModal/FeedbackModal";
 import {useNavigate} from "react-router-dom";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import IntroCard from "./Blocks/IntroCard/IntroCard";
+import styles from "./Resume.module.scss";
 
 // Ленивая загрузка компонентов для оптимизации
 const VirtualInterviewComponent = lazy(() => import("./Blocks/Interview/VirtualInterviewComponent"));
@@ -140,13 +141,21 @@ const Resume = ({ darkTheme, setDarkTheme }) => {
                                    <Suspense fallback={<LoadingComponent>Загрузка интервью...</LoadingComponent>}>
                                        <WrappedVirtualInterviewComponent />
                                    </Suspense>
+
+                                   <div className={styles.ImageRatingBanner}>
+                                       <a href="/image-rating" className={styles.BannerLink} onClick={() => window.isNavigatingInternally = true}>
+                                           <div className={styles.BannerContent}>
+                                               <h1>Gallery UI</h1>
+                                           </div>
+                                       </a>
+                                   </div>
                                </>
                            );
                        })()}
-
                    </div>
                </div>
                <LeftSide darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
+
                <FeedbackModal
                    isOpen={showFeedbackModal}
                    onClose={() => setShowFeedbackModal(false)}

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from 'recharts';
+import { FaUser, FaClock, FaChartLine, FaEye } from 'react-icons/fa';
+import styles from './AdminPanel.module.scss';
 
 const StatsOverview = ({ supabase }) => {
   const [stats, setStats] = useState({
@@ -7,7 +9,9 @@ const StatsOverview = ({ supabase }) => {
     uniqueUsers: 0,
     averageDuration: 0,
     sessionsPerDay: [],
-    averageDurationPerDay: []
+    averageDurationPerDay: [],
+    todaySessions: 0,
+    bounceRate: 0
   });
 
   useEffect(() => {
@@ -30,18 +34,35 @@ const StatsOverview = ({ supabase }) => {
       // Вычисляем статистику
       const totalSessions = sessions.length;
       const uniqueUsers = new Set(sessions.map(session => session.id)).size;
+      
+      // Calculate today's sessions
+      const today = new Date().toDateString();
+      const todaySessions = sessions.filter(session => 
+        new Date(session.created_at).toDateString() === today
+      ).length;
 
       // Вычисляем среднюю продолжительность сессии
       let totalDuration = 0;
       let validSessions = 0;
+      let bouncedSessions = 0; // Sessions with very short duration (< 10 seconds)
+      
       sessions.forEach(session => {
         if (session.end_time) {
           const duration = new Date(session.end_time) - new Date(session.start_time);
           totalDuration += duration;
           validSessions++;
+          
+          if (duration < 10000) { // Less than 10 seconds considered as bounce
+            bouncedSessions++;
+          }
+        } else {
+          // If no end_time, consider as ongoing or short session
+          bouncedSessions++;
         }
       });
+      
       const averageDuration = validSessions > 0 ? totalDuration / validSessions : 0;
+      const bounceRate = totalSessions > 0 ? (bouncedSessions / totalSessions) * 100 : 0;
 
       // Группируем сессии по дням
       const sessionsPerDayMap = {};
@@ -72,6 +93,8 @@ const StatsOverview = ({ supabase }) => {
         uniqueUsers,
         averageDuration,
         sessionsPerDay,
+        todaySessions,
+        bounceRate,
         averageDurationPerDay: sessionsPerDay.map(day => ({
           date: day.date,
           averageDuration: day.averageDuration
@@ -83,20 +106,28 @@ const StatsOverview = ({ supabase }) => {
   }, [supabase]);
 
   return (
-    <div>
+    <div className={styles.StatsOverview}>
       <h2>Статистика за неделю</h2>
-      <div className="stats-summary">
-        <div className="stat-card">
+      <div className={styles.statsSummary}>
+        <div className={styles.statCard}>
+          <FaChartLine className={styles.statIcon} />
           <h3>Всего сессий</h3>
           <p>{stats.totalSessions}</p>
         </div>
-        <div className="stat-card">
+        <div className={styles.statCard}>
+          <FaUser className={styles.statIcon} />
           <h3>Уникальных пользователей</h3>
           <p>{stats.uniqueUsers}</p>
         </div>
-        <div className="stat-card">
+        <div className={styles.statCard}>
+          <FaClock className={styles.statIcon} />
           <h3>Среднее время на сайте</h3>
           <p>{Math.floor(stats.averageDuration / 1000)} сек</p>
+        </div>
+        <div className={styles.statCard}>
+          <FaEye className={styles.statIcon} />
+          <h3>Сессий сегодня</h3>
+          <p>{stats.todaySessions}</p>
         </div>
       </div>
 

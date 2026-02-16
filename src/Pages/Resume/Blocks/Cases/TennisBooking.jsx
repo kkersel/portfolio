@@ -28,7 +28,7 @@ const TennisBooking = ({ darkTheme, setDarkTheme }) => {
             </div>
 
             <div className={styles.VideoBlock}>
-                <img className={styles.VideoElement} src="/tennis1.png" alt=""/>
+                {/*<img className={styles.VideoElement} src="/tennis1.png" alt=""/>*/}
                 <img className={styles.VideoElement} src="/tennis2.png" alt=""/>
             </div>
 
