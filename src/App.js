@@ -52,11 +52,14 @@ function App() {
 
     // Добавляем или убираем класс для темной темы
     useEffect(() => {
+        const scrollPosition = window.scrollY;
         if (darkTheme) {
             document.body.classList.add("dark-theme");
         } else {
             document.body.classList.remove("dark-theme");
         }
+        // Восстанавливаем позицию скролла
+        window.scrollTo(0, scrollPosition);
     }, [darkTheme]);
 
     return (

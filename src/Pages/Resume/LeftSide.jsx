@@ -35,7 +35,7 @@ const LeftSide = ({darkTheme, setDarkTheme}) => {
                         Александр Соловьев
                     </p>
 
-                    <p>Ищу работу</p>
+                    <p className={styles.green}>Ищу работу</p>
                 </div>
             </div>
         </div>

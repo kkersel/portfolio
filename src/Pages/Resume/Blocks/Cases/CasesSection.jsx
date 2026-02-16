@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect, Suspense, useRef } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import workExpStyles from '../WorkExp/WorkExp.module.scss';
 import { casesData, categories, caseComponents } from './caseData';
@@ -9,8 +9,13 @@ const CasesSection = ({ darkTheme, setDarkTheme }) => {
     const [activeTab, setActiveTab] = useState(caseId ? 'cases-all' : 'cases-grid');
     const [selectedCategory, setSelectedCategory] = useState('all');
 
+    const mountedRef = useRef(false);
+
     useEffect(() => {
-        window.scrollTo(0, 0);
+        if (!mountedRef.current) {
+            window.scrollTo(0, 0);
+            mountedRef.current = true;
+        }
     }, []);
 
     const filteredCases = selectedCategory === 'all'
