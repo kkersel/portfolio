@@ -1,6 +1,7 @@
 /* CustomCursor.scss */
 
 @import "~breakpoint-sass";
+
 $bk-desktop: 1920px 140px;
 $bk-table-landscape: 1440px 811px;
 $bk-table: 811px 611px;
@@ -8,12 +9,12 @@ $bk-phone: 611px 0px;
 
 .custom-cursor {
   position: fixed;
- pointer-events: none;
+  pointer-events: none;
   width: 24px;
   height: 24px;
   background-size: contain;
   background-repeat: no-repeat;
- transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   z-index: 9999;
   transition: background-image 0.1s linear;
   @include breakpoint(bk-phone) {
@@ -52,23 +53,23 @@ a,
 .pointer,
 .hoverable,
 .selectable {
- cursor: none !important;
- cursor: url('data:image.svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="transparent"/></svg>') 12 12, auto !important;
- user-select: none; // Отключаем выделение текста
- -webkit-user-select: none; // Для Safari
--moz-user-select: none; // Для Firefox
--ms-user-select: none; // Для IE
+  cursor: none !important;
+  cursor: url('data:image.svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="transparent"/></svg>') 12 12, auto !important;
+  user-select: none; // Отключаем выделение текста
+  -webkit-user-select: none; // Для Safari
+  -moz-user-select: none; // Для Firefox
+  -ms-user-select: none; // Для IE
 }
 
 // Отключаем выделение текста глобально при активном кастомном курсоре
 body {
- &.custom-cursor-active {
-   user-select: none;
-   -webkit-user-select: none;
-   -moz-user-select: none;
-   -ms-user-select: none;
-   cursor: none !important; // Полностью скрываем системный курсор при активном кастомном курсоре
- }
+  &.custom-cursor-active {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: none !important; // Полностью скрываем системный курсор при активном кастомном курсоре
+  }
 }
 
 // Также добавляем глобальное скрытие курсора для всех элементов при активном кастомном курсоре

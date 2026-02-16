@@ -27,7 +27,7 @@ const CasesSection = ({ darkTheme, setDarkTheme }) => {
                     <div className={workExpStyles.caseContent}>
                         <h4 className={workExpStyles.caseTitle}>{caseItem.title}</h4>
                         <p className={workExpStyles.caseDescription}>{caseItem.description}</p>
-                        <button className={workExpStyles.detailButton}>Подробнее</button>
+                        {/*<button className={workExpStyles.detailButton}>Подробнее</button>*/}
                     </div>
                 </Link>
             ))}

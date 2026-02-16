@@ -164,7 +164,8 @@
   box-sizing: border-box;
 
   &:hover {
-    border-color: var(--accent-default);
+    //border-color: var(--accent-default);
+    background-color: var(--bg-muted);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
