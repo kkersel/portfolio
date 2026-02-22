@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './CommonBlocks.module.scss';
 
-const HRDep = ({ darkTheme, setDarkTheme }) => {
+const HRDep = ({darkTheme, setDarkTheme}) => {
     return (
         <div className={styles.Wrapper}>
             <div className={styles.BlockContainer}>
@@ -21,14 +21,18 @@ const HRDep = ({ darkTheme, setDarkTheme }) => {
                 <h2 className={styles.BlockTitle}>Что сделал?</h2>
                 <p className={styles.BlockDescription}>
                     – Спроектировал UX для онбординг бота; <br/>
-                    – Создал удобные шаблоны с инструкциями для HRов в фигме; <br/>
-                    – Сократил время на онбординг новых сотрудников с 2-3 дней до 1 дня; <br/>
-                    – Снизили обращение к HR на 30%; <br/>
-                    – Отрисовал весь коммуникационный дизайн для бота и конфлюенса;
+                    – Создал удобные шаблоны с инструкциями и конструкторы для HRов в фигме; <br/>
+                    – Отрисовал весь коммуникационный дизайн для бота и конфлюенса;<br/>
+                    – Записал видео c инструкцией по использованию шаблонов;
                 </p>
             </div>
 
             <img className={styles.VideoElement} src="/cat.png" alt="HRDep"/>
+
+            <div className={styles.GoldBlock}>
+                <h2>– Снизили обращение к HR на 30%</h2>
+                <h2> – Сократил время на онбординг новых сотрудников с 2-3 дней до 1 дня</h2>
+            </div>
         </div>
     );
 };

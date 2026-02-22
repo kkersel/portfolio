@@ -122,7 +122,7 @@ const CasesSection = ({ darkTheme, setDarkTheme }) => {
                                 onClick={() => navigate('/')}
                                 aria-label="Вернуться назад"
                             >
-                                ← Назад
+                                Назад
                             </button>
                         </div>
                     )}

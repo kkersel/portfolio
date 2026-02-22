@@ -241,10 +241,10 @@ h3 {
 }
 
 .backButton {
-  padding: 8px 16px;
+  padding: 40px 64px;
   background-color: transparent;
   border: 1px solid var(--border-default);
-  border-radius: 8px;
+  border-radius: 99px;
   color: var(--accent-default);
   cursor: pointer;
   body.custom-cursor-active & {
