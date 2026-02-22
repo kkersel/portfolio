@@ -3,7 +3,7 @@ import React, {useEffect, useState} from "react";
 import { createClient } from '@supabase/supabase-js';
 import Resume from "./Pages/Resume/Resume";
 import NotFound from "./Components/404Page/NotFound";
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {BrowserRouter, Routes, Route, useLocation} from "react-router-dom";
 import { CustomCursor } from './Components/Cursor/CustomCursor';
 import CasesSection from "./Pages/Resume/Blocks/Cases/CasesSection";
 import Navigation from "./Components/Navigation/Navigation";
@@ -11,6 +11,14 @@ import ImageRating from "./Pages/ImageRating/ImageRating";
 import AdminLogin from "./Components/AdminPanel/AdminLogin";
 import AdminPanel from "./Components/AdminPanel/AdminPanel";
 import ProtectedRoute from "./Components/AdminPanel/ProtectedRoute";
+
+// Компонент для определения текущей страницы
+function NavigationWithLocation({ darkTheme, setDarkTheme }) {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+  
+  return <Navigation darkTheme={darkTheme} setDarkTheme={setDarkTheme} hideOnMainPage={isHomePage}/>;
+}
 
 function App() {
     const [darkTheme, setDarkTheme] = useState(true);
@@ -66,7 +74,7 @@ function App() {
         <div>
             <CustomCursor/>
             <BrowserRouter>
-                <Navigation darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
+                <NavigationWithLocation darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
                 <Routes>
                     <Route path="/" element={<Resume darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>
                     <Route path="/Resume" element={<Resume darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}/>

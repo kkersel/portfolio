@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import styles from './Navigation.module.scss';
 
-const Navigation = ({ darkTheme, setDarkTheme }) => {
+const Navigation = ({ darkTheme, setDarkTheme, hideOnMainPage = false }) => {
   const [onlineCount, setOnlineCount] = useState(0);
 
   useEffect(() => {
@@ -91,6 +91,11 @@ const Navigation = ({ darkTheme, setDarkTheme }) => {
       supabase.removeChannel(channel);
     };
   }, []);
+
+  // Если скрытие навигации включено и мы на главной странице, не отображаем навигацию
+  if (hideOnMainPage) {
+    return null;
+  }
 
   return (
     <nav className={styles.Navigation}>
