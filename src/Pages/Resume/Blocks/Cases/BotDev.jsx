@@ -7,7 +7,7 @@ const BotDev = ({ darkTheme, setDarkTheme }) => {
             <div className={styles.BlockContainer}>
                 <h2 className={styles.BlockTitle}>BOT-DEV</h2>
                 <p className={styles.BlockDescription}>
-                    user-flow для телеграм ботов
+                    проектирование user-flow для телеграм ботов
                 </p>
             </div>
 
@@ -15,7 +15,7 @@ const BotDev = ({ darkTheme, setDarkTheme }) => {
                 <h2 className={styles.BlockTitle}>Проблема</h2>
                 <div className={styles.BlockText}>
                     <p className={styles.Paragraph}>
-                        – Разработчики часто путались в флоу из-за плохой навигации и перегруженного визуала)
+                        – Разработчики часто путались и допускали ошибки в разработке из-за плохой навигации и перегруженного визуала в макетах
                         <br/>
                         – Отсутствие консистенции в макетах
                     </p>
