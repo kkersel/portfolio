@@ -8,7 +8,7 @@ const Sparta = ({ darkTheme, setDarkTheme }) => {
                 <h2 className={styles.BlockTitle}>MarketLab • Sparta</h2>
                 <b>О проекте:</b>
                 <p className={styles.BlockDescription}>
-                    Внутренняя CRM-система для управления рассылками в telegram.<br/>
+                    Внутренняя система для управления рассылками в telegram.<br/>
                     Система позволяет полностью автоматизировать весь процесс работы 6 отделов: <br/>
                     Создание ботов, каналов и аккаунтов<br/>
                     Создание шаблонов, перевод контента на разные языки, постинг и управление командой<br/>
@@ -48,7 +48,6 @@ const Sparta = ({ darkTheme, setDarkTheme }) => {
                     – Спроектировали все основные сценарии пользователей интерфейсы; <br/>
                     – Провел A/B тестирование;
                 </p>
-                <p className={styles.BlockDescription}>Время работы сотрудников на новом продукте сократилось в 2.5 раза</p>
             </div>
 
             <div className={styles.BlockContainer}>
@@ -79,6 +78,10 @@ const Sparta = ({ darkTheme, setDarkTheme }) => {
 
             <div className={styles.VideoBlock}>
                 <img className={styles.VideoElement} src="/Sparta3.png" alt="Скриншоты проекта Sparta"/>
+            </div>
+
+            <div className={styles.GoldBlock}>
+                <h2>Время работы сотрудников на новом продукте сократилось в 2.5 раза</h2>
             </div>
         </div>
     );
