@@ -177,10 +177,10 @@ body {
   font-family: -apple-system, Manrope, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  //-ms-user-select: none;
-  //-moz-user-select: none;
-  //-webkit-user-select: none;
-  //user-select: none;
+  ms-user-select: auto;
+  moz-user-select: auto;
+  webkit-user-select: auto;
+  user-select: auto;
   background-color: var(--bg-default);
   color: var(--fg-default);
   overflow-x: hidden;
@@ -191,7 +191,7 @@ body {
 
 /* Убираем курсор везде */
 * {
-  cursor: none;
+  /* cursor: none; */
 }
 
 /* Восстанавливаем курсор для интерактивных элементов */
@@ -247,6 +247,18 @@ a:focus {
 :focus-visible {
   outline: 2px solid var(--accent-default);
  outline-offset: 2px;
+}
+
+/* Стили для выделенного текста */
+::selection {
+  background-color: var(--accent-default);
+  color: var(--accent-on-accent);
+}
+
+/* Стили для выделенного текста в Firefox */
+::-moz-selection {
+  background-color: var(--accent-default);
+  color: var(--accent-on-accent);
 }
 
 /* Убираем выделение при тапе на мобильных устройствах */

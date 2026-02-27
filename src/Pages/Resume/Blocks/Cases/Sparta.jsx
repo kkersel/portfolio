@@ -81,7 +81,7 @@ const Sparta = ({ darkTheme, setDarkTheme }) => {
             </div>
 
             <div className={styles.GoldBlock}>
-                <h2>Новый продукт позволил ускорить работу сотрудников в ~2.5 раза</h2>
+                <h2>Производительность при работе с новым продуктом выросла на 150%</h2>
             </div>
         </div>
     );

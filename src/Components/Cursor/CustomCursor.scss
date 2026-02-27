@@ -55,24 +55,24 @@ a,
 .selectable {
   cursor: none !important;
   cursor: url('data:image.svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="transparent"/></svg>') 12 12, auto !important;
-  user-select: none; // Отключаем выделение текста
-  -webkit-user-select: none; // Для Safari
-  -moz-user-select: none; // Для Firefox
-  -ms-user-select: none; // Для IE
+  // user-select: none; // Отключаем выделение текста
+  // -webkit-user-select: none; // Для Safari
+  // -moz-user-select: none; // Для Firefox
+  // -ms-user-select: none; // Для IE
 }
 
 // Отключаем выделение текста глобально при активном кастомном курсоре
 body {
   &.custom-cursor-active {
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    cursor: none !important; // Полностью скрываем системный курсор при активном кастомном курсоре
+    /* user-select: none; */
+    /* -webkit-user-select: none; */
+    /* -moz-user-select: none; */
+    /* -ms-user-select: none; */
+    /* cursor: none !important; // Полностью скрываем системный курсор при активном кастомном курсоре */
   }
 }
 
 // Также добавляем глобальное скрытие курсора для всех элементов при активном кастомном курсоре
 body.custom-cursor-active * {
-  cursor: none !important;
+  /* cursor: none !important; */
 }

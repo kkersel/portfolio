@@ -30,7 +30,7 @@ const HRDep = ({darkTheme, setDarkTheme}) => {
             <img className={styles.VideoElement} src="/cat.png" alt="HRDep"/>
 
             <div className={styles.GoldBlock}>
-                <h2>– Снизили обращение к HR на 30%</h2>
+                <h2>– Снизил обращение к HR на 30%</h2>
                 <h2> – Сократил время на онбординг новых сотрудников с 2-3 дней до 1 дня</h2>
             </div>
         </div>
