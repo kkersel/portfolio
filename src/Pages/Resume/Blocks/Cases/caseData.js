@@ -3,52 +3,66 @@ import React from 'react';
 export const casesData = [
     {
         id: 'sparta',
-        title: 'MarketLab • Sparta',
-        description: 'Система для рассылок внутри телеграм',
+        title: 'Система для рассылок внутри телеграм • Sparta',
+        description: '',
         image: '/Preview/Sparta.png',
-        category: 'web'
+        category: 'web',
+        date: '2023',
+        technologies: ['WEB','B2E']
     },
     {
         id: 'bazgain',
-        title: 'Сервис для путешествий',
+        title: 'Сервис для путешествий • Bazgain',
         description: 'ДС, Управление командой, MVP',
         image: '/Preview/Bazgain.gif',
-        category: 'mobile'
+        category: 'mobile',
+        date: '2023',
+        technologies: ['MOBILE', 'WEB']
     },
     {
         id: 'botdev',
-        title: 'Проект Bot-Dev',
+        title: 'Ускорил разработку новых tg-ботов',
         description: 'Выстроил процесс, ускорил TTM',
         image: '/Preview/Bot.png',
-        category: 'web'
+        category: 'web',
+        date: '2022',
+        technologies: ['JavaScript', 'Node.js', 'Express']
     },
     {
         id: 'hrdep',
         title: 'HR Department',
         description: 'UX онбординг бота для новых сотрудников',
         image: '/cat.png',
-        category: 'web'
+        category: 'web',
+        date: '2022',
+        technologies: ['Figma', 'React', 'Chatbots']
     },
     {
         id: 'chatlab',
         title: 'ChatLab',
         description: 'Агрегатор мессенджеров и социальных сетей',
         image: '/Preview/Chatlab.png',
-        category: 'web'
+        category: 'web',
+        date: '2023',
+        technologies: ['React', 'Socket.io', 'MongoDB']
     },
     {
         id: 'tennisbooking',
         title: 'Tennis Booking',
         description: 'Делаю свое приложение для бронирования общественных кортов',
         image: '/Preview/Tennis.png',
-        category: 'web'
+        category: 'web',
+        date: '2024',
+        technologies: ['React', 'Node.js', 'PostgreSQL']
     },
     {
         id: 'tinkoff',
         title: 'Tinkoff – Perfomance review',
         description: 'Редизайн платформы',
         image: '/Preview/Tinkoff.png',
-        category: 'web'
+        category: 'web',
+        date: '2023',
+        technologies: ['React', 'TypeScript', 'Styled Components']
     }
 ];
 

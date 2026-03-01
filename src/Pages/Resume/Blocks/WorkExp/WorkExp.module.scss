@@ -70,6 +70,8 @@ h3 {
 
 
 .title {
+  display: flex;
+  flex-flow: column;
   font-weight: 590;
   font-size: var(--font-size-m);
   color: var(--fg-default);
@@ -170,10 +172,11 @@ h3 {
 .caseCard {
   text-decoration: none;
   color: inherit;
-  border: 1px solid var(--border-default);
+  //border: 1px solid var(--border-default);
   border-radius: 12px;
   overflow: hidden;
-  background-color: var(--bg-card);
+  background-color: var(--bg-disabled);
+  position: relative;
 
   &:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -203,7 +206,10 @@ h3 {
 
 // Контент карточки кейса
 .caseContent {
-  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  padding: 16px 16px;
 }
 
 .caseDescription {
@@ -213,6 +219,46 @@ h3 {
   line-height: 1.4;
 }
 
+.caseMeta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: var(--font-size-xs);
+  color: var(--fg-muted);
+}
+
+.caseCategory {
+  text-transform: capitalize;
+}
+
+.caseTechnologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.technologyBadge {
+  padding: 4px 8px;
+  background-color: var(--bg-surface2);
+  border-radius: 4px;
+  font-size: var(--font-size-xs);
+  color: var(--fg-muted);
+}
+
+.caseHoverEmoji {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  font-size: 20px;
+}
+
+.caseCard:hover .caseHoverEmoji {
+  opacity: 1;
+}
+
 .detailButton {
   padding: 8px 16px;
   background-color: transparent;
@@ -220,16 +266,6 @@ h3 {
   border-radius: 8px;
   color: var(--accent-default);
   cursor: pointer;
-  body.custom-cursor-active & {
-    cursor: none !important;
-  }
-  font-size: var(--font-size-s);
-  transition: all 0.2s ease;
-
-  &:hover {
-    background-color: var(--accent-default);
-    color: var(--fg-on-accent);
-  }
 }
 
 // Стили для заголовка детального просмотра кейса

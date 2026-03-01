@@ -20,6 +20,7 @@ const ImageRating = ({darkTheme, setDarkTheme}) => {
             '/Dash.png',
             '/emply.png',
             '/pik.png',
+            '/prof.png',
             '/VK.png',
             '/zvuk.png',
         ];
@@ -36,10 +37,6 @@ const ImageRating = ({darkTheme, setDarkTheme}) => {
 
     if (isLoading) {
         return <div className={styles.loading}>Загрузка...</div>;
-    }
-
-    if (images.length === 0) {
-        return <div className={styles['no-images']}>Нет доступных изображений для оценки</div>;
     }
 
     return (
