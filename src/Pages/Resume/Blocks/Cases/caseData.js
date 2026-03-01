@@ -19,6 +19,17 @@ export const casesData = [
         date: '2023',
         technologies: ['MOBILE', 'WEB']
     },
+
+    {
+        id: 'tinkoff',
+        title: 'Tinkoff – Perfomance review',
+        description: 'Редизайн платформы',
+        image: '/Preview/Tinkoff.png',
+        category: 'web',
+        date: '2023',
+        technologies: ['React', 'TypeScript', 'Styled Components']
+    },
+
     {
         id: 'botdev',
         title: 'Ускорил разработку новых tg-ботов',
@@ -54,15 +65,6 @@ export const casesData = [
         category: 'web',
         date: '2024',
         technologies: ['React', 'Node.js', 'PostgreSQL']
-    },
-    {
-        id: 'tinkoff',
-        title: 'Tinkoff – Perfomance review',
-        description: 'Редизайн платформы',
-        image: '/Preview/Tinkoff.png',
-        category: 'web',
-        date: '2023',
-        technologies: ['React', 'TypeScript', 'Styled Components']
     }
 ];
 
