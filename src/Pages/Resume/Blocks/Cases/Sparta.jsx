@@ -4,6 +4,11 @@ import styles from './CommonBlocks.module.scss';
 const Sparta = ({ darkTheme, setDarkTheme }) => {
     return (
         <div className={styles.Wrapper}>
+
+            <div className={styles.VideoBlock}>
+                <img className={styles.VideoElement} src="/Preview/Sparta.png" alt="Скриншоты проекта Sparta"/>
+            </div>
+
             <div className={styles.BlockContainer}>
                 <h2 className={styles.BlockTitle}>MarketLab • Sparta</h2>
                 <b>О проекте:</b>
