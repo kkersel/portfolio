@@ -12,7 +12,28 @@ const Tinkoff = ({darkTheme, setDarkTheme}) => {
             <div className={styles.BlockContainer}>
                 <h2 className={styles.BlockTitle}>Tinkoff</h2>
                 <p className={styles.BlockDescription}>
-                    Perfomance review
+                    Performance Review<br/>
+
+                    Пользователи: ~60.000 сотрудников <br/>
+                    Процесс: ежегодная обязательная оценка сотрудников <br/>
+                    Влияние: бонусы, пересмотр зарплат, кадровые решения <br/>
+                </p>
+            </div>
+
+            <div className={styles.BlockContainer}>
+                <h2 className={styles.BlockTitle}>Цель</h2>
+                <p className={styles.BlockDescription}>
+                    Сократить время прохождения review <br/>
+                    Повысить completion rate <br/>
+                    Повысить качество и осознанность оценок
+                </p>
+            </div>
+
+
+            <div className={styles.BlockContainer}>
+                <h2 className={styles.BlockTitle}>Discovery</h2>
+                <p className={styles.BlockDescription}>
+                    На основе сбора обратной связи от пользователей и проведенных интервью были выявлены следующие проблемы:
                 </p>
             </div>
 
@@ -20,8 +41,8 @@ const Tinkoff = ({darkTheme, setDarkTheme}) => {
             <div className={styles.BlockContainer}>
                 <h2 className={styles.BlockTitle}>Проблема #1</h2>
                 <p className={styles.Paragraph}>
-                    Перегруженная страница оценки сотрудников. <br/> Отсутствие иерархии и 15 обязательных вопросов <br/>
-                    Среднее время на один отзыв ~15 мин.
+                    Перегруженная страница оценки сотрудников. <br/> Отсутствие иерархии, люди уставали и начинали прокликивать. <br/>
+                    Среднее время на один отзыв ~10-15 мин.
                 </p>
             </div>
 
@@ -52,16 +73,15 @@ const Tinkoff = ({darkTheme, setDarkTheme}) => {
                     Процесс оценки был неочевидным и занимал много времени, люди ставили оценку интуитивно из-за слайдера
                 </p>
             </div>
-
-            <div className={styles.VideoBlock}>
-                <img className={styles.VideoElement} src="/rate.png" alt="Скриншоты проекта Sparta"/>
-            </div>
-
+            
             <div className={styles.ResultBlock}>
-                <h2 className={styles.BlockTitle}>Что сделал?</h2>
                 <p className={styles.Paragraph}>
                     Упростил механику оценки и добавил понятные градации с визуальной обратной связью
                 </p>
+            </div>
+
+            <div className={styles.VideoBlock}>
+                <img className={styles.VideoElement} src="/rate.png" alt="Скриншоты проекта Sparta"/>
             </div>
 
             <br/>
